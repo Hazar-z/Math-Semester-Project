@@ -9,8 +9,30 @@
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
     color: #222;
 }
+/******************************************************************************************************/
 /*****************************************************************************************************/
+/*my @keyframes*/
+
+@keyframes fade-in {
+    0% { opacity: 0;}
+
+    100% { opacity: 1;}
+} 
+
+
 /* my stylings */
+
+/*.visible-fragment {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    pointer-events: none;
+}
+.visible-fragment.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+*/ 
+
 .Slide1 .header,
 .Slide2 .header {
     font-family: Arial;
@@ -21,6 +43,28 @@ section.has-light-background, section.has-light-background h1, section.has-light
     padding-bottom: 200px;
     color: white;
 }
+
+.continue-button {
+    border-radius: 10px;
+    color: white !important;
+    font-size: 30px;
+    border-color: white;
+    border-style: solid;
+    border-width:5px;
+    padding: 20px 40px;
+    display: inline-flex;
+    margin-right: 500px;
+    box-sizing: border-box;
+    opacity:0; 
+    text-decoration: none;
+    background-color: transparent;
+
+}
+.continue-button:hover {
+        border: 5px solid white !important;
+        background-color: lightpink;
+ }
+
 .Slide2 .header {
     text-align: right;
     padding-right: 0;
@@ -42,14 +86,15 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 body {
     font-family: Arial;
-    font-size: 20px;
-    color: white;
+    font-size: 50px;
+    color: white !important;
 }
 .delayed-paragraph {
     opacity: 10;
     animation: fadeIn 5s ease-in forwards;
     animation-delay: 4s;
 }
+/************************************************************/
 
 
 /*********************************************
@@ -139,7 +184,7 @@ body {
 }
 
 .reveal h2 {
-  font-size: var(--r-heading2-size);
+    font-size: var(--r-heading2-size);
 }
 
 .reveal h3 {
