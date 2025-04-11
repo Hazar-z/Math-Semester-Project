@@ -17,35 +17,44 @@
 		<img class="Background-theme" src="Math-Project/bg-theme.png" />
 		<div class="reveal">
 			<div class="slides">
-				<section
+				<!-- Slide 1-->
+                <section id="intro-slide" 
 						 data-background-image="Math-Project/theme-opening.png"
-						 style="display: flex; flex-direction:row"
-						 class="Slide1"
-						 data-transition="wipe", 
-						 data-state="animate-paragraph">
+                         style="display: flex; flex-direction:row; margin-left:70px;"
+                         class="Slide1"
+                         data-transition="wipe"
+                         data-state="animate-paragraph">
+                    <!-- slide1 Title-->
+					<div style=" flex: 1; width: 400px;"
+                         class="header"> 
+					<h2> המבנה העשרוני </h2>
+					</div>
+                    <!-- continue click-->
+	 
+						<a href="#/1" 
+						   id="delayed-fragment"
+						   class="continue-button visible-fragment"
+						   style="animation: fade-in 0.5s ease-in 2s forwards;">
+						לחץ כּאן כּדי להמשיך 
+						</a>
+					
+                </section>
 
-					<div class="header"> <h2> המבנה העשרוני </h2> </div>
-					<div class="center"> <p class="delayed-paragraph"> לחץ כּאן כּדי להמשיך </p> </div>
-					<style>
-
-						@keyframes fadeIn {
-							from {
-								opacity: 0;
-							}
-
-							to {
-								opacity: 1;
-							}
-						}
-					</style>
-				</section>
+				<!-- Slide 2-->
 				<section class="Slide2">
-					<div class="header" <h3> הוראות המשחק </h3> </div>
-                    <div class="right" , style="text-align: right;">
-					<div> במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך </div>
-                    <div style="text-align: right;"> <p><li></li>.עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק </p></li></div></section>
+					<div class="header">
+					<h3> הוראות המשחק </h3> 
+					</div>
+					<div class="right" style="text-align: right;">
+						<div> במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך </div>
+						<div style="text-align: right;">
+						<p>
+							<li>.עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק </li>
+						</p>
+						</div>
+				</section>
 
-					<section data-transition="zoom" data-transition-speed="slow"> Slide 3</section>
+				<section data-transition="zoom" data-transition-speed="slow"> Slide 3</section>
 			</div>
 		</div>
 <!-- Core and Plugins -->
@@ -61,10 +70,24 @@
 				hash: true,
 				backgroundTransition: 'wipe',
 				transitionSpeed: 'slow',
+				
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+            // Trigger the fragment after 2 seconds when entering the slide
+		   /*	Reveal.on('slidechanged', function (event) {
+                const button = document.getElementById('delayed-fragment');
+
+                if (event.currentSlide.contains(button)) {
+                    button.classList.remove('visible'); // reset if revisited
+
+                    setTimeout(() => {
+                        button.classList.add('visible'); // fade in after 2s
+                    }, 2000);
+                }
+            }); */
 		</script>
 	</body>
 </html>
