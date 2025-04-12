@@ -22,20 +22,16 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 
 /*=== my stylings ===*/
-.Background-theme, .opening-theme {
+.Background-theme{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: fixed;
-    z-index: -1;
+    z-index:-1;
     height: 100%;
     width: 100%;
     margin-left: -15;
     margin-right: -15;
-}
-
-.opening-theme {
-    z-index: 0;
 }
 
 body {
@@ -103,6 +99,28 @@ body {
     opacity: 0;
     animation: fade-in  2s 0.7s ease-in forwards;
  }
+
+.answer1{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap:120px;
+    font-family: Arial;
+    font-size: 60px;
+    margin: 200px 70px 150px ;
+    height:170px;
+    width: 170px;
+}
+.answer2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    font-size:60px;
+    margin: 200px 600px 150px -200px;
+    height: 170px;
+    width:170px;
+}
 /************************************************************/
 
 
@@ -198,6 +216,8 @@ body {
 
 .reveal h3 {
   font-size: var(--r-heading3-size);
+  text-align: right;
+  direction:rtl;
 }
 
 .reveal h4 {
