@@ -11,7 +11,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 /******************************************************************************************************/
 /*****************************************************************************************************/
-/*my @keyframes*/
+
+/*=== my @keyframes ===*/
 
 @keyframes fade-in {
     0% { opacity: 0;}
@@ -20,7 +21,28 @@ section.has-light-background, section.has-light-background h1, section.has-light
 } 
 
 
-/* my stylings */
+/*=== my stylings ===*/
+.Background-theme, .opening-theme {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin-left: -15;
+    margin-right: -15;
+}
+
+.opening-theme {
+    z-index: 0;
+}
+
+body {
+    font-family: Arial;
+    font-size: 50px;
+    color: white !important;
+}
 
 /*.visible-fragment {
     opacity: 0;
@@ -33,6 +55,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 */ 
 
+
+/*=== Slide's title decoratios ===*/
+*/
 .Slide1 .header,
 .Slide2 .header {
     font-family: Arial;
@@ -42,6 +67,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
     padding-right: 380px;
     padding-bottom: 200px;
     color: white;
+}
+
+.Slide2 .header {
+    text-align: right;
+    padding-right: 0;
 }
 
 .continue-button {
@@ -65,35 +95,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
         background-color: lightpink;
  }
 
-.Slide2 .header {
-    text-align: right;
-    padding-right: 0;
-}
-.Background-theme, .opening-theme {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: fixed;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin-left: -15;
-    margin-right: -15;
-}
-.opening-theme{
-    z-index: 0;
-}
 
-body {
-    font-family: Arial;
-    font-size: 50px;
-    color: white !important;
-}
-.delayed-paragraph {
-    opacity: 10;
-    animation: fadeIn 5s ease-in forwards;
-    animation-delay: 4s;
-}
+.delayed-p {
+    opacity: 0;
+    animation: fade-in  2s 0.7s ease-in forwards;
+ }
 /************************************************************/
 
 
