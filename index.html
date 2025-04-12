@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="he">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,51 +13,73 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
-	<body>
+	<body dir="rtl" style="text-align:right;">
 		<img class="Background-theme" src="Math-Project/bg-theme.png" />
 		<div class="reveal">
 			<div class="slides">
 				<!-- Slide 1-->
-                <section id="intro-slide" 
+				<section id="intro-slide"
 						 data-background-image="Math-Project/theme-opening.png"
-                         style="display: flex; flex-direction:row; margin-left:70px;"
-                         class="Slide1"
-                         data-transition="wipe"
-                         data-state="animate-paragraph">
-                    <!-- slide1 Title-->
-					<div style=" flex: 1; width: 400px;"
-                         class="header"> 
-					<h2> המבנה העשרוני </h2>
+						 style="display: flex;
+								flex-direction:column;
+								align-items:center;
+								justify-content: center;
+								margin-right:70px;"
+						 class="Slide1"
+						 data-transition="wipe"
+						 data-state="animate-paragraph">
+					<!-- slide1 Title-->
+					<div style="width: 400px;
+								padding-top: 85px;
+								padding-bottom:85px;
+								margin-right:400px;
+								justify-content: center;"
+						 class="header">
+						<h2> המבנה העשרוני </h2>
 					</div>
-                    <!-- continue click-->
-	 
-						<a href="#/1" 
+					<!-- continue click-->
+					<div>
+						<a href="#/1"
 						   id="delayed-fragment"
-						   class="continue-button visible-fragment"
-						   style="animation: fade-in 0.5s ease-in 2s forwards;">
-						לחץ כּאן כּדי להמשיך 
+						   class="continue-button delayed-p"
+						   style=" display: flex;
+								margin-top:150px;
+								margin-right: 400px;
+								width: 400px;
+								justify-content: center;
+								text-align: center;">
+							לחץ כּאן כּדי להמשיך
 						</a>
-					
-                </section>
-
-				<!-- Slide 2-->
-				<section class="Slide2">
-					<div class="header">
-					<h3> הוראות המשחק </h3> 
 					</div>
-					<div class="right" style="text-align: right;">
-						<div> במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך </div>
-						<div style="text-align: right;">
-						<p>
-							<li>.עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק </li>
-						</p>
-						</div>
+
 				</section>
 
-				<section data-transition="zoom" data-transition-speed="slow"> Slide 3</section>
+				<!-- Slide 2-->
+				<section class="Slide2" data-autoslide="1200">
+					<div class="header">
+						<h3> הוראות המשחק </h3>
+					</div>
+					<!-- Slide2 fragments-->
+							<p class="fragment highlight-red" style="animation-delay:2s;">
+								במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך
+							</p>
+							<p class="fragment fade-in">
+								.עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק
+							</p>
+				</section>
+
+				<!-- Slide 3-->
+				<section data-transition="zoom" data-transition-speed="slow" data-autoslide="1200">
+					<p class="fragment grow" style="animation-delay: 2s;"> slide3 fading in</p>
+				</section>
 			</div>
 		</div>
-<!-- Core and Plugins -->
+
+
+
+
+
+		<!-- Core and Plugins -->
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
@@ -70,24 +92,26 @@
 				hash: true,
 				backgroundTransition: 'wipe',
 				transitionSpeed: 'slow',
-				
+				controls: false,
+				fragments: true,
+
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 			});
-
-            // Trigger the fragment after 2 seconds when entering the slide
-		   /*	Reveal.on('slidechanged', function (event) {
-                const button = document.getElementById('delayed-fragment');
-
-                if (event.currentSlide.contains(button)) {
-                    button.classList.remove('visible'); // reset if revisited
-
-                    setTimeout(() => {
-                        button.classList.add('visible'); // fade in after 2s
-                    }, 2000);
-                }
-            }); */
+            // trigger the animation only when the slide appears
+			/*Reveal.on('slidechanged', function (event) {
+				if (event.currentSlide.classList.contains('Slide2')) {
+					const items = event.currentSlide.querySelectorAll('.delayed-p');
+					items.forEach((el, i) => {
+						el.style.opacity = 0; // Reset opacity
+						el.style.animation = 'none'; // Clear any existing animation
+						void el.offsetHeight; // Force reflow
+						el.style.animation = `fade-in 0.8s ease-in ${i * 0.6}s forwards`;
+					});
+				}
+			}); */
 		</script>
+
 	</body>
 </html>
