@@ -39,6 +39,7 @@
 					</div>
 					<!-- continue click-->
 					<div>
+						<!-- linked to slide: index=2-->
 						<a href="#/1"
 						   id="delayed-fragment"
 						   class="continue-button delayed-p"
@@ -55,21 +56,40 @@
 				</section>
 
 				<!-- Slide 2-->
-				<section class="Slide2" data-autoslide="1200">
+				<section class="Slide2">
 					<div class="header">
 						<h3> הוראות המשחק </h3>
 					</div>
 					<!-- Slide2 fragments-->
-							<p class="fragment highlight-red" style="animation-delay:2s;">
-								במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך
-							</p>
-							<p class="fragment fade-in">
-								.עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק
-							</p>
+					<ul style="text-align:right;">
+						<li class="fragment fade-in"
+							style="animation-delay: 2s;
+						    margin-bottom: 20px;
+						    margin-top: 10px;">
+							במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך.
+						</li>
+						<li class="fragment fade-in">
+							עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
+						</li>
+					</ul>
+					<div>
+						<!-- linked to slide: index=3-->
+						<a href="#/2"
+						   id="delayed-fragment"
+						   class="continue-button fragment fade-in"
+						   style=" display: flex;
+							margin-top:150px;
+							margin-right: 400px;
+							width: 400px;
+							justify-content: center;
+							text-align: center;">
+							לחץ כּאן כּדי להמשיך
+						</a>
+					</div>
 				</section>
 
 				<!-- Slide 3-->
-				<section data-transition="zoom" data-transition-speed="slow" data-autoslide="1200">
+				<section data-transition="zoom" data-transition-speed="slow">
 					<p class="fragment grow" style="animation-delay: 2s;"> slide3 fading in</p>
 				</section>
 			</div>
