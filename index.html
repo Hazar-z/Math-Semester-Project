@@ -100,11 +100,12 @@
 						font-size:50px;
 						background-color:pink;
 						position:absolute;
-						flex-direction: column;">
+						flex-direction: column;
+						border: 7px solid blue;">
 					בחר את המספר הגדול מבין שני הבאים:</h3>
-					<div style="display:flex; flex-direction:row;">
-						<div class="answer1" style="background-color:mediumpurple;"> 0.25 </div>
-						<div class="answer2" style="background-color:mediumpurple;"> 0.3 </div>
+					<div style="display:flex; flex-direction:row; border: 5px solid red;">
+						<div class="answer1" style="display:flex; flex:1; background-color:mediumpurple; border: 5px solid yellow;"> 0.25 </div>
+						<div class="answer2" style=" flex:1; background-color:mediumpurple;"> 0.3 </div>
 					</div>
 						</section>
 					<!-- Slide 4-->
@@ -131,7 +132,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				backgroundTransition: 'wipe',
+				backgroundTransition: 'slide',
 				transitionSpeed: 'slow',
 				controls: false,
 				fragments: true,
