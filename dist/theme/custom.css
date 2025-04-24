@@ -100,27 +100,34 @@ body {
     animation: fade-in  2s 0.7s ease-in forwards;
  }
 
-.answer1{
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    gap:120px;
-    font-family: Arial;
-    font-size: 60px;
-    margin: 200px 70px 150px ;
-    height:170px;
-    width: 170px;
-}
-.answer2{
+.answer1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial;
+        font-size: 70px;
+        background-image: url('../../Math-Project/answer-button.png');
+        background-size: contain;
+        background-position: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+/*.answer2{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 120px;
     font-size:60px;
-    margin: 200px 600px 150px -200px;
+    margin: -250px 870px 0px 100px;
     height: 170px;
     width:170px;
-}
+}*/
+
 /************************************************************/
 
 
