@@ -101,21 +101,26 @@ body {
  }
 
 .answer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial;
-        font-size: 70px;
-        background-image: url('../../Math-Project/answer-button.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 350px;
-        width: 400px;
-        border-radius: 50px;
-        text-align: center;
-        color:white;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 70px;
+    background-image: url('../../Math-Project/answer-button.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 400px;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+.answer:hover {
+    transform: scale(1.20);
+}
+
 .feedback-centering {
     display: flex;
     flex-direction: column;
@@ -158,18 +163,29 @@ body {
 }
  .composition-next a {
         color: white;
-        font-size: 40px;
+        font-size: 35px;
         text-decoration: underline;
         cursor: pointer;
         border: 2px solid white;
         padding: 10px 10px 10px 10px;
         border-radius:10px;
 }
-/************************************************************/
-/*********************************************
- * GLOBAL STYLES
- *********************************************/
-:root {
+ .composition-next a:hover {
+        background-color: whitesmoke;
+        color: mediumorchid !important;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+                    0 0 30px rgba(255, 255, 255, 0.6),
+                    0 0 40px rgba(255, 255, 255, 0.4);
+        transform: scale(1.03);
+    }
+
+
+  /************************************************************/
+ /************************************************************/
+ 
+* GLOBAL STYLES *********************************************/
+
+  : root {
     --r-background-color: #582f4e;
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
     --r-main-font-size: 42px;
