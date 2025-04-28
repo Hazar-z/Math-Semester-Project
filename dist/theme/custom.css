@@ -18,7 +18,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
     0% { opacity: 0;}
 
     100% { opacity: 1;}
-} 
+}
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.6);
+    }
+}
 
 
 /*=== my stylings ===*/
@@ -187,7 +200,7 @@ body {
 .house-background {
     position: absolute;  /*nearest parent= "num-house-slide" */
     top: 55%; /*move left to middle of the parent*/
-    left: 55%;
+    left: 58%;
     padding-bottom:60px;
     width: 120%; 
     height: auto;
@@ -242,7 +255,16 @@ body {
     color: #333;
 }
 
-
+.glowing-border {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9); /* White glow */
+    width: 400px;
+    height: 320px;
+    animation: pulseGlow 6s ease-in-out infinite;
+    animation: fade-in 2s 1s ease-in-out infinite;
+    animation-direction: alternate;
+}
 
 /************************************************************/
 /************************************************************/
