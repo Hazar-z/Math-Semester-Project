@@ -35,7 +35,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 body {
-    font-family: Arial;
+    font-family: 'Noto Sans Hebrew', Arial !important;
     font-size: 50px;
     color: white !important;
     direction: rtl;
@@ -58,7 +58,7 @@ body {
 */
 .Slide1 .header,
 .Slide2 .header {
-    font-family: Arial;
+    font-family: 'Noto Sans Hebrew', Arial;
     font-size: 72px;
     font-weight: 700px;
     text-align: center;
@@ -104,7 +104,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial;
+    font-family: 'Noto Sans Hebrew', Arial;
     font-size: 70px;
     background-image: url('../../Math-Project/answer-button.png');
     background-size: contain;
@@ -134,9 +134,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial;
+    font-family: 'Noto Sans Hebrew', Arial;
     font-size: 80px;
-    margin-top:80px;
+    margin-top: 80px;
     background-image: url('../../Math-Project/answer-button.png');
     background-size: contain;
     background-position: center;
@@ -145,7 +145,7 @@ body {
     width: 400px;
     border-radius: 50px;
     text-align: center;
-    color:white;
+    color: white;
 }
 
 .composition-next {
@@ -154,12 +154,11 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    font-family: Arial;
+    font-family: 'Noto Sans Hebrew', Arial;
     text-align: center;
     color: white;
     font-size: 60px;
     gap: 30px;
-
 }
  .composition-next a {
         color: white;
@@ -179,13 +178,73 @@ body {
         transform: scale(1.03);
     }
 
+#num-house-slide {
+    position:relative;
+    height:110%;
+    width:120%;
+}
 
-  /************************************************************/
- /************************************************************/
- 
+.house-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: none;
+    border-radius:12px;
+    transform: translate(-50%,-50%);
+}
+
+.house-content {
+    position: relative;
+    z-index: 2; /* put text ABOVE the image */
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+#main-explanation {
+    background-color: #FFEB88;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 36px;
+    color: #5C469C;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+#continue-button {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 32px;
+    color: teal;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.side-text {
+    position: absolute;
+    top: 70px;
+    transform: translateY(-50%);
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+
+
+/************************************************************/
+/************************************************************/
 * GLOBAL STYLES *********************************************/
 
-  : root {
+: root {
     --r-background-color: #582f4e;
     --r-main-font: Source Sans Pro, Helvetica, sans-serif;
     --r-main-font-size: 42px;
