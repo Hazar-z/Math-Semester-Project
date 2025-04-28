@@ -185,17 +185,18 @@ body {
 }
 
 .house-background {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120%;
+    position: absolute;  /*nearest parent= "num-house-slide" */
+    top: 55%; /*move left to middle of the parent*/
+    left: 55%;
+    padding-bottom:60px;
+    width: 120%; 
     height: auto;
     object-fit: contain;
     z-index: 1;
     opacity: 1;
     pointer-events: none;
     border-radius:12px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); /*centred the image inside the parent*/
 }
 
 .house-content {
@@ -203,11 +204,14 @@ body {
     z-index: 2; /* put text ABOVE the image */
     text-align: center;
     color: white;
-    margin-top: 30px;
+    margin-top: 10px;
+    padding-bottom:10px;
+    display:inline-block;
 }
 
 #main-explanation {
     background-color: #FFEB88;
+    position:relative;
     padding: 20px;
     border-radius: 20px;
     font-size: 36px;
