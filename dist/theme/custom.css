@@ -217,14 +217,12 @@ body {
     z-index: 2; /* put text ABOVE the image */
     text-align: center;
     color: white;
-    margin-top: 10px;
-    padding-bottom:10px;
-    display:inline-block;
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 #main-explanation {
     background-color: #FFEB88;
-    position:relative;
     padding: 20px;
     border-radius: 20px;
     font-size: 36px;
@@ -259,7 +257,7 @@ body {
     border: 2px solid transparent;
     border-radius: 20px;
     box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.9); /* White glow */
-    width: 400px;
+    width: 405px;
     height: 320px;
     animation: pulseGlow 6s ease-in-out infinite;
     animation: fade-in 2s 1s ease-in-out infinite;
