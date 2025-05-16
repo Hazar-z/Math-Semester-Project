@@ -33,6 +33,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
     }
 }
 
+@keyframes drawboxframe {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 
 /*=== my stylings ===*/
 .Background-theme{
@@ -218,7 +230,9 @@ body {
     text-align: center;
     color: white;
     padding-bottom: 10px;
-    display: inline-block;
+    display: block;
+    width: 1000px;
+
 }
 
 #main-explanation {
@@ -262,6 +276,16 @@ body {
     animation: pulseGlow 6s ease-in-out infinite;
     animation: fade-in 2s 1s ease-in-out infinite;
     animation-direction: alternate;
+}
+.circle-draw {
+    width: 435px;
+    height: 335px;
+    border: 12px solid #4169e1;
+    position: absolute;
+    border-radius: 10%;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: scale(0.2);
 }
 
 /************************************************************/
