@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="he">
 <head>
@@ -178,70 +179,74 @@
 					<div class="house-content">
 						<!-- Title -->
 						<div class="fragment fade-in" data-fragment-index="1"
-							 style="position: absolute; color: #5C469C; background-color: #FFEB88; top: 5%; left: 95%; transform: translateX(-50%); width: 100vw; padding: 15px 0px; border-radius:20px; text-align:center; ">
+							 style=" display: inline-block; max-width:90vw; width:1100px; position:absolute; color: #5C469C; background-color: #FFEB88; top: 5%; left: 75%; transform: translateX(-50%);  padding: 15px 20px; border-radius:20px; text-align:right; font-size:40px; ">
 							בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
 						</div>
 
 						<!-- Main explanation -->
-							<div class="fragment fade-in" id="main-explanation"
-								 data-fragment-index="2"
-								 style="position:relative; margin-top:270px; margin-left:130px;">
-								כל מספר עשרוני מורכב מ:
-							</div>
+						<div class="fragment fade-in" id="main-explanation"
+							 data-fragment-index="2"
+							 style="position:relative; margin-top:270px; margin-left:50px;">
+							כל מספר עשרוני מורכב מ:
+						</div>
 						<!-- Decimal nummber components-->
 						<div class="fragment fade-in" data-fragment-index="3">
-							<div style=" position: absolute; top: 105%; left: -10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
+							<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 								החלק השלם
 							</div>
-							<div style=" position: absolute; top: 148%; left: 21.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: 26.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								אחדות
 							</div>
-							<div style=" position: absolute; top: 148%; left: -3.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: 12.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								עשרות
 							</div>
-							<div style=" position: absolute; top: 148%; left: -27.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: -1%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								מאות
 							</div>
 						</div>
-						<div class="fragment fade-in" data-fragment-index="5" style="position: absolute; top: 105%; left: 46%;">
+						<div class="fragment" data-fragment-index="5" style="position: absolute; top: 105%; left: 40%;">
 							<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 								הנקודה העשרונית
 							</div>
+							<!-- highlight/circle of decimal dot-->
+							<div id="square-frame-2" class="circle-draw" style="position: absolute; top: 275%; left: 26%; border-radius: 55px; width: 108px; height: 100px; border: 7px solid #FFEB88; "> </div>
 						</div>
+
 						<div class="fragment fade-in" data-fragment-index="6">
-							<div style="position: absolute; top: 105%; left: 110%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap;">
+							<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap;">
 								החלק השברי
 							</div>
-							<div style=" position: absolute; top: 148%; left: 90%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								עשיריות
 							</div>
-							<div style=" position: absolute; top: 148%; left: 117%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: 66%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								מאיות
 							</div>
-							<div style=" position: absolute; top: 148%; left: 140%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
+							<div style=" position: absolute; top: 148%; left: 93%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
 								אלפיות
 							</div>
 						</div>
 
-						<!-- Empty glowing frame left side-->
-						<div class="fragment fade-in glowing-border" data-fragment-index="4" style="position: absolute; top: 100%; left:-29%;"> </div>
 						<!-- Side Text on the left -->
-						<div class="fragment fade-in" data-fragment-index="4" style="position: absolute; top: 125%; left: -80%; animation: fade-in 3s 2s ease-in;">
+						<div class="fragment" data-fragment-index="4" style="position: absolute; top: 115%; left: -30%;">
 							<div style="background-color: #E7FFE7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 								שהוא כולל את<br>המספרים מצד<br>שמאל של הנקודה<br>העשרונית
 							</div>
+							<!-- draw sqaured fram left side-->
+							<div id="square-frame-1" class="circle-draw" style="position: absolute; top: -35%; left:105%;"> </div>
 						</div>
-
-						<!-- Empty glowing frame right side-->
-						<div class="fragment fade-in glowing-border" data-fragment-index="7" style="position: absolute; top: 100%; left:90%;"> </div>
+						
 						<!-- Side Text on the right -->
-						<div class="fragment fade-in" data-fragment-index="7" style="position: absolute; top: 125%; right: -113%; animation: fade-in 3s 2s ease-in;">
+						<div class="fragment fade-in" data-fragment-index="7" style="position: absolute; top: 115%; right: -32%;">
 							<div style="background-color: #FFE7E7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 								שהוא כולל את<br>המספרים מצד<br>ימין של הנקודה<br>העשרונית
 							</div>
+							<!-- draw a squared frame right side-->
+							<div id="square-frame-3" class="circle-draw" style="position: absolute; top: -35%; left:-190%;"> </div>
 						</div>
+						
 					</div>
-				</section>
+			</section>
 
 
 
@@ -282,18 +287,24 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 			});
-            // trigger the animation only when the slide appears
-			/*Reveal.on('slidechanged', function (event) {
-				if (event.currentSlide.classList.contains('Slide2')) {
-					const items = event.currentSlide.querySelectorAll('.delayed-p');
-					items.forEach((el, i) => {
-						el.style.opacity = 0; // Reset opacity
-						el.style.animation = 'none'; // Clear any existing animation
-						void el.offsetHeight; // Force reflow
-						el.style.animation = `fade-in 0.8s ease-in ${i * 0.6}s forwards`;
-					});
-				}
-			}); */
+			Reveal.addEventListener('fragmentshown', function (event) {
+                console.log("Fragment shown!", event.fragment);
+				const boxframe = event.fragment.querySelector('.circle-draw');
+				if (boxframe) {
+                    console.log("✅ Animating:", boxframe);
+				   //reset animation
+					boxframe.style.animation = 'none';
+					boxframe.style.opacity = '0';
+
+                    // Force a reflow: this makes the browser "recalculate" the layout,
+                    // which is necessary to restart the animation cleanly
+                    void boxframe.offsetWidth;
+
+                    // Now apply the animation after slight delay
+					setTimeout(()=>{
+					boxframe.style.animation ='drawboxframe 3s ease-out forwards';}, 100);
+                }
+            });
 		</script>
 
 	</body>
