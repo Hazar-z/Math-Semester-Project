@@ -84,8 +84,8 @@ body {
 .Slide1 .header,
 .Slide2 .header {
     font-family: 'Noto Sans Hebrew', Arial;
-    font-size: 72px;
-    font-weight: 700px;
+    font-size: 90px !important;
+    font-weight: 700;
     text-align: center;
     padding-right: 380px;
     padding-bottom: 200px;
@@ -98,10 +98,29 @@ body {
     margin-top: -10px;
 }
 
+.glow-underline {
+    position: relative;
+    display: inline-block;
+    color: white;
+}
+
+    .glow-underline::after {
+        content: "";
+        position: absolute;
+        bottom: -8px; /* space between text and line */
+        right: 0%;
+        width: 85%;
+        height: 8px;
+        background-color: #7F3B80; /* or royal blue */
+        box-shadow: 0 0 15px #7F3B80;
+        border-radius: 5px;
+    }
+
 .continue-button {
     border-radius: 10px;
     color: white !important;
     font-size: 30px;
+    font-weight:700;
     border-color: white;
     border-style: solid;
     border-width:5px;
@@ -114,10 +133,12 @@ body {
     background-color: transparent;
 
 }
-.continue-button:hover {
+    .continue-button:hover {
         border: 5px solid white !important;
-        background-color: lightpink;
- }
+        backdrop-filter: blur(10px);
+        background-color: rgba(253, 186, 47, 0.6);
+        color: white !important;
+    }
 
 
 .delayed-p {
