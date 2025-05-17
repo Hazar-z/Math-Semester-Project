@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
 	<!-- Personalizing font-->
+	<!-- Noto Sans Hebrew font-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap" rel="stylesheet">
@@ -36,26 +37,19 @@
 					 data-transition="wipe"
 					 data-state="animate-paragraph">
 				<!-- slide1 Title-->
-				<div style="width: 400px;
-								padding-top: 85px;
+				<div style="width: 500px;
+								padding-top: 145px;
 								padding-bottom:85px;
-								margin-right:400px;
+								margin-right:350px;
 								justify-content: center;"
 					 class="header">
-					<h2> המבנה העשרוני </h2>
+					<h2 style="font-size: 75px !important;"> המבנה העשרוני </h2>
 				</div>
 				<!-- continue click-->
 				<div>
-					<!-- linked to slide: index=2-->
-					<a href="#/1"
-					   id="delayed-fragment"
-					   class="continue-button delayed-p"
-					   style=" display: flex;
-								margin-top:150px;
-								margin-right: 400px;
-								width: 400px;
-								justify-content: center;
-								text-align: center;">
+					<!-- linked to slide2: index=1-->
+					<a onclick="playTapAndGo(1)" id="delayed-fragment" class="continue-button delayed-p"
+							    style=" display: flex; margin-top: 230px; margin-right: 400px; width: 400px; justify-content: center; text-align: center; cursor: pointer;">
 						לחץ כּאן כּדי להמשיך
 					</a>
 				</div>
@@ -63,32 +57,28 @@
 
 			<!-- Slide 2 index=1-->
 			<section class="Slide2">
-				<div class="header">
-					<h3> הוראות המשחק </h3>
+				<div class="header glow-underline delayed-p" style="width: 60%;">
+					<h3 class="delayed-p" style="font-size: 75px !important;"> הוראות המשחק </h3>
 				</div>
 				<!-- Slide2 fragments-->
 				<ul style="text-align:right;">
-					<li class="fragment fade-in"
-						style="animation-delay: 2s;
+					<li class="delayed-p"
+						style="animation-delay: 3s;
 						    margin-bottom: 20px;
-						    margin-top: 10px;">
+						    margin-top: 15px;
+							padding-top:15px;">
 						במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך.
 					</li>
-					<li class="fragment fade-in">
+					<li class="delayed-p" style="animation-delay: 5s; padding-top:10px;">
 						עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
 					</li>
 				</ul>
 				<div>
-					<!-- linked to slide: index=3-->
-					<a href="#/2"
+					<!-- linked to slide3: index=2-->
+					<a onclick="playTapAndGo(2)"
 					   id="delayed-fragment"
-					   class="continue-button fragment fade-in"
-					   style=" display: flex;
-							margin-top:150px;
-							margin-right: 400px;
-							width: 400px;
-							justify-content: center;
-							text-align: center;">
+					   class="continue-button delayed-p"
+					   style=" display: flex; margin-top: 150px; margin-right: 250px; width: 400px; justify-content: center; text-align: center; cursor: pointer; animation-delay: 6s;">
 						לחץ כּאן כּדי להמשיך
 					</a>
 				</div>
@@ -96,17 +86,19 @@
 
 			<!-- Slide 3 index=2-->
 			<section id="slide3">
-				<div class="fragment grow"
+				<div class="delayed-p glow-underline"
 					 style="
 						display: flex;
 						flex-shrink:1;
 						margin-top: 90px;
 						animation-delay: 2s;
 						margin-right: -60px;
-						font-size:50px;
+						font-size:60px;
 						position:absolute;
 						flex-wrap: wrap;
-						width: 103%;">
+						width: 150%;
+						right: -17%;
+						animation-delay:0s;">
 					בחר את המספר הגדול מבין שני המספרים הבאים:
 				</div>
 				<div style="display: flex;
@@ -116,8 +108,8 @@
 								width: 1200px;
 								height:300px;
 								flex-wrap:wrap;">
-					<a href="#/4" class="answer" style="cursor:pointer; color:white"> 0.25 </a>
-					<a href="#/3" class="answer" style="cursor:pointer; color:white;"> 0.3 </a>
+					<a href="#/4" class="delayed-p answer" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
+					<a href="#/3" class="delayed-p answer" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
 				</div>
 			</section>
 
@@ -128,7 +120,7 @@
 				</div>
 				<div class="composition-next">
 					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
-					<a href="#/5" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<a onclick="playTapAndGo(5)" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
 
@@ -167,8 +159,8 @@
 						width: 1200px;
 						height:300px;
 						flex-wrap:wrap;">
-					<a href="#/6" class="answer" style="cursor:pointer; color:white"> 0.25 </a>
-					<a href="#/7" class="answer" style="cursor:pointer; color:white;"> 0.3 </a>
+					<a onclick="playTapAndGo(6)" class="answer" style="cursor:pointer; color:white"> 0.25 </a>
+					<a onclick="playTapAndGo(7)" class="answer" style="cursor:pointer; color:white;"> 0.3 </a>
 				</div>
 			</section>
 
@@ -179,19 +171,19 @@
 				<!-- Text conten above image-->
 				<div class="house-content">
 					<!-- Title -->
-					<div class="fragment fade-in" data-fragment-index="1"
+					<div class="delayed-p" data-fragment-index="1"
 						 style=" display: inline-block; max-width:90vw; width:1100px; position:absolute; color: #5C469C; background-color: #FFEB88; top: 5%; left: 75%; transform: translateX(-50%);  padding: 15px 20px; border-radius:20px; text-align:right; font-size:40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
 					</div>
 
 					<!-- Main explanation -->
-					<div class="fragment fade-in" id="main-explanation"
+					<div class="delayed-p" id="main-explanation"
 						 data-fragment-index="2"
-						 style="position:relative; margin-top:270px; margin-left:50px;">
+						 style="position:relative; margin-top:270px; margin-left:50px; animation-delay:2s;">
 						כל מספר עשרוני מורכב מ:
 					</div>
 					<!-- Decimal nummber components-->
-					<div class="fragment fade-in" data-fragment-index="3">
+					<div class="delayed-p" data-fragment-index="3" style="animation-delay:5s;">
 						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							החלק השלם
 						</div>
@@ -205,15 +197,16 @@
 							מאות
 						</div>
 					</div>
-					<div class="fragment" data-fragment-index="5" style="position: absolute; top: 105%; left: 40%;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 105%; left: 40%; animation-delay:11s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 						<!-- highlight/circle of decimal dot-->
-						<div id="square-frame-2" class="circle-draw" style="position: absolute; top: 275%; left: 26%; border-radius: 55px; width: 108px; height: 100px; border: 7px solid #FFEB88; "> </div>
+						<div id="square-frame-2" class="circle-draw" data-delay="11000" style="position: absolute; top: 267%; left: 26.5%; border-radius: 55px;
+							 width: 108px; height: 108px; border: 5px solid #cceeff; box-shadow: 0 0 10px 4px rgba(204, 238, 255, 0.8); background-color: #cceeff "> </div>
 					</div>
 
-					<div class="fragment fade-in" data-fragment-index="6">
+					<div class="delayed-p" data-fragment-index="6" style="animation-delay:14s;">
 						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap;">
 							החלק השברי
 						</div>
@@ -229,21 +222,23 @@
 					</div>
 
 					<!-- Side Text on the left -->
-					<div class="fragment" data-fragment-index="4" style="position: absolute; top: 115%; left: -30%;">
+					<div class="delayed-p" data-fragment-index="4" style="position: absolute; top: 115%; left: -30%; animation-delay:8s;">
 						<div style="background-color: #E7FFE7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 							שהוא כולל את<br>המספרים מצד<br>שמאל של הנקודה<br>העשרונית
 						</div>
-						<!-- draw sqaured fram left side-->
-						<div id="square-frame-1" class="circle-draw" style="position: absolute; top: -35%; left:105%;"> </div>
 					</div>
+					<!-- sqaure frame: will animate via JS -->
+					<div id="square-frame-1" class="circle-draw" data-delay="8000"
+						 style="position: absolute; top: 97.5%; left: -3.5%; border: 5px solid #E7FFE7; box-shadow: 0 0 25px 10px rgba(231, 255, 231, 0.8);"></div>
 
 					<!-- Side Text on the right -->
-					<div class="fragment fade-in" data-fragment-index="7" style="position: absolute; top: 115%; right: -32%;">
+					<div class="delayed-p" data-fragment-index="7" style="position: absolute; top: 115%; right: -32%; animation-delay:17s;">
 						<div style="background-color: #FFE7E7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 							שהוא כולל את<br>המספרים מצד<br>ימין של הנקודה<br>העשרונית
 						</div>
 						<!-- draw a squared frame right side-->
-						<div id="square-frame-3" class="circle-draw" style="position: absolute; top: -35%; left:-190%;"> </div>
+						<div id="square-frame-3" class="circle-draw" data-delay="17000" style="position: absolute; top: -39.5%; left: -189.5%;
+							 border: 5px solid #f5cccc; box-shadow: 0 0 20px 8px rgba(245, 204, 204, 0.7); "> </div>
 					</div>
 
 				</div>
@@ -289,24 +284,23 @@
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
 		//Method to animate visual effect
-		Reveal.addEventListener('fragmentshown', function (event) {
+		Reveal.addEventListener('slidechanged', function (event) {
 			console.log("Fragment shown!", event.fragment);  //debug
-			const boxframe = event.fragment.querySelector('.circle-draw');
-			if (boxframe) {
-				console.log("✅ Animating:", boxframe); //debug
-				//reset animation
-				boxframe.style.animation = 'none';
-				boxframe.style.opacity = '0';
+			const currentSlide = event.currentSlide;
+			const boxes = currentSlide.querySelectorAll('.circle-draw');
+			boxes.forEach(box => {
+			//Reset animation
+			box.style.animation = 'none';
+			box.style.opacity = '0';
+			void box.offsetWidth;
 
-				// Force a reflow: this makes the browser "recalculate" the layout,
-				// which is necessary to restart the animation cleanly
-				void boxframe.offsetWidth;
-
-				// Now apply the animation after slight delay
-				setTimeout(() => {
-					boxframe.style.animation = 'drawboxframe 3s ease-out forwards';
-				}, 100);
-			}
+			//Read custom delay from data-delaty attribute
+			const delay = parseInt(box.getAttribute('data-delay')) ||100;
+			
+			 setTimeout(() => {
+                box.style.animation = 'drawboxframe 1s ease-out forwards';
+            }, delay);
+        });
 		});
 
         //function to play Audio Elements
