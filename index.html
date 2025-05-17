@@ -22,7 +22,7 @@
 
 </head>
 <body dir="rtl" style="text-align:right;">
-	<img class="Background-theme" src="Math-Project/bg-theme.png" />
+	<img class="Background-theme" src="Math-Project/main-theme.png" />
 	<div class="reveal">
 		<div class="slides">
 			<!-- Slide 1 index=0-->
@@ -49,7 +49,7 @@
 				<div>
 					<!-- linked to slide2: index=1-->
 					<a onclick="playTapAndGo(1)" id="delayed-fragment" class="continue-button delayed-p"
-							    style=" display: flex; margin-top: 230px; margin-right: 400px; width: 400px; justify-content: center; text-align: center; cursor: pointer;">
+					   style=" display: flex; margin-top: 230px; margin-right: 400px; width: 400px; justify-content: center; text-align: center; cursor: pointer;">
 						לחץ כּאן כּדי להמשיך
 					</a>
 				</div>
@@ -240,7 +240,6 @@
 						<div id="square-frame-3" class="circle-draw" data-delay="17000" style="position: absolute; top: -39.5%; left: -189.5%;
 							 border: 5px solid #f5cccc; box-shadow: 0 0 20px 8px rgba(245, 204, 204, 0.7); "> </div>
 					</div>
-
 				</div>
 			</section>
 
@@ -296,7 +295,7 @@
 
 			//Read custom delay from data-delaty attribute
 			const delay = parseInt(box.getAttribute('data-delay')) ||100;
-			
+
 			 setTimeout(() => {
                 box.style.animation = 'drawboxframe 1s ease-out forwards';
             }, delay);
@@ -338,9 +337,13 @@
                 Reveal.slide(slideIndex);
             }, 300);
         }
- 
+
 	</script>
 
+
+	<!-- Navigation Buttons (global) -->
+	<a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
+	<a onclick="goNext()" class="nav-arrow next-arrow"></a>
 
 	<!-- Audio elements -->
 	<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
