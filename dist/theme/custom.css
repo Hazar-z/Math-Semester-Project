@@ -121,10 +121,10 @@ body {
 .nav-arrow {
     position: fixed;
     top: 10px;
-    width: 45px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../../Math-Project/next-prev-arrows.png');
-    background-size: 150px 80px;
+    background-size: 130px 70px;
     background-repeat: no-repeat;
     font-family: 'Noto Sans Hebrew', Arial;
     font-size: 40px;
@@ -147,7 +147,7 @@ body {
     }
 
     .next-arrow {
-    left: 130px;
+    left: 100px;
     background-position: right center; /*shows left of the image*/
     }
 
@@ -156,6 +156,35 @@ body {
     background-position: left center; /* shows right half of the image */
 }
 
+/* pause button styling: */
+.pause-button {
+    left: 120px;
+    width: 10px;
+    height: 15px;
+    top:81px;
+    background-image: url('../../Math-Project/pause-btn1.png');  
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 12px 4px rgba(192, 132, 214, 0.4); /*glow */
+    border: 3px dotted #FFCBDB; /* soft lavender-violet tone */
+    border-radius:30%;
+}
+            .pause-button:hover {
+                background-color: #402c73;
+                background-color: rgba(255, 255, 255, 0.25);
+                transform: scale(1.10);
+             }
+      /* When paused, show the play triangle image instead */
+            .pause-button.playing {
+                 background-image: url('../../Math-Project/resume-btn-green.png'); /* your triangle image */
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 background-size: 132%
+
+             }
+
+/* לחץ כדי להמשיך */
 .continue-button {
     border-radius: 10px;
     color: white !important;

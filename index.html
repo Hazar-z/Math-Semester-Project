@@ -278,7 +278,6 @@
 			controls: false,
 			fragments: true,
 
-
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
@@ -338,12 +337,78 @@
             }, 300);
         }
 
+		//Navigation arrows functions
+		function goNext() {
+		 Reveal.next(); // Go to the next slide
+		}
+
+	    function goPrev() {
+		 Reveal.prev(); // Go to the previous slide
+		}
+
+		//Time calculating and Display methods
+		let gameTimerInterval = null;
+		let elapsedSeconds = 0;
+
+		// Start timer (run this once at the start of your game)
+		function startGameTimer() {
+			 if (gameTimerInterval) return; // Prevent multiple intervals!
+
+		  gameTimerInterval = setInterval(() => {
+		   if (!isPaused) {
+			  elapsedSeconds++;
+			  updateTimerDisplay();
+			 }
+			}, 1000); // Count up every second
+		}
+
+		function updateTimerDisplay() {
+			 const minutes = Math.floor(elapsedSeconds / 60);     // Get full minutes
+			 const seconds = elapsedSeconds % 60;                 // Remaining seconds
+
+		// Format as "MM:SS" with leading zeros if needed
+			document.getElementById('game-timer').textContent =
+		    String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+		}
+
+	    // Called by pause button
+		let isPaused = false;
+		function togglePause() {
+			 isPaused = !isPaused;
+			 console.log(isPaused ? '⏸️ Game paused' : '▶️ Game resumed');
+
+			const pauseBtn= document.getElementById('pause-btn');
+			if(isPaused) {
+				pauseBtn.classList.add('playing');  //switch to play icon ▶️
+			}
+			else{
+				pauseBtn.classList.remove('playing');  //switch back to pause icon ⏸️
+			}
+		}
+	
+	    Reveal.on('ready', () => {
+			startGameTimer();
+		});
 	</script>
 
+	<!-- Timer element on top left corner-->
+	 <div id="game-timer"
+		  style=" position: fixed; top: 83px; left: 20px; width: 60px; height:25px;
+				font-size: 24px; text-align: left; color: white; background: rgba(0,0,0,0.4);
+				border-radius: 12px;
+				background-color: rgba(0, 0, 0, 0.3); /* optional translucent background */
+				box-shadow: 0 0 12px 4px rgba(192, 132, 214, 0.4); /* soft glow */ 
+				padding: 8px 16px;
+				border-radius: 10px;
+				z-index: 1000;">00:00
+	</div>
 
 	<!-- Navigation Buttons (global) -->
 	<a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
 	<a onclick="goNext()" class="nav-arrow next-arrow"></a>
+
+	<!-- Pause Button -->
+	<a onclick="togglePause()" class="nav-arrow pause-button" id="pause-btn"></a>
 
 	<!-- Audio elements -->
 	<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
