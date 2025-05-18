@@ -246,7 +246,7 @@
 
 
 			<!-- Slide 8 index=7 -->
-			<section>
+			<section id="start-game">
 				<p> changing the content to the num-house, similar to the previous slide but with the number: נפרק את המספר 0.3</p>
 			</section><!-- Slide 9 index=8 -->
 			<!-- Slide 10 index=9 -->
@@ -337,7 +337,29 @@
             }, 300);
         }
 
-		//Navigation arrows functions
+		//Blocking nav-buttons from display on first slide:
+		function updateNavVisibility() {
+			 const nav = document.getElementById('nav-buttons');
+			 const timer_icon = document.getElementById('game-timer');
+			 const current = Reveal.getIndices();
+			 if (current.h === 0) {
+				 nav.style.display = 'none'; // Hide on first slide
+				 timer_icon.style.display = 'none'; // Hide on first slide
+			}	
+			 else {
+				 nav.style.display = 'block'; // Show on others
+				 timer_icon.style.display = 'block'; // Show on others
+			 }
+		}
+
+		// trigger this every time the slide changes
+		 Reveal.addEventListener('slidechanged', updateNavVisibility);
+
+		// also trigger it once when the presentation starts
+		 Reveal.addEventListener('ready', updateNavVisibility);
+
+
+		//Navigation arrows functions:
 		function goNext() {
 		 Reveal.next(); // Go to the next slide
 		}
@@ -346,13 +368,16 @@
 		 Reveal.prev(); // Go to the previous slide
 		}
 
-		//Time calculating and Display methods
+		//Time calculating and Display methods:
 		let gameTimerInterval = null;
 		let elapsedSeconds = 0;
+		let gameStarted = false; // To ensure it runs only once
 
 		// Start timer (run this once at the start of your game)
 		function startGameTimer() {
-			 if (gameTimerInterval) return; // Prevent multiple intervals!
+			if (gameTimerInterval || gameStarted ) return; // Prevent multiple intervals!
+			 
+		  gameStarted = true;
 
 		  gameTimerInterval = setInterval(() => {
 		   if (!isPaused) {
@@ -386,9 +411,66 @@
 			}
 		}
 	
-	    Reveal.on('ready', () => {
-			startGameTimer();
+	    //Listen for loading the presentation
+		Reveal.on('ready', (event) => {
+			const slideId = event.currentSlide.id;
+			 if (slideId === 'start-game') {
+				 showGameUI();
+				 startGameTimer();
+				 gameStarted= true;   //toggle flag to true so we know it's activated
+			 }
+			 else{
+				 hideGameUI();
+			 }
+			});
+
+		//Listen for slide changing
+		Reveal.on('slidechanged', (event) => {
+			const slideId = event.currentSlide.id;
+			if (slideId === 'start-game') {
+			   //if the game hasn’t already started-->gameStarted=false. we still haven't landed on 'start-game' slide
+				if (!gameStarted) {
+				 showGameUI();
+				 startGameTimer();
+				 gameStarted= true;
+	    	 }
+		   }
+			//the game already started--> gameStarted=true
+			 else if (gameStarted) {
+				 showGameUI(); // keep showing after 'start-game' slide
+			 }
+		    else {
+			 hideGameUI(); //hide before 'start-game' slide
+		    }
 		});
+		// Utility functions:
+		 // Show pause and timer
+	   	 function showGameUI(){
+			const timer= document.getElementById('game-timer');
+		    const pause= document.querySelector('.pause-button');
+				timer.style.display= 'block';
+				pause.style.display= 'block';
+
+			// Delay to allow the elements to render before fading
+			 setTimeout(() => {
+				  timer.style.opacity = '1';
+				  pause.style.opacity = '1'; }, 50); // Tiny delay
+
+			// Start timer after fade-in is complete (1s later)
+			setTimeout(() => {
+			     startGameTimer();  }, 1000);
+		 }
+			
+
+		 // Hide pause buttn adn timer 
+		 function hideGameUI(){
+			const timer= document.getElementById('game-timer');
+			const pause= document.querySelector('.pause-button');
+					timer.style.display= 'none';
+					pause.style.display= 'none';
+		 }
+
+
 	</script>
 
 	<!-- Timer element on top left corner-->
@@ -403,16 +485,18 @@
 				z-index: 1000;">00:00
 	</div>
 
-	<!-- Navigation Buttons (global) -->
-	<a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
-	<a onclick="goNext()" class="nav-arrow next-arrow"></a>
+     <div id="nav-buttons">
+         <!-- Navigation Buttons (global) -->
+         <a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
+         <a onclick="goNext()" class="nav-arrow next-arrow"></a>
 
-	<!-- Pause Button -->
-	<a onclick="togglePause()" class="nav-arrow pause-button" id="pause-btn"></a>
+         <!-- Pause Button -->
+         <a onclick="togglePause()" class="nav-arrow pause-button" id="pause-btn"></a>
 
-	<!-- Audio elements -->
-	<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
-	<audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
-	<audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
+         <!-- Audio elements -->
+         <audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
+         <audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
+         <audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
+     </div>
 </body>
 </html>

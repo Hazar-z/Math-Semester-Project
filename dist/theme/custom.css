@@ -183,6 +183,12 @@ body {
                  background-size: 132%
 
              }
+        /*Hide pause and timer by defualt, they appear when triggerd*/
+             #game-timer , .pause-button{
+                 display: none;
+                 opacity: 0;
+                 transition: opacity 1s ease-in;
+              }
 
 /* לחץ כדי להמשיך */
 .continue-button {
