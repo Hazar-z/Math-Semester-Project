@@ -36,6 +36,24 @@
             }, 300);
         }
 
+
+//function that manages "click to continue" when the games starts and is adaptable to shuffling qeustions:
+	document.querySelectorAll('[data-go]').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const targetId = btn.getAttribute('data-go');
+			const targetSlide = document.querySelector(`[data-question-id="${targetId}"]`);
+			if (targetSlide) {
+				const allSlides = Array.from(document.querySelectorAll('section'));
+				const index = allSlides.indexOf(targetSlide);
+				Reveal.slide(index);
+			}
+			else {
+				console.warn("Couldn't find question with ID:", targetId);
+			}
+		});
+	});
+
+
 //Blocking nav-buttons from display on first slide:
 		function updateNavVisibility() {
 			 const nav = document.getElementById('nav-buttons');  //pause+nav arrows
@@ -189,7 +207,7 @@ function goPrev() {
 		 document.querySelectorAll('.answer').forEach(btn=> {
 			 btn.addEventListener('click', () => {
 				 const isCorrect = btn.getAttribute('data-correct') === "true";
-				 const targetSlide =parseInt(btn.getAttribute('data-feedback')); //target slide index
+				 const feedbackID =btn.getAttribute('data-feedback'); //target slide ID according to the feedback type
 				
 				//play sound according to the answer:
 				 if(isCorrect) {
@@ -200,7 +218,19 @@ function goPrev() {
 				 }
 			   // Navigate to the slide after short delay (let the sound start)
 				setTimeout(() => {
-			    Reveal.slide(targetSlide);  }, 100); // delay
+					Reveal.slide(targetSlide);
+				}, 100); // delay
+
+			   // Find slide by ID and navigate to it
+				 const targetSlide = document.querySelector(`section#${feedbackID}`);
+				 if (targetSlide) {
+					 const indices = Reveal.getIndices(targetSlide);
+					 setTimeout(() => {
+						 Reveal.slide(indices.h, indices.v || 0); }, 100); // delay to let sound begin
+				 }
+				 else {
+					 console.warn("⚠️ Slide with ID not found:", feedbackId);
+				 }
 			 });
 		 });
 

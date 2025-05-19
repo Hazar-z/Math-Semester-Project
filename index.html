@@ -110,13 +110,13 @@
 								width: 1200px;
 								height:300px;
 								flex-wrap:wrap;">
-					<a data-feedback="4" class="answer delayed-p" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
-					<a data-feedback="3" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
+					<a data-feedback="Q-Ex1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
+					<a data-feedback="Q-Ex1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
 				</div>
 			</section>
 
 			<!-- Slide 4 index=3 -->
-			<section data-role="feedback" id="s4" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+			<section data-role="feedback" id="Q-Ex1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
@@ -127,7 +127,7 @@
 			</section>
 
 			<!-- Slide 5 index=4 -->
-			<section data-role="feedback" id="s5" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+			<section data-role="feedback" id="Q-Ex1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
@@ -268,6 +268,98 @@
 			<!-- numbers' axis 1.32 vs 1.4 -->
 			<!-- end of tutorial-->
 			<!-- start of the game, using shuffle between slides. number of questions=13-->
+			<!-- Question1 -->
+			<section class="question-slide" data-question-id="q1">
+				<div class="delayed-p glow-underline"
+					 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+					בחר את המספר הגדול מבין שני המספרים הבאים:
+				</div>
+				<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+					<a data-feedback="q1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.14 </a>
+					<a data-feedback="q1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.4 </a>
+				</div>
+			</section>
+
+			<!-- Q1 Correct Answer -->
+			<section data-role="feedback" id="q1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> נכון </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q2" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+
+			<!-- Q1-incorrect Answer -->
+			<section data-role="feedback" id="q1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> לא נכון   </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q2" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+			<!-- Question2 -->
+			<section class="question-slide" data-question-id="q2">
+				<div class="delayed-p glow-underline"
+					 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+					בחר את המספר הגדול מבין שני המספרים הבאים:
+				</div>
+				<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+					<a data-feedback="q2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.56 </a>
+					<a data-feedback="q2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.7 </a>
+				</div>
+			</section>
+			<!-- Q2 Correct Answer -->
+			<section data-role="feedback" id="q2-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> נכון </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q3" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+
+			<!-- Q2-incorrect Answer -->
+			<section data-role="feedback" id="q2-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> לא נכון   </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q3" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+			<!-- Question3 -->
+			<section class="question-slide" data-question-id="q3">
+				<div class="delayed-p glow-underline"
+					 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+					בחר את המספר הגדול מבין שני המספרים הבאים:
+				</div>
+				<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+					<a data-feedback="q3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 2.24 </a>
+					<a data-feedback="q3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 2.4 </a>
+				</div>
+			</section>
+			<!-- Q3 Correct Answer -->
+			<section data-role="feedback" id="q3-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> נכון </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q4" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+
+			<!-- Q3-incorrect Answer -->
+			<section data-role="feedback" id="q3-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+				<div class="feedback-centering">
+					<div class="ansFeedback"> לא נכון   </div>
+				</div>
+				<div class="composition-next">
+					<a data-go="q4" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+				</div>
+			</section>
+
 			<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
 
 
