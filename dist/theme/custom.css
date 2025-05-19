@@ -185,10 +185,12 @@ body {
              }
         /*Hide pause and timer by defualt, they appear when triggerd*/
              #game-timer , .pause-button{
-                 display: none;
                  opacity: 0;
                  transition: opacity 1s ease-in;
               }
+             .hidden{
+                 display:none !important;
+             }
 
 /* לחץ כדי להמשיך */
 .continue-button {
@@ -221,7 +223,7 @@ body {
     animation: fade-in  2s 0.7s ease-in forwards;
  }
 
-.answer {
+.answer, .option{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,7 +240,7 @@ body {
     color: white;
     transition: all 0.3s ease;
 }
-        .answer:hover {
+        .answer:hover, .option:hover{
         transform: scale(1.20);
          }  
 

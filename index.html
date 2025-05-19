@@ -7,9 +7,11 @@
 
 	<title>reveal.js Math-Project</title>
 
+	<!--linking CSS-->
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/custom.css">
+	
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -108,13 +110,13 @@
 								width: 1200px;
 								height:300px;
 								flex-wrap:wrap;">
-					<a href="#/4" class="delayed-p answer" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
-					<a href="#/3" class="delayed-p answer" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
+					<a data-feedback="4" class="answer delayed-p" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
+					<a data-feedback="3" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
 				</div>
 			</section>
 
 			<!-- Slide 4 index=3 -->
-			<section id="s4" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+			<section data-role="feedback" id="s4" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
@@ -125,7 +127,7 @@
 			</section>
 
 			<!-- Slide 5 index=4 -->
-			<section id="s5" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+			<section data-role="feedback" id="s5" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
@@ -159,8 +161,8 @@
 						width: 1200px;
 						height:300px;
 						flex-wrap:wrap;">
-					<a onclick="playTapAndGo(6)" class="answer" style="cursor:pointer; color:white"> 0.25 </a>
-					<a onclick="playTapAndGo(7)" class="answer" style="cursor:pointer; color:white;"> 0.3 </a>
+					<a onclick="playTapAndGo(6)" class="option" style="cursor:pointer; color:white"> 0.25 </a>
+					<a onclick="playTapAndGo(7)" class="option" style="cursor:pointer; color:white;"> 0.3 </a>
 				</div>
 			</section>
 
@@ -243,22 +245,67 @@
 				</div>
 			</section>
 
-
-
-			<!-- Slide 8 index=7 -->
-			<section id="start-game">
+			<!-- Slide 8 index=7  composition of 0.25-->
+			<section id="number composition">
 				<p> changing the content to the num-house, similar to the previous slide but with the number: נפרק את המספר 0.3</p>
-			</section><!-- Slide 9 index=8 -->
-			<!-- Slide 10 index=9 -->
-			<!-- Slide 11 index=10 -->
-			<!-- Slide 12 index=11 -->
-			<!-- Slide 13 index=12 -->
-			<!-- Slide 14 index=13-->
+			</section>
+			<!-- Slide 9 index=8 composition of 0.3 -->
+			<!-- Slide 10 index=9 importance of zero in decimal numbers -->
+			<!-- Slide 11 index=10 another example -->
+			<!-- Slide 12 index=11 numbers' x-axis -->
+			<!-- Slide 13 index=12 comparision between 0.25 and 0.3 on axis-->
+			<!-- Slide 14 index=13 choose between 0.65 and 0.7-->
+			<!-- true-->
+			<!--false-->
+			<!-- composition of 0.65-->
+			<!-- composition of 0.7-->
+			<!-- numbers' axis 0.65 vs 0.7 -->
+			<!-- choose between 1.32 and 1.4-->
+			<!-- true-->
+			<!--false-->
+			<!-- composition of 1.4-->
+			<!-- composition of 1.32-->
+			<!-- numbers' axis 1.32 vs 1.4 -->
+			<!-- end of tutorial-->
+			<!-- start of the game, using shuffle between slides. number of questions=13-->
+			<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
+
+
+
 		</div>
 
 	</div>
 
 
+
+
+
+	<!-- Timer element on top left corner-->
+	<div id="game-timer" class="hidden"
+		 style=" position: fixed; top: 83px; left: 20px; width: 60px; height:25px;
+				font-size: 24px; text-align: left; color: white; background: rgba(0,0,0,0.4);
+				border-radius: 12px;
+				background-color: rgba(0, 0, 0, 0.3); /* optional translucent background */
+				box-shadow: 0 0 12px 4px rgba(192, 132, 214, 0.4); /* soft glow */
+				padding: 8px 16px;
+				border-radius: 10px;
+				z-index: 1000;">
+		00:00
+	</div>
+
+	<div id="nav-buttons" class="hidden">
+		<!-- Navigation Buttons (global) -->
+		<a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
+		<a onclick="goNext()" class="nav-arrow next-arrow"></a>
+
+		<!-- Pause Button -->
+		<a onclick="togglePause()" class="nav-arrow pause-button" id="pause-btn"></a>
+
+		<!-- Audio elements -->
+		<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
+		<audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
+		<audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
+	</div>
 
 
 
@@ -281,222 +328,10 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
-		//Method to animate visual effect
-		Reveal.addEventListener('slidechanged', function (event) {
-			console.log("Fragment shown!", event.fragment);  //debug
-			const currentSlide = event.currentSlide;
-			const boxes = currentSlide.querySelectorAll('.circle-draw');
-			boxes.forEach(box => {
-			//Reset animation
-			box.style.animation = 'none';
-			box.style.opacity = '0';
-			void box.offsetWidth;
-
-			//Read custom delay from data-delaty attribute
-			const delay = parseInt(box.getAttribute('data-delay')) ||100;
-
-			 setTimeout(() => {
-                box.style.animation = 'drawboxframe 1s ease-out forwards';
-            }, delay);
-        });
-		});
-
-        //function to play Audio Elements
-        Reveal.addEventListener('slidechanged', function (event) {
-            const slideId = event.currentSlide.id;
-            console.log("Slide shown:", slideId);  // debug
-
-            //incorrect Answer Audio
-            if (slideId === 's5') {
-                const audio = document.getElementById('wrong-sound');
-                if (audio) {
-                    audio.currentTime = 0;
-                    audio.play().catch(err => console.log("Playback failed:", err));
-                }
-			}
-			//correct Answer Audio
-            else if (slideId === 's4') {
-                const audio = document.getElementById('correct-sound');
-                if (audio) {
-                    audio.currentTime = 0;
-                    audio.play().catch(e => console.warn("Audio failed:", e));
-                }
-            }
-		});
-
-		//function that play "tap-sound" when clicking a button and then forwards the user to the targetSlideIndex
-        function playTapAndGo(slideIndex, soundId = 'tap-sound') {
-            const sound = document.getElementById(soundId);
-            if (sound) {
-                sound.currentTime = 0;
-                sound.play().catch(e => console.warn("Sound failed:", e));
-            }
-
-            setTimeout(() => {
-                Reveal.slide(slideIndex);
-            }, 300);
-        }
-
-		//Blocking nav-buttons from display on first slide:
-		function updateNavVisibility() {
-			 const nav = document.getElementById('nav-buttons');
-			 const timer_icon = document.getElementById('game-timer');
-			 const current = Reveal.getIndices();
-			 if (current.h === 0) {
-				 nav.style.display = 'none'; // Hide on first slide
-				 timer_icon.style.display = 'none'; // Hide on first slide
-			}	
-			 else {
-				 nav.style.display = 'block'; // Show on others
-				 timer_icon.style.display = 'block'; // Show on others
-			 }
-		}
-
-		// trigger this every time the slide changes
-		 Reveal.addEventListener('slidechanged', updateNavVisibility);
-
-		// also trigger it once when the presentation starts
-		 Reveal.addEventListener('ready', updateNavVisibility);
-
-
-		//Navigation arrows functions:
-		function goNext() {
-		 Reveal.next(); // Go to the next slide
-		}
-
-	    function goPrev() {
-		 Reveal.prev(); // Go to the previous slide
-		}
-
-		//Time calculating and Display methods:
-		let gameTimerInterval = null;
-		let elapsedSeconds = 0;
-		let gameStarted = false; // To ensure it runs only once
-
-		// Start timer (run this once at the start of your game)
-		function startGameTimer() {
-			if (gameTimerInterval || gameStarted ) return; // Prevent multiple intervals!
-			 
-		  gameStarted = true;
-
-		  gameTimerInterval = setInterval(() => {
-		   if (!isPaused) {
-			  elapsedSeconds++;
-			  updateTimerDisplay();
-			 }
-			}, 1000); // Count up every second
-		}
-
-		function updateTimerDisplay() {
-			 const minutes = Math.floor(elapsedSeconds / 60);     // Get full minutes
-			 const seconds = elapsedSeconds % 60;                 // Remaining seconds
-
-		// Format as "MM:SS" with leading zeros if needed
-			document.getElementById('game-timer').textContent =
-		    String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-		}
-
-	    // Called by pause button
-		let isPaused = false;
-		function togglePause() {
-			 isPaused = !isPaused;
-			 console.log(isPaused ? '⏸️ Game paused' : '▶️ Game resumed');
-
-			const pauseBtn= document.getElementById('pause-btn');
-			if(isPaused) {
-				pauseBtn.classList.add('playing');  //switch to play icon ▶️
-			}
-			else{
-				pauseBtn.classList.remove('playing');  //switch back to pause icon ⏸️
-			}
-		}
-	
-	    //Listen for loading the presentation
-		Reveal.on('ready', (event) => {
-			const slideId = event.currentSlide.id;
-			 if (slideId === 'start-game') {
-				 showGameUI();
-				 startGameTimer();
-				 gameStarted= true;   //toggle flag to true so we know it's activated
-			 }
-			 else{
-				 hideGameUI();
-			 }
-			});
-
-		//Listen for slide changing
-		Reveal.on('slidechanged', (event) => {
-			const slideId = event.currentSlide.id;
-			if (slideId === 'start-game') {
-			   //if the game hasn’t already started-->gameStarted=false. we still haven't landed on 'start-game' slide
-				if (!gameStarted) {
-				 showGameUI();
-				 startGameTimer();
-				 gameStarted= true;
-	    	 }
-		   }
-			//the game already started--> gameStarted=true
-			 else if (gameStarted) {
-				 showGameUI(); // keep showing after 'start-game' slide
-			 }
-		    else {
-			 hideGameUI(); //hide before 'start-game' slide
-		    }
-		});
-		// Utility functions:
-		 // Show pause and timer
-	   	 function showGameUI(){
-			const timer= document.getElementById('game-timer');
-		    const pause= document.querySelector('.pause-button');
-				timer.style.display= 'block';
-				pause.style.display= 'block';
-
-			// Delay to allow the elements to render before fading
-			 setTimeout(() => {
-				  timer.style.opacity = '1';
-				  pause.style.opacity = '1'; }, 50); // Tiny delay
-
-			// Start timer after fade-in is complete (1s later)
-			setTimeout(() => {
-			     startGameTimer();  }, 1000);
-		 }
-			
-
-		 // Hide pause buttn adn timer 
-		 function hideGameUI(){
-			const timer= document.getElementById('game-timer');
-			const pause= document.querySelector('.pause-button');
-					timer.style.display= 'none';
-					pause.style.display= 'none';
-		 }
-
-
 	</script>
 
-	<!-- Timer element on top left corner-->
-	 <div id="game-timer"
-		  style=" position: fixed; top: 83px; left: 20px; width: 60px; height:25px;
-				font-size: 24px; text-align: left; color: white; background: rgba(0,0,0,0.4);
-				border-radius: 12px;
-				background-color: rgba(0, 0, 0, 0.3); /* optional translucent background */
-				box-shadow: 0 0 12px 4px rgba(192, 132, 214, 0.4); /* soft glow */ 
-				padding: 8px 16px;
-				border-radius: 10px;
-				z-index: 1000;">00:00
-	</div>
-
-     <div id="nav-buttons">
-         <!-- Navigation Buttons (global) -->
-         <a onclick="goPrev()" class="nav-arrow prev-arrow"></a>
-         <a onclick="goNext()" class="nav-arrow next-arrow"></a>
-
-         <!-- Pause Button -->
-         <a onclick="togglePause()" class="nav-arrow pause-button" id="pause-btn"></a>
-
-         <!-- Audio elements -->
-         <audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
-         <audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
-         <audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
-     </div>
+	<!--Linking JS file-->
+	<script src="main.js"></script>
+	
 </body>
 </html>
