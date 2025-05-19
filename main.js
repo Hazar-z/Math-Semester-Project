@@ -35,24 +35,106 @@
                 Reveal.slide(slideIndex);
             }, 300);
         }
+/*******************************************************************/
+// ******* GAME SECTION FUNCTIONS ********
+/*******************************************************************/
 
-
-//function that manages "click to continue" when the games starts and is adaptable to shuffling qeustions:
+// Function that binds 'data-go' buttons to their next target slide
+// Function that binds 'data-go' buttons to their next target slide
+function bindContinueButtons() {
 	document.querySelectorAll('[data-go]').forEach(btn => {
+		btn.onclick = () => {
+			const nextId = btn.getAttribute('data-go');
+			if (!nextId) return;
+
+			const nextSlide = document.querySelector(`[data-question-id="${nextId}"]`);
+			if (nextSlide) Reveal.slide(nextSlide);
+			else console.warn("Next question not found:", nextId);
+		};
+	});
+} 
+
+
+// Function that binds 'data-go' buttons to their next target slide
+function bindContinueButtons() {
+	document.querySelectorAll('[data-go]').forEach(btn => {
+		btn.onclick = () => {
+			const nextId = btn.getAttribute('data-go');
+			if (!nextId) return;
+
+			const nextSlide = document.querySelector(`[data-question-id="${nextId}"]`);
+			if (nextSlide) Reveal.slide(nextSlide);
+			else console.warn("Next question not found:", nextId);
+		};
+	});
+}
+
+// Function to bind answer buttons and move vertically to feedback
+function bindAnswerButtons() {
+	document.querySelectorAll('.answer').forEach(btn => {
 		btn.addEventListener('click', () => {
-			const targetId = btn.getAttribute('data-go');
-			const targetSlide = document.querySelector(`[data-question-id="${targetId}"]`);
-			if (targetSlide) {
-				const allSlides = Array.from(document.querySelectorAll('section'));
-				const index = allSlides.indexOf(targetSlide);
-				Reveal.slide(index);
+			const feedbackId = btn.getAttribute('data-feedback');
+			const feedbackSlide = document.getElementById(feedbackId);
+			if (!feedbackSlide) return;
+
+			const parentStack = feedbackSlide.closest('section');
+			const hIndex = Array.from(document.querySelectorAll('section.question-group')).indexOf(parentStack);
+			const vIndex = Array.from(parentStack.children).indexOf(feedbackSlide);
+
+			// Play correct/wrong sound
+			const isCorrect = btn.getAttribute('data-correct') === 'true';
+			const sound = document.getElementById(isCorrect ? 'correct-sound' : 'wrong-sound');
+			if (sound) {
+				sound.currentTime = 0;
+				sound.play().catch(e => console.warn("Audio error:", e));
 			}
-			else {
-				console.warn("Couldn't find question with ID:", targetId);
-			}
+
+			// Navigate
+			setTimeout(() => {
+				Reveal.slide(hIndex, vIndex);
+			}, 300);
+		});
+	});
+}
+
+// Shuffle function for question slides only
+function shuffleQuestions() {
+	const slidesContainer = document.querySelector('.reveal .slides');
+	const questionGroups = Array.from(document.querySelectorAll('section.question-group'));
+
+	// Remove all question groups from DOM
+	questionGroups.forEach(group => slidesContainer.removeChild(group));
+
+	// Shuffle the question groups
+	for (let i = questionGroups.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[questionGroups[i], questionGroups[j]] = [questionGroups[j], questionGroups[i]];
+	}
+
+	// Re-append shuffled question groups
+	questionGroups.forEach(group => slidesContainer.appendChild(group));
+
+	// Update data-go attributes
+	const questionIds = questionGroups.map(group => group.querySelector('.question-slide')?.getAttribute('data-question-id'));
+	questionIds.forEach((id, index) => {
+		const nextId = questionIds[index + 1];
+		document.querySelectorAll(`[data-go="${id}"]`).forEach(el => {
+			if (nextId) el.setAttribute('data-go', nextId);
+			else el.removeAttribute('data-go');
 		});
 	});
 
+	// Re-bind buttons
+	bindContinueButtons();
+	bindAnswerButtons();
+}
+
+
+
+
+/*******************************************************************/
+// ******* GENERAL FUNCTION FOR MAINTANING THE WHOLE PRESENTATION *********
+/*******************************************************************/
 
 //Blocking nav-buttons from display on first slide:
 		function updateNavVisibility() {
@@ -234,3 +316,9 @@ function goPrev() {
 			 });
 		 });
 
+
+// Shuffle only once when the DOM is ready (before Reveal.initialize)
+//  Shuffle only once after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+	shuffleQuestions();
+});
