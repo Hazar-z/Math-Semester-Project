@@ -40,7 +40,7 @@
 /*******************************************************************/
 
 // Function that binds 'data-go' buttons to their next target slide
-// Function that binds 'data-go' buttons to their next target slide
+
 function bindContinueButtons() {
 	document.querySelectorAll('[data-go]').forEach(btn => {
 		btn.onclick = () => {
@@ -55,20 +55,6 @@ function bindContinueButtons() {
 } 
 
 
-// Function that binds 'data-go' buttons to their next target slide
-function bindContinueButtons() {
-	document.querySelectorAll('[data-go]').forEach(btn => {
-		btn.onclick = () => {
-			const nextId = btn.getAttribute('data-go');
-			if (!nextId) return;
-
-			const nextSlide = document.querySelector(`[data-question-id="${nextId}"]`);
-			if (nextSlide) Reveal.slide(nextSlide);
-			else console.warn("Next question not found:", nextId);
-		};
-	});
-}
-
 // Function to bind answer buttons and move vertically to feedback
 function bindAnswerButtons() {
 	document.querySelectorAll('.answer').forEach(btn => {
@@ -77,9 +63,9 @@ function bindAnswerButtons() {
 			const feedbackSlide = document.getElementById(feedbackId);
 			if (!feedbackSlide) return;
 
-			const parentStack = feedbackSlide.closest('section');
-			const hIndex = Array.from(document.querySelectorAll('section.question-group')).indexOf(parentStack);
-			const vIndex = Array.from(parentStack.children).indexOf(feedbackSlide);
+			const indices = Reveal.getIndices(feedbackSlide);
+			const hIndex = indices.h;
+			const vIndex = indices.v;
 
 			// Play correct/wrong sound
 			const isCorrect = btn.getAttribute('data-correct') === 'true';
