@@ -46,6 +46,33 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 
+@keyframes riseAndFade {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-40px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 rgba(200, 150, 255, 0.0), 0 0 0 rgba(200, 150, 255, 0.0), 0 0 0 rgba(200, 150, 255, 0.0), 0 0 0 rgba(200, 150, 255, 0.0);
+    }
+
+    50% {
+        box-shadow: 0 0 10px rgba(200, 150, 255, 0.5), 0 0 20px rgba(200, 150, 255, 0.3), 0 0 40px rgba(200, 150, 255, 0.25), 0 0 60px rgba(200, 150, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(200, 150, 255, 0.3), 0 0 30px rgba(200, 150, 255, 0.2), 0 0 40px rgba(200, 150, 255, 0.15);
+    }
+}
+
+
 /*=== my stylings ===*/
 .Background-theme{
     background-size: cover;
@@ -400,46 +427,44 @@ body {
     /* Purple, playful, glowy buttons with wave hover */
     .end-options a {
         position: relative;
-        background-color: #a66cff;
+        background: linear-gradient(145deg, #a66cff, #b88dff);
         color: white;
-        font-size: 30px;
+        font-size: 28px;
         font-family: 'Comic Sans MS', 'Noto Sans Hebrew', Arial, sans-serif;
         padding: 16px 30px;
         border-radius: 20px;
         text-decoration: none;
         cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.25s ease, background-color 0.4s ease;
-        box-shadow: 0 5px 15px rgba(140, 90, 255, 0.3);
+        transition: transform 0.25s ease, box-shadow 0.3s ease;
+        box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.4), inset 2px 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(160, 100, 255, 0.2);
+        overflow: visible;
         user-select: none;
     }
 
-        /* Wave ripple animation on hover */
-        .end-options a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 150%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 20%, transparent 70%);
-            transform: skewX(-30deg);
-            transition: left 0.6s ease;
-            pointer-events: none;
-        }
 
-        .end-options a:hover::before {
-            left: 100%;
-        }
-
-        /* Hover glow and bounce */
         .end-options a:hover {
-            transform: scale(1.1);
-            background-color: #c59bff;
-            box-shadow: 0 0 15px rgba(180, 120, 255, 0.6), 0 0 30px rgba(200, 150, 255, 0.4);
+            transform: scale(1.08);
+            background: linear-gradient(145deg, #c59bff, #d7acff);
+            box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(200, 150, 255, 0.3), 0 0 40px rgba(200, 150, 255, 0.25), 0 0 60px rgba(200, 150, 255, 0.2);
+            animation: pulse-glow 1s ease-out forwards;
         }
 
 
+
+
+
+.star-dust {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: riseAndFade 0.8s ease-out forwards;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.8;
+    box-shadow: none;
+}
 
 
 .game-continue {

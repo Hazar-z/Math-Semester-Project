@@ -43,11 +43,9 @@
 function bindContinueButtons() {
 	document.querySelectorAll('.continue-to-next').forEach(btn => {
 		btn.addEventListener('click', () => {
-			// 🔊 Play tap sound
 			const tapSound = document.getElementById('tap-sound');
 			if (tapSound) tapSound.play();
 
-			// ✅ Move to next question
 			const hIndex = parseInt(btn.getAttribute('data-go-h'));
 			if (!isNaN(hIndex)) {
 				Reveal.slide(hIndex, 0);
@@ -55,6 +53,7 @@ function bindContinueButtons() {
 		});
 	});
 }
+
 
 
 
@@ -174,6 +173,37 @@ function updateContinueButtons() {
 		});
 	});
 }
+
+// poof sound when hovering over actions on game section:
+document.addEventListener('mouseenter', (e) => {
+	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial');
+	if (target) {
+		// 💥 Play poof sound
+		const poofSound = document.getElementById('poof-sound');
+		if (poofSound) {
+			poofSound.currentTime = 0;
+			poofSound.play().catch(() => { });
+		}
+
+		// ✨ Star dust effect
+		for (let i = 0; i < 7; i++) {
+			const star = document.createElement('div');
+			star.className = 'star-dust';
+
+			// Random position inside the button
+			const x = Math.random() * target.offsetWidth;
+			const y = Math.random() * target.offsetHeight;
+
+			star.style.left = `${x}px`;
+			star.style.top = `${y}px`;
+
+			target.appendChild(star);
+			setTimeout(() => star.remove(), 800);
+		}
+	}
+}, true); // ✅ capture phase so it works on dynamically added buttons
+
+
 
 
 
@@ -411,5 +441,14 @@ document.addEventListener('click', (e) => {
 		setTimeout(() => {
 			Reveal.slide(0, 0);
 		}, 0);
+	}
+});
+
+
+Reveal.on('slidechanged', (event) => {
+	const current = event.currentSlide;
+	if (current.classList.contains('question-slide')) {
+		current.classList.add('fade-in');
+		setTimeout(() => current.classList.remove('fade-in'), 700); // Reset
 	}
 });
