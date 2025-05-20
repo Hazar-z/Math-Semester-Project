@@ -40,19 +40,19 @@
 /*******************************************************************/
 
 // Function that binds 'data-go' buttons to their next target slide
-
 function bindContinueButtons() {
-	document.querySelectorAll('[data-go]').forEach(btn => {
-		btn.onclick = () => {
-			const nextId = btn.getAttribute('data-go');
-			if (!nextId) return;
-
-			const nextSlide = document.querySelector(`[data-question-id="${nextId}"]`);
-			if (nextSlide) Reveal.slide(nextSlide);
-			else console.warn("Next question not found:", nextId);
-		};
+	document.querySelectorAll('.continue-to-next').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const hIndex = parseInt(btn.getAttribute('data-go-h'));
+			if (!isNaN(hIndex)) {
+				console.log("➡️ Jumping to h:", hIndex);
+				Reveal.slide(hIndex, 0);
+			}
+		});
 	});
-} 
+}
+
+
 
 
 // Function to bind answer buttons and move vertically to feedback
@@ -88,35 +88,68 @@ function shuffleQuestions() {
 	const slidesContainer = document.querySelector('.reveal .slides');
 	const questionGroups = Array.from(document.querySelectorAll('section.question-group'));
 
-	// Remove all question groups from DOM
+	// Remove groups from DOM
 	questionGroups.forEach(group => slidesContainer.removeChild(group));
 
-	// Shuffle the question groups
+	// Shuffle
 	for (let i = questionGroups.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
 		[questionGroups[i], questionGroups[j]] = [questionGroups[j], questionGroups[i]];
 	}
 
-	// Re-append shuffled question groups
+	// Re-append
 	questionGroups.forEach(group => slidesContainer.appendChild(group));
 
-	// Update data-go attributes
-	const questionIds = questionGroups.map(group => group.querySelector('.question-slide')?.getAttribute('data-question-id'));
-	questionIds.forEach((id, index) => {
-		const nextId = questionIds[index + 1];
-		document.querySelectorAll(`[data-go="${id}"]`).forEach(el => {
-			if (nextId) el.setAttribute('data-go', nextId);
-			else el.removeAttribute('data-go');
+	// After shuffle, update continue buttons
+	const groups = document.querySelectorAll('section.question-group');
+	groups.forEach((group, i) => {
+		const questionId = group.querySelector('.question-slide')?.getAttribute('data-question-id');
+		const nextGroup = groups[i + 1];
+		const nextId = nextGroup?.querySelector('.question-slide')?.getAttribute('data-question-id');
+
+		const buttons = group.querySelectorAll('.continue-to-next');
+		buttons.forEach(btn => {
+			if (nextId) {
+				btn.setAttribute('data-go', nextId);
+			} else {
+				btn.removeAttribute('data-go');
+				btn.innerText = "סיימת!";
+				btn.style.cursor = "default";
+			}
 		});
 	});
 
-	// Re-bind buttons
-	bindContinueButtons();
-	bindAnswerButtons();
+	updateContinueButtons();  // ✅ add this!
+	bindContinueButtons();    // ✅ re-binds after setting data
+	bindAnswerButtons();      // ✅ already there
 }
 
+function updateContinueButtons() {
+	const groups = Array.from(document.querySelectorAll('section.question-group'));
+	const slides = Reveal.getHorizontalSlides();
 
+	groups.forEach((group, i) => {
+		const nextGroup = groups[i + 1];
+		const buttons = group.querySelectorAll('.continue-to-next');
 
+		if (!nextGroup) {
+			// Last question
+			buttons.forEach(btn => {
+				btn.removeAttribute('data-go-h');
+				btn.innerText = "סיימת!";
+				btn.style.cursor = "default";
+			});
+			return;
+		}
+
+		// Find real horizontal index of the next group
+		const hIndex = Array.from(slides).indexOf(nextGroup);
+
+		buttons.forEach(btn => {
+			btn.setAttribute('data-go-h', hIndex);
+		});
+	});
+}
 
 /*******************************************************************/
 // ******* GENERAL FUNCTION FOR MAINTANING THE WHOLE PRESENTATION *********
@@ -272,39 +305,48 @@ function goPrev() {
 		 }
 
  //function that activate for ' data-correct="true" ': and plays sound accordingly: 
-		 document.querySelectorAll('.answer').forEach(btn=> {
-			 btn.addEventListener('click', () => {
-				 const isCorrect = btn.getAttribute('data-correct') === "true";
-				 const feedbackID =btn.getAttribute('data-feedback'); //target slide ID according to the feedback type
-				
-				//play sound according to the answer:
-				 if(isCorrect) {
-					 document.getElementById('correct-sound').play();
-				 }
-				 else {
-					 document.getElementById('wrong-sound').play();
-				 }
-			   // Navigate to the slide after short delay (let the sound start)
-				setTimeout(() => {
-					Reveal.slide(targetSlide);
-				}, 100); // delay
+document.querySelectorAll('.answer').forEach(btn => {
+	btn.addEventListener('click', () => {
+		const isCorrect = btn.getAttribute('data-correct') === "true";
+		const feedbackID = btn.getAttribute('data-feedback'); // target feedback ID
 
-			   // Find slide by ID and navigate to it
-				 const targetSlide = document.querySelector(`section#${feedbackID}`);
-				 if (targetSlide) {
-					 const indices = Reveal.getIndices(targetSlide);
-					 setTimeout(() => {
-						 Reveal.slide(indices.h, indices.v || 0); }, 100); // delay to let sound begin
-				 }
-				 else {
-					 console.warn("⚠️ Slide with ID not found:", feedbackId);
-				 }
-			 });
-		 });
+		// play sound
+		const sound = document.getElementById(isCorrect ? 'correct-sound' : 'wrong-sound');
+		if (sound) {
+			sound.currentTime = 0;
+			sound.play().catch(err => console.warn("Audio failed:", err));
+		}
+
+		// find slide by ID
+		const targetSlide = document.querySelector(`section#${feedbackID}`);
+		if (targetSlide) {
+			const indices = Reveal.getIndices(targetSlide);
+
+			// fallback in case indices not found properly
+			const h = indices?.h ?? 0;
+			const v = indices?.v ?? 0;
+
+			setTimeout(() => {
+				console.log("Navigating to h:", h, "v:", v);
+				Reveal.slide(h, v);
+			}, 300); // delay to let sound play
+		} else {
+			console.warn("⚠️ Slide with ID not found:", feedbackID);
+		}
+	});
+});
 
 
 // Shuffle only once when the DOM is ready (before Reveal.initialize)
-//  Shuffle only once after DOM is ready
-document.addEventListener("DOMContentLoaded", () => {
-	shuffleQuestions();
+Reveal.on('ready', () => {
+	shuffleQuestions();        // now DOM is fully there
+});
+
+window.addEventListener('click', (e) => {
+	if (e.target.classList.contains('continue-to-next')) {
+		alert("✅ Button clicked!");
+
+		const nextId = e.target.getAttribute('data-go');
+		console.log("Next question ID is:", nextId);
+	}
 });

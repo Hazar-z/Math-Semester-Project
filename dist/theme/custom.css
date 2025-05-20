@@ -272,7 +272,7 @@ body {
 }
 
 /*Press to continue button: */
-.composition-next {
+.composition-next, .continue-to-next {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,22 +284,20 @@ body {
     font-size: 60px;
     gap: 30px;
 }
-        .composition-next a {
-             color: white;
-             font-size: 35px;
-             text-decoration: underline;
-             cursor: pointer;
-             border: 2px solid white;
-             padding: 10px 10px 10px 10px;
-             border-radius:10px;
-        }
-        .composition-next a:hover {
-             background-color: whitesmoke;
-             color: mediumorchid !important;
-             box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
-                    0 0 30px rgba(255, 255, 255, 0.6),
-                    0 0 40px rgba(255, 255, 255, 0.4);
-             transform: scale(1.03);
+    .composition-next a, .continue-to-next a {
+        color: white;
+        font-size: 35px;
+        text-decoration: underline;
+        cursor: pointer;
+        border: 2px solid white;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+    }
+        .composition-next a:hover, .continue-to-next a:hover {
+            background-color: whitesmoke;
+            color: mediumorchid !important;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+            transform: scale(1.03);
         }
 
 #num-house-slide {

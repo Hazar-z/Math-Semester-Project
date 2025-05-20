@@ -270,10 +270,10 @@
 			<!-- start of the game, using shuffle between slides. number of questions=13-->
 			<section id="start-game"> Here the game starts: </section>
 			<!-- Question1 -->
-			<section class="question-group">
+			<section class="question-group" id="group-q1">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						Q1 בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
@@ -287,8 +287,8 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> נכון </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q2" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a  style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 
@@ -297,16 +297,16 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> לא נכון   </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q2" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a  style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 			</section>
 			<!-- Question2 -->
-			<section class="question-group">
+			<section class="question-group" id="group-q2">
 				<section class="question-slide" data-question-id="q2">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						Q2 בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
@@ -319,8 +319,8 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> נכון </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q3" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a  style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 
@@ -329,16 +329,16 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> לא נכון   </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q3" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a   style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 			</section>
 			<!-- Question3 -->
-			<section class="question-group">
+			<section class="question-group" id="group-q3">
 				<section class="question-slide" data-question-id="q3">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:60px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						Q3בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
@@ -351,8 +351,8 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> נכון </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q4" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a   style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 
@@ -361,8 +361,8 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> לא נכון   </div>
 					</div>
-					<div class="composition-next">
-						<a data-go="q4" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 					</div>
 				</section>
 			</section>
@@ -413,8 +413,7 @@
 	<script src="plugin/highlight/highlight.js"></script>
 
 
-	<!--Linking JS file-->
-	<script src="main.js"></script>
+
 
 
 	<script>
@@ -433,7 +432,8 @@
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
 	</script>
-
+	<!--Linking JS file-->
+	<script src="main.js"></script>
 
 
 </body>
