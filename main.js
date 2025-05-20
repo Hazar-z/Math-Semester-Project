@@ -43,14 +43,20 @@
 function bindContinueButtons() {
 	document.querySelectorAll('.continue-to-next').forEach(btn => {
 		btn.addEventListener('click', () => {
+			// 🔊 Play tap sound
+			const tapSound = document.getElementById('tap-sound');
+			if (tapSound) tapSound.play();
+
+			// ✅ Move to next question
 			const hIndex = parseInt(btn.getAttribute('data-go-h'));
 			if (!isNaN(hIndex)) {
-				console.log("➡️ Jumping to h:", hIndex);
 				Reveal.slide(hIndex, 0);
 			}
 		});
 	});
 }
+
+
 
 
 
@@ -78,7 +84,7 @@ function bindAnswerButtons() {
 			// Navigate
 			setTimeout(() => {
 				Reveal.slide(hIndex, vIndex);
-			}, 300);
+			}, 200);
 		});
 	});
 }
@@ -130,26 +136,46 @@ function updateContinueButtons() {
 
 	groups.forEach((group, i) => {
 		const nextGroup = groups[i + 1];
-		const buttons = group.querySelectorAll('.continue-to-next');
+		const hIndex = nextGroup ? Array.from(slides).indexOf(nextGroup) : null;
 
-		if (!nextGroup) {
-			// Last question
-			buttons.forEach(btn => {
-				btn.removeAttribute('data-go-h');
-				btn.innerText = "סיימת!";
-				btn.style.cursor = "default";
-			});
-			return;
-		}
+		const feedbackSlides = group.querySelectorAll('[data-role="feedback"]');
 
-		// Find real horizontal index of the next group
-		const hIndex = Array.from(slides).indexOf(nextGroup);
+		feedbackSlides.forEach(slide => {
+			// Remove old buttons if they exist
+			slide.querySelector('.continue-to-next')?.remove();
+			slide.querySelector('.end-options')?.remove();
 
-		buttons.forEach(btn => {
-			btn.setAttribute('data-go-h', hIndex);
+			const wrapper = document.createElement('div');
+			wrapper.className = 'end-options';
+
+			if (nextGroup) {
+				// Regular "Click to Continue" button
+				const continueBtn = document.createElement('a');
+				continueBtn.className = 'continue-to-next';
+				continueBtn.textContent = 'לחץ כאן כדי להמשיך';
+				continueBtn.setAttribute('data-go-h', hIndex);
+
+				wrapper.appendChild(continueBtn);
+			} else {
+				// Final slide → add Replay and Tutorial buttons
+				const btnReplay = document.createElement('a');
+				btnReplay.id = 'btn-replay';
+				btnReplay.textContent = 'שחק שוב 🔁 ';
+
+				const btnTutorial = document.createElement('a');
+				btnTutorial.id = 'btn-tutorial';
+				btnTutorial.textContent = 'חזרה להדרכה 🏠';
+
+				wrapper.appendChild(btnReplay);
+				wrapper.appendChild(btnTutorial);
+			}
+
+			slide.appendChild(wrapper);
 		});
 	});
 }
+
+
 
 /*******************************************************************/
 // ******* GENERAL FUNCTION FOR MAINTANING THE WHOLE PRESENTATION *********
@@ -230,6 +256,23 @@ function goPrev() {
 		    String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
 		}
 
+
+//Reset timer method- when replayin:
+function resetGameState() {
+	const allGroups = document.querySelectorAll('section.question-group');
+	allGroups.forEach((group, hIndex) => {
+		Reveal.slide(hIndex, 0); // ensure you're not stuck in feedback slide
+	});
+}
+
+function resetGameTimer() {
+	clearInterval(gameTimerInterval);
+	gameTimerInterval = null;
+	elapsedSeconds = 0;
+	gameStarted = false;
+	updateTimerDisplay();
+}
+
 //function to toggle pause buttn: Called by pause button
 		let isPaused = false;
 		function togglePause() {
@@ -245,64 +288,55 @@ function goPrev() {
 			}
 		}
 	
-//Listen for loading the presentation
-		Reveal.on('ready', (event) => {
-			const slideId = event.currentSlide.id;
-			 if (slideId === 'start-game') {
-				 showGameUI();
-				 startGameTimer();
-				 gameStarted= true;   //toggle flag to true so we know it's activated
-			 }
-			 else{
-				 hideGameUI();
-			 }
-			});
+// Handle game UI when presentation loads
+Reveal.on('ready', (event) => {
+	handleGameUIVisibility(event.currentSlide);
+});
 
-//Listen for slide changing
-		Reveal.on('slidechanged', (event) => {
-			const slideId = event.currentSlide.id;
-			if (slideId === 'start-game') {
-			   //if the game hasn’t already started-->gameStarted=false. we still haven't landed on 'start-game' slide
-				if (!gameStarted) {
-				 showGameUI();
-				 startGameTimer();
-				 gameStarted= true;
-	    	 }
-		   }
-			//the game already started--> gameStarted=true
-			 else if (gameStarted) {
-				 showGameUI(); // keep showing after 'start-game' slide
-			 }
-		    else {
-			 hideGameUI(); //hide before 'start-game' slide
-		    }
-		});
-		// Utility functions:
-		 // Show pause and timer
-	   	 function showGameUI(){
-			const timer= document.getElementById('game-timer');
-		    const pause= document.querySelector('.pause-button');
-				timer.style.display= 'block';
-				pause.style.display= 'block';
+// Handle game UI every time the slide changes
+Reveal.on('slidechanged', (event) => {
+	handleGameUIVisibility(event.currentSlide);
+});
 
-			// Delay to allow the elements to render before fading
-			 setTimeout(() => {
-				  timer.style.opacity = '1';
-				  pause.style.opacity = '1'; }, 50); // Tiny delay
+// Unified logic for showing/hiding UI and starting timer
+function handleGameUIVisibility(currentSlide) {
+	const slideId = currentSlide?.id;
+	const isGameSlide = slideId === 'start-game' || currentSlide?.classList.contains('question-slide');
 
-			// Start timer after fade-in is complete (1s later)
-			setTimeout(() => {
-			     startGameTimer();  }, 1000);
-		 }
-			
+	if (isGameSlide) {
+		showGameUI();
+		startGameTimer(); // will auto-block if already started
+		gameStarted = true;
+	} else {
+		hideGameUI();
+	}
+}
 
-		 // Hide pause buttn adn timer 
-		 function hideGameUI(){
-			const timer= document.getElementById('game-timer');
-			const pause= document.querySelector('.pause-button');
-					timer.style.display= 'none';
-					pause.style.display= 'none';
-		 }
+// Show pause and timer with fade-in
+function showGameUI() {
+	const timer = document.getElementById('game-timer');
+	const pause = document.querySelector('.pause-button');
+	if (!timer || !pause) return;
+
+	timer.style.display = 'block';
+	pause.style.display = 'block';
+
+	setTimeout(() => {
+		timer.style.opacity = '1';
+		pause.style.opacity = '1';
+	}, 50);
+}
+
+// Hide pause and timer completely
+function hideGameUI() {
+	const timer = document.getElementById('game-timer');
+	const pause = document.querySelector('.pause-button');
+	if (!timer || !pause) return;
+
+	timer.style.display = 'none';
+	pause.style.display = 'none';
+}
+
 
  //function that activate for ' data-correct="true" ': and plays sound accordingly: 
 document.querySelectorAll('.answer').forEach(btn => {
@@ -329,7 +363,7 @@ document.querySelectorAll('.answer').forEach(btn => {
 			setTimeout(() => {
 				console.log("Navigating to h:", h, "v:", v);
 				Reveal.slide(h, v);
-			}, 300); // delay to let sound play
+			}, 50); // delay to let sound play
 		} else {
 			console.warn("⚠️ Slide with ID not found:", feedbackID);
 		}
@@ -344,9 +378,38 @@ Reveal.on('ready', () => {
 
 window.addEventListener('click', (e) => {
 	if (e.target.classList.contains('continue-to-next')) {
-		alert("✅ Button clicked!");
-
 		const nextId = e.target.getAttribute('data-go');
 		console.log("Next question ID is:", nextId);
+	}
+});
+
+
+document.addEventListener('click', (e) => {
+	if (e.target?.id === 'btn-replay') {
+		const tapSound = document.getElementById('tap-sound');
+		if (tapSound) tapSound.play();
+
+		resetGameState();
+		resetGameTimer();
+		shuffleQuestions();
+
+		setTimeout(() => {
+			const startSlide = document.getElementById('start-game');
+			const hIndex = Array.from(Reveal.getHorizontalSlides()).indexOf(startSlide);
+			if (hIndex !== -1) Reveal.slide(hIndex, 0);
+		}, 0);
+	}
+
+	if (e.target?.id === 'btn-tutorial') {
+		const tapSound = document.getElementById('tap-sound');
+		if (tapSound) tapSound.play();
+
+		resetGameState();
+		resetGameTimer();
+		shuffleQuestions();
+
+		setTimeout(() => {
+			Reveal.slide(0, 0);
+		}, 0);
 	}
 });

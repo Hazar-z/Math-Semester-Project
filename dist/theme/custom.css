@@ -385,6 +385,94 @@ body {
     transform: scale(0.2);
 }
 
+/*****************************************/
+/* Game slides styling: */
+/****************************************/
+
+.end-options {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+    /* Purple, playful, glowy buttons with wave hover */
+    .end-options a {
+        position: relative;
+        background-color: #a66cff;
+        color: white;
+        font-size: 30px;
+        font-family: 'Comic Sans MS', 'Noto Sans Hebrew', Arial, sans-serif;
+        padding: 16px 30px;
+        border-radius: 20px;
+        text-decoration: none;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.25s ease, background-color 0.4s ease;
+        box-shadow: 0 5px 15px rgba(140, 90, 255, 0.3);
+        user-select: none;
+    }
+
+        /* Wave ripple animation on hover */
+        .end-options a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 20%, transparent 70%);
+            transform: skewX(-30deg);
+            transition: left 0.6s ease;
+            pointer-events: none;
+        }
+
+        .end-options a:hover::before {
+            left: 100%;
+        }
+
+        /* Hover glow and bounce */
+        .end-options a:hover {
+            transform: scale(1.1);
+            background-color: #c59bff;
+            box-shadow: 0 0 15px rgba(180, 120, 255, 0.6), 0 0 30px rgba(200, 150, 255, 0.4);
+        }
+
+
+
+
+.game-continue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-family: 'Noto Sans Hebrew', Arial;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    gap: 30px;
+}
+
+    .game-continue a {
+        color: white;
+        font-size: 35px;
+        text-decoration: underline;
+        cursor: pointer;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+        .game-continue a:hover {
+            background-color: whitesmoke;
+            color: mediumorchid !important;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+            transform: scale(1.03);
+        }
+
 /************************************************************/
 /************************************************************/
 * GLOBAL STYLES *********************************************/
