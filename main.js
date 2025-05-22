@@ -56,10 +56,6 @@ function bindContinueButtons() {
 
 
 
-
-
-
-
 // Function to bind answer buttons and move vertically to feedback
 function bindAnswerButtons() {
 	document.querySelectorAll('.answer').forEach(btn => {
@@ -118,15 +114,14 @@ function shuffleQuestions() {
 				btn.setAttribute('data-go', nextId);
 			} else {
 				btn.removeAttribute('data-go');
-				btn.innerText = "סיימת!";
 				btn.style.cursor = "default";
 			}
 		});
 	});
 
-	updateContinueButtons();  // ✅ add this!
-	bindContinueButtons();    // ✅ re-binds after setting data
-	bindAnswerButtons();      // ✅ already there
+	updateContinueButtons();  //  update continue buttons after shuffling
+	bindContinueButtons();    //  re-binds after setting data
+	bindAnswerButtons();      // rebind answer after setting data
 }
 
 function updateContinueButtons() {
@@ -155,7 +150,9 @@ function updateContinueButtons() {
 				continueBtn.setAttribute('data-go-h', hIndex);
 
 				wrapper.appendChild(continueBtn);
-			} else {
+			}
+			//change the the "click to continue" on final question so it won't bug
+			else {
 				// Final slide → add Replay and Tutorial buttons
 				const btnReplay = document.createElement('a');
 				btnReplay.id = 'btn-replay';
@@ -178,14 +175,14 @@ function updateContinueButtons() {
 document.addEventListener('mouseenter', (e) => {
 	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial');
 	if (target) {
-		// 💥 Play poof sound
+		//  Play poof sound
 		const poofSound = document.getElementById('poof-sound');
 		if (poofSound) {
 			poofSound.currentTime = 0;
 			poofSound.play().catch(() => { });
 		}
 
-		// ✨ Star dust effect
+		//  Star dust effect
 		for (let i = 0; i < 7; i++) {
 			const star = document.createElement('div');
 			star.className = 'star-dust';
@@ -201,7 +198,7 @@ document.addEventListener('mouseenter', (e) => {
 			setTimeout(() => star.remove(), 800);
 		}
 	}
-}, true); // ✅ capture phase so it works on dynamically added buttons
+}, true); 
 
 
 
@@ -249,11 +246,12 @@ function goToSlideSkippingFeedback(direction) {
 		}
 	}
 }
-
+//go next but skip the feedback slides when using navigation arrows:
 function goNext() {
 	goToSlideSkippingFeedback('forward');
 }
 
+//go prev but skip the feedback slides when using navigation arrows:
 function goPrev() {
 	goToSlideSkippingFeedback('backward');
 }
@@ -307,14 +305,14 @@ function resetGameTimer() {
 		let isPaused = false;
 		function togglePause() {
 			 isPaused = !isPaused;
-			 console.log(isPaused ? '⏸️ Game paused' : '▶️ Game resumed');
+			 console.log(isPaused ? ' Game paused' : 'Game resumed');  //debug
 
 			const pauseBtn= document.getElementById('pause-btn');
 			if(isPaused) {
-				pauseBtn.classList.add('playing');  //switch to play icon ▶️
+				pauseBtn.classList.add('playing');  //switch to play icon 
 			}
 			else{
-				pauseBtn.classList.remove('playing');  //switch back to pause icon ⏸️
+				pauseBtn.classList.remove('playing');  //switch back to pause icon 
 			}
 		}
 	
@@ -395,7 +393,7 @@ document.querySelectorAll('.answer').forEach(btn => {
 				Reveal.slide(h, v);
 			}, 50); // delay to let sound play
 		} else {
-			console.warn("⚠️ Slide with ID not found:", feedbackID);
+			console.warn(" slide with ID not found:", feedbackID);
 		}
 	});
 });
@@ -409,11 +407,11 @@ Reveal.on('ready', () => {
 window.addEventListener('click', (e) => {
 	if (e.target.classList.contains('continue-to-next')) {
 		const nextId = e.target.getAttribute('data-go');
-		console.log("Next question ID is:", nextId);
+		console.log("Next question ID is:", nextId);  //debug
 	}
 });
 
-
+//function lisetens for a click and check whether to play tap-sound audio for "replay" and "go to home page" buttns
 document.addEventListener('click', (e) => {
 	if (e.target?.id === 'btn-replay') {
 		const tapSound = document.getElementById('tap-sound');
@@ -445,6 +443,8 @@ document.addEventListener('click', (e) => {
 });
 
 
+
+//need to check if to keep this!
 Reveal.on('slidechanged', (event) => {
 	const current = event.currentSlide;
 	if (current.classList.contains('question-slide')) {
