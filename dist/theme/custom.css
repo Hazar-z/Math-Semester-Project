@@ -72,6 +72,34 @@ section.has-light-background, section.has-light-background h1, section.has-light
     }
 }
 
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes showThenHide {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 /*=== my stylings ===*/
 .Background-theme{
@@ -358,7 +386,6 @@ body {
     width: 1000px;
 
 }
-
 #main-explanation {
     background-color: #FFEB88;
     padding: 20px;
@@ -411,6 +438,40 @@ body {
     opacity: 0;
     transform: scale(0.2);
 }
+
+ /******* Duplicates of numbers house to use for examples: ********/
+.num-house-slide {
+    position: relative;
+    height: 120%;
+    width: 120%;
+}
+
+.main-explanation {
+    background-color: #FFF6D1;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 36px;
+    color: #5C3B00;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.question-mark-bounce {
+    position: absolute;
+    top: 145%; 
+    left: 90%; 
+    width: 80px;
+    height: auto;
+    z-index: 5;
+    animation: bounce 1.2s infinite;
+}
+.animated-arrow {
+    opacity: 0;
+    animation: showThenHide 3s ease-in-out forwards;
+    animation-delay: 1s; /* delay before showing */
+}
+
+
 
 /*****************************************/
 /* Game slides styling: */
