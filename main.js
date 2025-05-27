@@ -2,6 +2,22 @@
 //JS function for Math-Project Game using Reveal.js
 
 
+//detect when the slide becomes visible and trigger animation with delay
+Reveal.addEventListener('slidechanged', (event) => {
+	const slide = event.currentSlide;
+
+	// Handle both .delayed-p and .animated-arrow
+	slide.querySelectorAll('.delayed-p, .animated-arrow').forEach((el) => {
+		el.classList.remove('visible-now'); // Reset in case of revisiting
+		const delay = el.style.animationDelay || '0s';
+
+		// Trigger animation after the specified delay
+		setTimeout(() => {
+			el.classList.add('visible-now');
+		}, parseFloat(delay) * 1000);
+	});
+});
+
 
 //Method to animate visual effect
 		Reveal.addEventListener('slidechanged', function (event) {
@@ -34,7 +50,47 @@
             setTimeout(() => {
                 Reveal.slide(slideIndex);
             }, 300);
-        }
+}
+
+// playing a matching sound to the x-class:
+document.addEventListener('DOMContentLoaded', () => {
+	const soundMap = {
+		'peek-effect': {
+			soundId: 'peek-sound',
+			animationName: 'fade-in'
+		},
+		'animated-arrow': {
+			soundId: 'arrow-sound',
+			animationName: 'showThenHide'
+		}
+	};
+
+	// Attach animationstart listeners to both types
+	Object.keys(soundMap).forEach(className => {
+		document.querySelectorAll(`.${className}`).forEach(el => {
+			el.addEventListener('animationstart', (e) => {
+				console.log(`animationstart on:`, el, 'name:', e.animationName);
+				const expectedAnim = soundMap[className].animationName;
+				const soundId = soundMap[className].soundId;
+
+				if (e.animationName === expectedAnim) {
+					const sound = document.getElementById(soundId);
+					if (sound) {
+						sound.currentTime = 0;
+						sound.play().catch(err => {
+							console.warn(`Audio play blocked (${soundId}):`, err);
+						});
+					}
+				}
+			});
+		});
+	});
+});
+
+
+
+
+
 /*******************************************************************/
 // ******* GAME SECTION FUNCTIONS ********
 /*******************************************************************/
@@ -173,7 +229,7 @@ function updateContinueButtons() {
 
 // poof sound when hovering over actions on game section:
 document.addEventListener('mouseenter', (e) => {
-	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial');
+	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound');
 	if (target) {
 		//  Play poof sound
 		const poofSound = document.getElementById('poof-sound');

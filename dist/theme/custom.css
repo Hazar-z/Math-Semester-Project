@@ -102,6 +102,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 /*=== my stylings ===*/
+.animate-on-load{
+    
+}
 .Background-theme{
     background-size: cover;
     background-position: center;
@@ -275,8 +278,15 @@ body {
 
 .delayed-p {
     opacity: 0;
-    animation: fade-in  2s 0.7s ease-in forwards;
- }
+}
+    /* Trigger animation manually */
+    .delayed-p.visible-now {
+        animation-name: fade-in;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+
 
 .answer, .option{
     display: flex;
@@ -458,20 +468,33 @@ body {
 
 .question-mark-bounce {
     position: absolute;
-    top: 145%; 
-    left: 90%; 
+    top: 145%;
+    left: 90%;
     width: 80px;
     height: auto;
     z-index: 5;
-    animation: bounce 1.2s infinite;
+    opacity: 0;
 }
+    .question-mark-bounce.visible-now {
+        animation: fade-in 2s ease-in forwards, bounce 1.2s 2.2s infinite;
+    }
+
+
 .animated-arrow {
     opacity: 0;
-    animation: showThenHide 3s ease-in-out forwards;
-    animation-delay: 1s; /* delay before showing */
 }
 
+    .animated-arrow.visible-now {
+        animation: showThenHide 3s ease-in-out forwards;
+    }
 
+
+.hoverable-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(145deg, #c59bff, #d7acff);
+    box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(200, 150, 255, 0.3), 0 0 40px rgba(200, 150, 255, 0.25), 0 0 60px rgba(200, 150, 255, 0.2);
+    animation: pulse-glow 1s ease-out forwards;
+}
 
 /*****************************************/
 /* Game slides styling: */
