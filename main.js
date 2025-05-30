@@ -1,5 +1,6 @@
 
 //JS function for Math-Project Game using Reveal.js
+let allowSound = true;
 
 
 //detect when the slide becomes visible and trigger animation with delay
@@ -52,8 +53,8 @@ Reveal.addEventListener('slidechanged', (event) => {
             }, 300);
 }
 
-// playing a matching sound to the x-class:
-document.addEventListener('DOMContentLoaded', () => {
+// 🔊 PLAY SOUNDS when animations start
+function attachSoundListeners(currentSlide) {
 	const soundMap = {
 		'peek-effect': {
 			soundId: 'peek-sound',
@@ -62,58 +63,77 @@ document.addEventListener('DOMContentLoaded', () => {
 		'animated-arrow': {
 			soundId: 'arrow-sound',
 			animationName: 'showThenHide'
+		},
+		'question-mark-bounce': {
+			soundId: 'questionMark-sound',
+			animationName: 'fade-in'
+		},
+		'click-to-continue': {
+			soundId: 'continue-sound',
+			animationName: 'fade-in'
 		}
 	};
 
-	// Attach animationstart listeners to both types
 	Object.keys(soundMap).forEach(className => {
-		document.querySelectorAll(`.${className}`).forEach(el => {
-			el.addEventListener('animationstart', (e) => {
-				console.log(`animationstart on:`, el, 'name:', e.animationName);
-				const expectedAnim = soundMap[className].animationName;
-				const soundId = soundMap[className].soundId;
-
-				if (e.animationName === expectedAnim) {
-					const sound = document.getElementById(soundId);
+		currentSlide.querySelectorAll(`.${className}`).forEach(el => {
+			const handler = (e) => {
+				if (e.animationName === soundMap[className].animationName) {
+					const sound = document.getElementById(soundMap[className].soundId);
 					if (sound) {
 						sound.currentTime = 0;
-						sound.play().catch(err => {
-							console.warn(`Audio play blocked (${soundId}):`, err);
-						});
+						sound.play().catch(() => { });
 					}
 				}
-			});
+			};
+			el._soundHandler = handler;
+			el.addEventListener('animationstart', handler);
 		});
 	});
+}
+
+
+
+// ❌ STOP all sound and remove listeners
+function detachSoundListeners(slide) {
+	slide.querySelectorAll('*').forEach(el => {
+		if (el._soundHandler) {
+			el.removeEventListener('animationstart', el._soundHandler);
+		}
+	});
+}
+
+
+// ✅ ON FIRST LOAD
+document.addEventListener('DOMContentLoaded', () => {
+	const current = Reveal.getCurrentSlide();
+	if (current) {
+		attachSoundListeners(current);
+	}
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	document.querySelectorAll('.question-mark-bounce').forEach(el => {
-		el.addEventListener('animationstart', (e) => {
-			if (e.animationName === 'fade-in') {
-				const questionSound = document.getElementById('questionMark-sound');
-				if (questionSound) {
-					questionSound.currentTime = 0;
-					questionSound.play().catch(() => { });
-				}
-			}
-		});
+
+// 🔁 WHEN SLIDE CHANGES
+Reveal.on('slidechanged', (event) => {
+	// Stop all playing audio
+	document.querySelectorAll('audio').forEach(audio => {
+		audio.pause();
+		audio.currentTime = 0;
 	});
+
+	// Clean up old listeners from previous slide
+	if (event.previousSlide) {
+		detachSoundListeners(event.previousSlide);
+	}
+
+	// Attach new listeners only for current slide
+	if (event.currentSlide) {
+		attachSoundListeners(event.currentSlide);
+	}
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	document.querySelectorAll('.click-to-continue').forEach(el => {
-		el.addEventListener('animationstart', (e) => {
-			if (e.animationName === 'fade-in') {
-				const questionSound = document.getElementById('continue-sound');
-				if (questionSound) {
-					questionSound.currentTime = 0;
-					questionSound.play().catch(() => { });
-				}
-			}
-		});
-	});
-});
+
+
+
 
 
 
@@ -151,21 +171,30 @@ function bindAnswerButtons() {
 			const hIndex = indices.h;
 			const vIndex = indices.v;
 
-			// Play correct/wrong sound
+			// 🔊 Play feedback sound immediately and fully bypass allowSound
 			const isCorrect = btn.getAttribute('data-correct') === 'true';
 			const sound = document.getElementById(isCorrect ? 'correct-sound' : 'wrong-sound');
+
 			if (sound) {
-				sound.currentTime = 0;
-				sound.play().catch(e => console.warn("Audio error:", e));
+				sound.pause();             // stop if it was already playing
+				sound.currentTime = 0;     // rewind to start
+				void sound.play().catch(err => {
+					console.warn("Feedback sound failed to play:", err);
+				});
 			}
 
-			// Navigate
+			// 🕒 Delay navigation slightly so sound gets committed
 			setTimeout(() => {
 				Reveal.slide(hIndex, vIndex);
-			}, 200);
+			}, 1000); // 
 		});
 	});
 }
+
+
+
+
+
 
 // Shuffle function for question slides only
 function shuffleQuestions() {
@@ -339,6 +368,23 @@ function goPrev() {
 	goToSlideSkippingFeedback('backward');
 }
 
+function goHome() {
+	const tapSound = document.getElementById('tap-sound');
+	if (tapSound) {
+		tapSound.currentTime = 0;
+		tapSound.play().catch(() => { });
+	}
+
+	resetGameState();   // Reset slide position
+	resetGameTimer();   // Reset timer
+	shuffleQuestions(); // Rebuild question order if needed
+
+	setTimeout(() => {
+		Reveal.slide(0, 0);  // Go to the first slide (home)
+	}, 0);
+}
+
+
 //Time calculating and Display methods:
 		let gameTimerInterval = null;
 		let elapsedSeconds = 0;
@@ -450,36 +496,7 @@ function hideGameUI() {
 
 
  //function that activate for ' data-correct="true" ': and plays sound accordingly: 
-document.querySelectorAll('.answer').forEach(btn => {
-	btn.addEventListener('click', () => {
-		const isCorrect = btn.getAttribute('data-correct') === "true";
-		const feedbackID = btn.getAttribute('data-feedback'); // target feedback ID
 
-		// play sound
-		const sound = document.getElementById(isCorrect ? 'correct-sound' : 'wrong-sound');
-		if (sound) {
-			sound.currentTime = 0;
-			sound.play().catch(err => console.warn("Audio failed:", err));
-		}
-
-		// find slide by ID
-		const targetSlide = document.querySelector(`section#${feedbackID}`);
-		if (targetSlide) {
-			const indices = Reveal.getIndices(targetSlide);
-
-			// fallback in case indices not found properly
-			const h = indices?.h ?? 0;
-			const v = indices?.v ?? 0;
-
-			setTimeout(() => {
-				console.log("Navigating to h:", h, "v:", v);
-				Reveal.slide(h, v);
-			}, 50); // delay to let sound play
-		} else {
-			console.warn(" slide with ID not found:", feedbackID);
-		}
-	});
-});
 
 
 // Shuffle only once when the DOM is ready (before Reveal.initialize)

@@ -214,6 +214,25 @@ body {
     background-position: left center; /* shows right half of the image */
 }
 
+.home-button {
+    background-image: url('../../Math-Project/home-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 0 12px 4px rgba(192, 132, 214, 0.4); /*glow */
+    border: 3px dotted #FFCBDB; /* soft lavender-violet tone */
+    top: 10px;
+    left: 180px;
+}
+
+
+
 /* pause button styling: */
 .pause-button {
     left: 120px;
