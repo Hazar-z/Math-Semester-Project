@@ -87,6 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.question-mark-bounce').forEach(el => {
+		el.addEventListener('animationstart', (e) => {
+			if (e.animationName === 'fade-in') {
+				const questionSound = document.getElementById('questionMark-sound');
+				if (questionSound) {
+					questionSound.currentTime = 0;
+					questionSound.play().catch(() => { });
+				}
+			}
+		});
+	});
+});
 
 
 
