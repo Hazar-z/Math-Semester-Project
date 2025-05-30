@@ -496,6 +496,13 @@ body {
     animation: pulse-glow 1s ease-out forwards;
 }
 
+.click-to-continue{
+    opacity: 0;
+}
+    .click-to-continue.visible-now {
+        animation: fade-in 2s ease-in forwards, bounce 1.2s 2.2s infinite;
+    }
+
 /*****************************************/
 /* Game slides styling: */
 /****************************************/

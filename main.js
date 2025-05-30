@@ -101,6 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.click-to-continue').forEach(el => {
+		el.addEventListener('animationstart', (e) => {
+			if (e.animationName === 'fade-in') {
+				const questionSound = document.getElementById('continue-sound');
+				if (questionSound) {
+					questionSound.currentTime = 0;
+					questionSound.play().catch(() => { });
+				}
+			}
+		});
+	});
+});
+
 
 
 
