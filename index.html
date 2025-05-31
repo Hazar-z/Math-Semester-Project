@@ -62,22 +62,45 @@
 
 			<!-- Slide 2 index=1-->
 			<section class="Slide2">
-				<div class="header glow-underline delayed-p" style="width: 60%;">
-					<h3 class="delayed-p" style="font-size: 75px !important;"> הוראות המשחק </h3>
+				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
+					<div onclick="playAudio('audio0')" class="audio-border"  style="margin-left: 20px;">
+						<img src="Math-Project/audio-inst.png" class="audio-icon">
+					</div>
+
+
+					<div style="display: flex; align-items: center; gap: 50px; direction: rtl;">
+						<h3 class="glow-underline delayed-p" style="font-size: 70px; margin: 0; text-align: center;">
+							הוראות המשחק
+						</h3>
+					</div>
 				</div>
+				<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>
+
 				<!-- Slide2 fragments-->
 				<ul style="text-align:right;">
-					<li class="delayed-p"
-						style="animation-delay: 3s;
-						    margin-bottom: 20px;
-						    margin-top: 15px;
-							padding-top:15px;">
-						במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך.
+					<li>
+						<div class="instruction-wrapper">
+							<div class="audio-border" onclick="playAudio('audio1')">
+								<img src="Math-Project/audio-inst.png" class="audio-icon">
+							</div>
+							<span class="instruction-text">
+								במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך.
+							</span>
+						</div>
 					</li>
-					<li class="delayed-p" style="animation-delay: 5s; padding-top:10px;">
-						עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
+					<li>
+						<div class="instruction-wrapper">
+							<div class="audio-border" onclick="playAudio('audio2')">
+								<img src="Math-Project/audio-inst.png" class="audio-icon">
+							</div>
+							<span class="instruction-text">
+								עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
+							</span>
+						</div>
 					</li>
 				</ul>
+				<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>
+				<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>
 				<div>
 					<!-- linked to slide3: index=2-->
 					<a onclick="playTapAndGo(2)"
@@ -104,8 +127,12 @@
 						width: 150%;
 						right: -17%;
 						animation-delay:0s;">
+					<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
 				</div>
+				<audio id="audio3" src="Math-Project/audio-instrcts/choose-big-num.m4a"></audio>
 				<div style="display: flex;
 								gap:80px;
 								justify-content:space-between;
@@ -1444,7 +1471,7 @@
 				<section class="question-slide" data-question-id="q3">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-						Q3בחר את המספר הגדול מבין שני המספרים הבאים:
+						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
 						<a data-feedback="q13-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 2.24 </a>

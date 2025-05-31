@@ -542,6 +542,13 @@ document.addEventListener('click', (e) => {
 	}
 });
 
+function playAudio(id) {
+	const audio = document.getElementById(id);
+	if (audio) {
+		audio.currentTime = 0;
+		audio.play().catch(e => console.error("Audio play error:", e));
+	}
+}
 
 
 //need to check if to keep this!
