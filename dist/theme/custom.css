@@ -167,7 +167,7 @@ body {
         position: absolute;
         bottom: -8px; /* space between text and line */
         right: 0%;
-        width: 95%;
+        width: 91%;
         height: 8px;
         background-color: #7F3B80; /* or royal blue */
         box-shadow: 0 0 15px #7F3B80;
@@ -328,36 +328,7 @@ body {
 .instruction-text {
     line-height: 1.5;
 }
-
-
-
-
-
-/* לחץ כדי להמשיך */
-.continue-button {
-    border-radius: 10px;
-    color: white !important;
-    font-size: 30px;
-    font-weight:700;
-    border-color: white;
-    border-style: solid;
-    border-width:5px;
-    padding: 20px 40px;
-    display: inline-flex;
-    margin-right: 500px;
-    box-sizing: border-box;
-    opacity:0; 
-    text-decoration: none;
-    background-color: transparent;
-
-}
-       .continue-button:hover {
-          border: 5px solid white !important;
-          backdrop-filter: blur(10px);
-          background-color: rgba(253, 186, 47, 0.6);
-          color: white !important;
-       }
-
+  
 
 .delayed-p {
     opacity: 0;
@@ -419,39 +390,21 @@ body {
     color: white;
 }
 
-/*Press to continue button: */
-.composition-next, .continue-to-next {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+
+.compose-num {
+    margin: 0;
+    color: whitesmoke;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     font-family: 'Noto Sans Hebrew', Arial;
-    text-align: center;
-    color: white;
-    font-size: 60px;
-    gap: 30px;
+    letter-spacing: 1px;
 }
-    .composition-next a, .continue-to-next a {
-        color: white;
-        font-size: 35px;
-        text-decoration: underline;
-        cursor: pointer;
-        border: 2px solid white;
-        padding: 10px 10px 10px 10px;
-        border-radius: 10px;
-    }
-        .composition-next a:hover, .continue-to-next a:hover {
-            background-color: whitesmoke;
-            color: mediumorchid !important;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
-            transform: scale(1.03);
-        }
 
 #num-house-slide {
-    position:relative;
-    height:110%;
-    width:120%;
+    position: relative;
+    height: 110%;
+    width: 120%;
 }
 
 .house-background {
@@ -590,7 +543,7 @@ body {
 /* Game slides styling: */
 /****************************************/
 
-.end-options {
+.end-options, .continue-button, .composition-next, .continue-to-next {
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -599,12 +552,12 @@ body {
 }
 
     /* Purple, playful, glowy buttons with wave hover */
-    .end-options a {
+    .end-options a, .continue-button a, .composition-next a, .continue-to-next a {
         position: relative;
         background: linear-gradient(145deg, #a66cff, #b88dff);
         color: white;
         font-size: 28px;
-        font-family: 'Comic Sans MS', 'Noto Sans Hebrew', Arial, sans-serif;
+        font-family: 'Noto Sans Hebrew', Arial, sans-serif;
         padding: 16px 30px;
         border-radius: 20px;
         text-decoration: none;
@@ -616,8 +569,8 @@ body {
     }
 
 
-        .end-options a:hover {
-            transform: scale(1.08);
+        .end-options a:hover, .continue-button a:hover, .composition-next a:hover, .continue-to-next a:hover {
+            transform: scale(1.05);
             background: linear-gradient(145deg, #c59bff, #d7acff);
             box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(200, 150, 255, 0.3), 0 0 40px rgba(200, 150, 255, 0.25), 0 0 60px rgba(200, 150, 255, 0.2);
             animation: pulse-glow 1s ease-out forwards;

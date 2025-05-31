@@ -51,12 +51,9 @@
 					<h2 style="font-size: 75px !important;"> המבנה העשרוני </h2>
 				</div>
 				<!-- continue click-->
-				<div>
+				<div class="delayed-p continue-button" style="margin-top: 170px; margin-right:220px;">
 					<!-- linked to slide2: index=1-->
-					<a onclick="playTapAndGo(1)" id="delayed-fragment" class="continue-button delayed-p"
-					   style=" display: flex; margin-top: 230px; margin-right: 400px; width: 400px; justify-content: center; text-align: center; cursor: pointer;">
-						לחץ כּאן כּדי להמשיך
-					</a>
+					<a onclick="playTapAndGo(1)" id="delayed-fragment">	לחץ כּאן כּדי להמשיך </a>
 				</div>
 			</section>
 
@@ -77,7 +74,7 @@
 				<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>
 
 				<!-- Slide2 fragments-->
-				<ul style="text-align:right;">
+				<ul class="delayed-p" style="text-align:right; animation-delay:2s;">
 					<li>
 						<div class="instruction-wrapper">
 							<div class="audio-border" onclick="playAudio('audio1')">
@@ -101,11 +98,10 @@
 				</ul>
 				<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>
 				<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>
-				<div>
+				<div class="continue-button delayed-p">
 					<!-- linked to slide3: index=2-->
 					<a onclick="playTapAndGo(2)"
 					   id="delayed-fragment"
-					   class="continue-button delayed-p"
 					   style=" display: flex; margin-top: 150px; margin-right: 250px; width: 400px; justify-content: center; text-align: center; cursor: pointer; animation-delay: 6s;">
 						לחץ כּאן כּדי להמשיך
 					</a>
@@ -140,8 +136,8 @@
 								width: 1200px;
 								height:300px;
 								flex-wrap:wrap;">
-					<a data-feedback="Q-Ex1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.25 </a>
-					<a data-feedback="Q-Ex1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
+					<a data-feedback="Q-Ex1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.25 </a>
+					<a data-feedback="Q-Ex1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.3 </a>
 				</div>
 			</section>
 
@@ -150,8 +146,8 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
-				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
+				<p class="compose-num"> בוא נפרק כל מספר</p>
+				<div class="composition-next">	
 					<a onclick="playTapAndGo(5)" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
@@ -161,8 +157,8 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
-				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
+				<p class="compose-num"> בוא נפרק כל מספר </p>
+				<div class="composition-next">	
 					<!--if we click, forward to slide-index=5-->
 					<a onclick="playTapAndGo(5)" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
@@ -182,7 +178,7 @@
 					flex-wrap: wrap;
 					width: 103%;">
 					<p>בוא נפרק את שני המספרים שבשאלה.</p>
-					<p>בחר את המספר שתרצה לפרק:</p>
+					<p>בחר את המספר שתרצה לפרק:</p> 
 				</div>
 				<div style="display: flex;
 						gap:80px;
@@ -519,11 +515,14 @@
 			<section>
 				<div class="delayed-p glow-underline"
 					 style=" display: flex; flex-shrink:1; margin-top: 90px; animation-delay: 2s; margin-right: -60px; font-size:60px; position:absolute; flex-wrap: wrap; width: 150%; right: -17%; animation-delay:0s;">
+					<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
 				</div>
 				<div style="display: flex; gap:80px; justify-content:space-between; margin:270px -70px 300px 300px; width: 1200px; height:300px; flex-wrap:wrap;">
-					<a data-feedback="Q-Ex2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.68 </a>
-					<a data-feedback="Q-Ex2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.7 </a>
+					<a data-feedback="Q-Ex2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.68 </a>
+					<a data-feedback="Q-Ex2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.7 </a>
 				</div>
 			</section>
 
@@ -532,8 +531,10 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
+				<p class="compose-num"> בוא נפרק כל מספר </p>
 				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
+					<!--if we click, forward to slide-index=______-->
+					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
 
@@ -542,10 +543,10 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
+				<p class="compose-num"> בוא נפרק כל מספר </p>
 				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
-					<!--if we click, forward to slide-index=___-->
-
+					<!--if we click, forward to slide-index=______-->
+					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
 
@@ -780,11 +781,14 @@
 			<section>
 				<div class="delayed-p glow-underline"
 					 style="display: flex; flex-shrink:1; margin-top: 90px; animation-delay: 2s; margin-right: -60px; font-size:60px; position:absolute; flex-wrap: wrap; width: 150%; right: -17%; animation-delay:0s;">
+					<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
 				</div>
 				<div style="display: flex; gap:80px; justify-content:space-between; margin:270px -70px 300px 300px; width: 1200px; height:300px; flex-wrap:wrap;">
-					<a data-feedback="Q-Ex3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.31 </a>
-					<a data-feedback="Q-Ex3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.4 </a>
+					<a data-feedback="Q-Ex3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.31 </a>
+					<a data-feedback="Q-Ex3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.4 </a>
 				</div>
 			</section>
 
@@ -793,8 +797,10 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
+				<p class="compose-num"> בוא נפרק כל מספר </p>
 				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
+					<!--if we click, forward to slide-index=______-->
+					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
 
@@ -803,10 +809,10 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
+				<p class="compose-num"> בוא נפרק כל מספר </p>
 				<div class="composition-next">
-					<p style="margin:0; color:mediumorchid;"> בוא נפרק כל מספר </p>
-					<!--if we click, forward to slide-index=___-->
-
+					<!--if we click, forward to slide-index=______-->
+					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
 				</div>
 			</section>
 
@@ -1064,12 +1070,15 @@
 			<section class="question-group" id="group-q1">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.4 </a>
-						<a data-feedback="q1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.14 </a>
+						<a data-feedback="q1-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.4 </a>
+						<a data-feedback="q1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.14 </a>
 					</div>
 				</section>
 
@@ -1078,9 +1087,9 @@
 					<div class="feedback-centering">
 						<div class="ansFeedback"> נכון </div>
 					</div>
-					<div class="continue-to-next">
-						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-					</div>
+                    <div class="continue-to-next">
+                        <a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+                    </div>
 				</section>
 
 				<!-- Q1-incorrect Answer -->
@@ -1098,12 +1107,15 @@
 			<section class="question-group" id="group-q2">
 				<section class="question-slide" data-question-id="q2">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.56 </a>
-						<a data-feedback="q2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.7 </a>
+						<a data-feedback="q2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.56 </a>
+						<a data-feedback="q2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.7 </a>
 					</div>
 				</section>
 				<!-- Q2 Correct Answer -->
@@ -1131,12 +1143,15 @@
 			<section class="question-group" id="group-q3">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.5 </a>
-						<a data-feedback="q3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.44 </a>
+						<a data-feedback="q3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.5 </a>
+						<a data-feedback="q3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.44 </a>
 					</div>
 				</section>
 
@@ -1165,12 +1180,15 @@
 			<section class="question-group" id="group-q4" ">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q4-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.33 </a>
-						<a data-feedback="q4-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.03 </a>
+						<a data-feedback="q4-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.33 </a>
+						<a data-feedback="q4-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.03 </a>
 					</div>
 				</section>
 
@@ -1199,12 +1217,15 @@
 			<section class="question-group" id="group-q5">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q5-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.66 </a>
-						<a data-feedback="q5-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.8 </a>
+						<a data-feedback="q5-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.66 </a>
+						<a data-feedback="q5-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.8 </a>
 					</div>
 				</section>
 
@@ -1233,12 +1254,15 @@
 			<section class="question-group" id="group-q6">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q6-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.3 </a>
-						<a data-feedback="q6-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.24 </a>
+						<a data-feedback="q6-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.3 </a>
+						<a data-feedback="q6-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.24 </a>
 					</div>
 				</section>
 
@@ -1267,12 +1291,15 @@
 			<section class="question-group" id="group-q7">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q7-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 0.9 </a>
-						<a data-feedback="q7-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 0.91 </a>
+						<a data-feedback="q7-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.9 </a>
+						<a data-feedback="q7-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.91 </a>
 					</div>
 				</section>
 
@@ -1301,12 +1328,15 @@
 			<section class="question-group" id="group-q8">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q8-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.2 </a>
-						<a data-feedback="q8-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.18 </a>
+						<a data-feedback="q8-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.2 </a>
+						<a data-feedback="q8-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.18 </a>
 					</div>
 				</section>
 
@@ -1335,12 +1365,15 @@
 			<section class="question-group" id="group-q9">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q9-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 1.23 </a>
-						<a data-feedback="q9-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 1.4 </a>
+						<a data-feedback="q9-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.23 </a>
+						<a data-feedback="q9-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.4 </a>
 					</div>
 				</section>
 
@@ -1369,12 +1402,15 @@
 			<section class="question-group" id="group-q10">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q10-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 8.7 </a>
-						<a data-feedback="q10-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 8.27 </a>
+						<a data-feedback="q10-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 8.7 </a>
+						<a data-feedback="q10-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 8.27 </a>
 					</div>
 				</section>
 
@@ -1403,12 +1439,15 @@
 			<section class="question-group" id="group-q11">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q11-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 6.4 </a>
-						<a data-feedback="q11-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 6.34 </a>
+						<a data-feedback="q11-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 6.4 </a>
+						<a data-feedback="q11-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 6.34 </a>
 					</div>
 				</section>
 
@@ -1437,12 +1476,15 @@
 			<section class="question-group" id="group-q12">
 				<section class="question-slide" data-question-id="q1">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q12-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 5.18 </a>
-						<a data-feedback="q12-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 5.8 </a>
+						<a data-feedback="q12-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 5.18 </a>
+						<a data-feedback="q12-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 5.8 </a>
 					</div>
 				</section>
 
@@ -1470,12 +1512,15 @@
 			<section class="question-group" id="group-q13">
 				<section class="question-slide" data-question-id="q3">
 					<div class="delayed-p glow-underline"
-						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:55px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:58px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
 						בחר את המספר הגדול מבין שני המספרים הבאים:
 					</div>
 					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-						<a data-feedback="q13-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:2s;"> 2.24 </a>
-						<a data-feedback="q13-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 2s"> 2.4 </a>
+						<a data-feedback="q13-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 2.24 </a>
+						<a data-feedback="q13-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 2.4 </a>
 					</div>
 				</section>
 

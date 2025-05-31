@@ -283,23 +283,22 @@ function updateContinueButtons() {
 	});
 }
 
-// poof sound when hovering over actions on game section:
+// Poof sound and star dust effect on hover:
 document.addEventListener('mouseenter', (e) => {
-	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound');
+	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound, .answer, .continue-button, .composition-next');
 	if (target) {
-		//  Play poof sound
+		// Play poof sound
 		const poofSound = document.getElementById('poof-sound');
 		if (poofSound) {
 			poofSound.currentTime = 0;
 			poofSound.play().catch(() => { });
 		}
 
-		//  Star dust effect
+		// Star dust effect
 		for (let i = 0; i < 7; i++) {
 			const star = document.createElement('div');
 			star.className = 'star-dust';
 
-			// Random position inside the button
 			const x = Math.random() * target.offsetWidth;
 			const y = Math.random() * target.offsetHeight;
 
@@ -310,7 +309,7 @@ document.addEventListener('mouseenter', (e) => {
 			setTimeout(() => star.remove(), 800);
 		}
 	}
-}, true); 
+}, true);
 
 
 
