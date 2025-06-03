@@ -101,6 +101,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
     }
 }
 
+@keyframes slide-right-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /*=== my stylings ===*/
 .animate-on-load{
     
@@ -504,6 +518,31 @@ body {
 
 }
 
+.float-loop {
+    animation: slide-right-left 1.2s ease-in-out infinite;
+}
+
+.special-button {
+    background: linear-gradient(135deg, #C38CCB, #E0B0FF);
+    color: white;
+    font-size: 30px;
+    font-family: 'Noto Sans Hebrew', Arial, sans-serif;
+    padding: 18px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(194, 144, 214, 0.6), 0 0 40px rgba(223, 160, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px dotted #f3e1ff;
+    display: inline-block;
+    text-align: center;
+}
+
+    .special-button:hover {
+        transform: scale(1.1);
+        background: linear-gradient(145deg, #E0B0FF, #C38CCB);
+        box-shadow: 0 0 25px rgba(223, 160, 255, 0.8), 0 0 50px rgba(223, 160, 255, 0.6);
+    }
 
  /******* Duplicates of numbers house to use for examples: ********/
 .num-house-slide {

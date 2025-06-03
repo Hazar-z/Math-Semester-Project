@@ -282,7 +282,7 @@ document.addEventListener('mouseenter', (e) => {
 	// Make sure it's a valid Element
 	if (!(e.target instanceof Element)) return;
 
-	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound, .answer, .continue-button, .composition-next');
+	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound, .answer, .continue-button, .composition-next, .special-button');
 	if (target) {
 		// Play poof sound
 		const poofSound = document.getElementById('poof-sound');
