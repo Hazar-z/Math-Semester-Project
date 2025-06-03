@@ -20,26 +20,6 @@ Reveal.addEventListener('slidechanged', (event) => {
 });
 
 
-//Method to animate visual effect
-		Reveal.addEventListener('slidechanged', function (event) {
-			console.log("Fragment shown!", event.fragment);  //debug
-			const currentSlide = event.currentSlide;
-			const boxes = currentSlide.querySelectorAll('.circle-draw');
-			boxes.forEach(box => {
-			//Reset animation
-			box.style.animation = 'none';
-			box.style.opacity = '0';
-			void box.offsetWidth;
-
-//Read custom delay from data-delaty attribute
-			const delay = parseInt(box.getAttribute('data-delay')) ||100;
-
-			 setTimeout(() => {
-                box.style.animation = 'drawboxframe 1s ease-out forwards';
-            }, delay);
-        });
-		});
-
 //function that play "tap-sound" when clicking a button and then forwards the user to the targetSlideIndex
         function playTapAndGo(slideIndex, soundId = 'tap-sound') {
             const sound = document.getElementById(soundId);
@@ -129,6 +109,20 @@ Reveal.on('slidechanged', (event) => {
 	if (event.currentSlide) {
 		attachSoundListeners(event.currentSlide);
 	}
+
+	// 🔁 Animate circle-draw boxes
+	const boxes = event.currentSlide.querySelectorAll('.circle-draw');
+	boxes.forEach(box => {
+		box.style.animation = 'none';
+		box.style.opacity = '0';
+		void box.offsetWidth;
+
+		const delay = parseInt(box.getAttribute('data-delay')) || 100;
+		console.log('Activating box:', box.id, 'with delay:', delay); //debug
+		setTimeout(() => {
+			box.style.animation = 'drawboxframe 1s ease-out forwards';
+		}, delay);
+	});
 });
 
 
@@ -285,6 +279,9 @@ function updateContinueButtons() {
 
 // Poof sound and star dust effect on hover:
 document.addEventListener('mouseenter', (e) => {
+	// Make sure it's a valid Element
+	if (!(e.target instanceof Element)) return;
+
 	const target = e.target.closest('.continue-to-next, #btn-replay, #btn-tutorial, .hover-sound, .answer, .continue-button, .composition-next');
 	if (target) {
 		// Play poof sound
@@ -310,6 +307,7 @@ document.addEventListener('mouseenter', (e) => {
 		}
 	}
 }, true);
+
 
 
 

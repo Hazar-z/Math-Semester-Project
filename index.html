@@ -218,19 +218,32 @@
 				<div class="house-content">
 					<!-- Title -->
 					<div class="delayed-p" data-fragment-index="1"
-						 style=" display: inline-block; max-width:90vw; width:1100px; position:absolute; color: #5C469C; background-color: #FFEB88; top: 5%; left: 75%; transform: translateX(-50%);  padding: 15px 20px; border-radius:20px; text-align:right; font-size:40px; ">
+						 style=" display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C469C; background-color: #FFEB88; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; padding-bottom: 0; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
+
 					</div>
 
 					<!-- Main explanation -->
 					<div class="delayed-p" id="main-explanation"
 						 data-fragment-index="2"
-						 style="position:relative; margin-top:270px; margin-left:50px; animation-delay:2s;">
+						 style="position: relative; margin-top: 270px; margin-left: 50px; animation-delay: 2s; padding-bottom: 0; padding-top:2px;">
 						כל מספר עשרוני מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio6')" style="vertical-align: middle; margin-top: 5px; display: inline-block; ">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 45px; height: 40px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 					<!-- Decimal nummber components-->
 					<div class="delayed-p" data-fragment-index="3" style="animation-delay:5s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
+						<div style=" position: absolute; top: 115%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 148%; left: 26.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
@@ -246,14 +259,23 @@
 					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 105%; left: 40%; animation-delay:11s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
+							<br>
+
+							<span onclick="playAudio('audio8')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
+
 						</div>
 						<!-- highlight/circle of decimal dot-->
-						<div id="square-frame-2" class="circle-draw" data-delay="11000" style="position: absolute; top: 267%; left: 26.5%; border-radius: 55px;
-							 width: 108px; height: 108px; border: 5px solid #cceeff; box-shadow: 0 0 10px 4px rgba(204, 238, 255, 0.8); background-color: #cceeff "> </div>
+						<div id="square-frame-2" class="circle-draw" data-delay="11000" style="position: absolute; top: 160%; left: 26.5%; border-radius: 55px;
+							 width: 108px; height: 108px; border: 5px solid #cceeff; box-shadow: 0 0 10px 4px rgba(204, 238, 255, 0.8); background-color: #cceeff ">
+						</div>
 					</div>
 
 					<div class="delayed-p" data-fragment-index="6" style="animation-delay:14s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap;">
+						<div style="position: absolute; top: 115%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 148%; left: 65%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space:nowrap;">
@@ -271,22 +293,53 @@
 					<div class="delayed-p" data-fragment-index="4" style="position: absolute; top: 115%; left: -30%; animation-delay:8s;">
 						<div style="background-color: #E7FFE7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 							שהוא כולל את<br>המספרים מצד<br>שמאל של הנקודה<br>העשרונית
+
+							<span onclick="playAudio('audio7')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
 						</div>
 					</div>
 					<!-- sqaure frame: will animate via JS -->
 					<div id="square-frame-1" class="circle-draw" data-delay="8000"
-						 style="position: absolute; top: 97.5%; left: -3.5%; border: 5px solid #E7FFE7; box-shadow: 0 0 25px 10px rgba(231, 255, 231, 0.8);"></div>
+						 style="position: absolute; top: 105.5%; left: -3.5%; border: 5px solid #E7FFE7; box-shadow: 0 0 25px 10px rgba(231, 255, 231, 0.8);"></div>
 
 					<!-- Side Text on the right -->
 					<div class="delayed-p" data-fragment-index="7" style="position: absolute; top: 115%; right: -32%; animation-delay:17s;">
 						<div style="background-color: #FFE7E7; padding: 20px; border-radius: 15px; font-size: 30px; color: #4B4B4B;">
 							שהוא כולל את<br>המספרים מצד<br>ימין של הנקודה<br>העשרונית
+
+							<span onclick="playAudio('audio9')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
+
 						</div>
 						<!-- draw a squared frame right side-->
-						<div id="square-frame-3" class="circle-draw" data-delay="17000" style="position: absolute; top: -39.5%; left: -189.5%;
-							 border: 5px solid #f5cccc; box-shadow: 0 0 20px 8px rgba(245, 204, 204, 0.7); "> </div>
+						<div id="square-frame-3" class="circle-draw" data-delay="17000" style="position: absolute; top: -18.5%; left: -189.5%; border: 5px solid #f5cccc; box-shadow: 0 0 20px 8px rgba(245, 204, 204, 0.7); z-index: 99999"> </div>
+					</div>
+
+					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+							לחץ כדי להמשיך
+						</div>
+					</div>
+					<div class="click-to-continue delayed-p"
+						 data-fragment-index="8"
+						 style="position: absolute; top: 25%; left: -20%; width: 140px; height: 140px; animation-delay: 18.5s;">
+
+						<img src="Math-Project/pointy-arrow-green.png"
+							 alt="Arrow"
+							 style="width: 100%; height: 100%; transform: scaleX(-1) rotate(-70deg);">
 					</div>
 				</div>
+				<audio id="audio5" src="Math-Project/audio-instrcts/lets-look-num-comp.m4a"></audio>
+				<audio id="audio6" src="Math-Project/audio-instrcts/every-dec-num.m4a"></audio>
+				<audio id="audio7" src="Math-Project/audio-instrcts/whole-left.m4a"></audio>
+				<audio id="audio8" src="Math-Project/audio-instrcts/decimal-pnt.m4a"></audio>
+				<audio id="audio9" src="Math-Project/audio-instrcts/frac-right.m4a"></audio>
 			</section>
 
 			<!-- Slide 8 index=7  composition of 0.25-->
@@ -383,10 +436,10 @@
 							אלפיות
 						</div>
 					</div>
-					<div class="delayed-p" style="animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-						<button style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
-							לחץ כדי להסביר
-						</button>
+					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+							לחץ כדי להמשיך
+						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
 						 data-fragment-index="7"
@@ -513,20 +566,155 @@
 			</section>
 			<!-- Slide 10 index=9 importance of zero in decimal numbers example:0.3 -->
 			<section>
-				Importance of ZERO after the deciaml point.
-				<p style="color:gold"> Example: 0.3 </p>
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: #4ebeb8; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
+					לאפס משמעות חשובה במספרים העשרוניים
+				</div>
+
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: steelblue; background-color: #FFF6D1; padding: 10px 25px; border-radius: 15px; display: inline-block; margin-bottom: 20px;">
+					לדוגמה:
+				</div>
+				<br />
+				<div class="delayed-p" style="font-size: 60px; color:steelblue; background-color: #FFF6D1; margin-bottom: 40px; padding: 10px 25px; border-radius: 15px; display: inline-block; ">
+					המספר העשרוני: <span style="font-size: 70px; font-weight: bold; color: #3bb38f; "> 0.3</span>
+				</div>
+
+				<div class="delayed-p" style="background-color: white; padding: 30px; border-radius: 15px; font-size: 30px; color: black; line-height: 2; text-align: right; font-weight:bold;">
+					יש בתוכו <span style="color: mediumseagreen; font-weight: bold;"> 3 עשיריות</span> = 0.<span style="color: mediumseagreen;">3</span> <br>
+					הוא שווה ל־<span style="color: lightseagreen; font-weight: bold;">  30 במאיות</span> = 0.<span style="color: lightseagreen; ">30</span><br>
+					וגם שווה ל־<span style="color: forestgreen; font-weight: bold;"> 300 באלפיות</span> = 0.<span style="color: forestgreen;;">300</span> <br>
+				</div>
+
+				<div class="continue-button delayed-p" style="margin-top: 50px;">
+					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)"> לחץ כאן כדי להמשיך <br /> <span style="line-height:1.3;"> לדוגמה נוספת: </span> </a>
+				</div>
 			</section>
+
 
 			<!-- Slide 11 index=10 another example 0.03-->
 			<section>
-				Importance of ZERO after the deciaml point.
-				<p style="color:gold"> Example: 0.03 </p>
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: #4ebeb8; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
+					לאפס משמעות חשובה במספרים העשרוניים
+				</div>
+
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: steelblue; background-color: #FFF6D1; padding: 10px 25px; border-radius: 15px; display: inline-block; margin-bottom: 20px;">
+					לדוגמה:
+				</div>
+				<br />
+				<div class="delayed-p" style="font-size: 60px; color:steelblue; background-color: #FFF6D1; margin-bottom: 40px; padding: 10px 25px; border-radius: 15px; display: inline-block; ">
+					המספר העשרוני: <span style="font-size: 70px; font-weight: bold; color: #3bb38f; "> 0.03</span>
+				</div>
+
+				<div class="delayed-p" style="background-color: white; padding: 30px; border-radius: 15px; font-size: 30px; color: black; line-height: 2; text-align: right; font-weight:bold;">
+					יש בתוכו <span style="color: mediumseagreen; font-weight: bold;"> 0 עשיריות</span> = 0.<span style="color: mediumseagreen;">0</span>3 <br>
+					הוא שווה ל־<span style="color: lightseagreen; font-weight: bold;">  3 במאיות</span> = 0.0<span style="color: lightseagreen; ">3</span><br>
+					וגם שווה ל־<span style="color: forestgreen; font-weight: bold;"> 30 באלפיות</span> = 0.0<span style="color: forestgreen;;">30</span> <br>
+				</div>
+
+				<div class="continue-button delayed-p" style="margin-top: 50px;">
+					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)"> לחץ כאן כדי להמשיך </a>
+				</div>
 			</section>
 
 			<!-- Slide 12 index=11 numbers' x-axis  0.25 vs, 0.3-->
-			<section>
-				view: 0.25 and 0.3 on numbers axis
+			<section dir="rtl" style="padding: 40px;">
+				<style>
+                    td {
+                        border-left: 2px solid lightgrey;
+                        border-right: 2px solid lightgrey;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+				</style>
+
+				<!-- Title -->
+				<h3 class="delayed-p" style="text-align: center; font-size: 42px; color: whitesmoke; margin-bottom: 40px; height: 60px; width: 90%; background-color: cadetblue; vertical-align: middle; margin-right:40px; padding-top:5px; border-radius:10px; ">
+					עכשיו נסדר את המספרים על ציר המספרים:
+				</h3>
+
+				<!-- Place Value Table -->
+				<div class="delayed-p" style="margin: auto; width: 95%; background-color: #fafafa; border-radius: 12px; overflow-x: auto; font-size: 24px; font-family: 'chewy', Arial; text-align: center; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+					<table style="width: 100%; border-collapse: collapse; direction: rtl;">
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">5</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">2</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td> </td>
+							<td> </td>
+
+						</tr>
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">3</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td> </td>
+
+						</tr>
+						<tr>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td style="background-color: hotpink;">אלפיות</td>
+							<td style="background-color: hotpink;">מאיות</td>
+							<td style="background-color: hotpink;">עשיריות</td>
+							<td style="background-color: cadetblue; text-align: center; vertical-align: middle;"> הנקודה העשרונית</td>
+							<td style="background-color: dodgerblue">אחדות</td>
+							<td style="background-color: dodgerblue">עשרות</td>
+							<td style="background-color: dodgerblue">מאות</td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td colspan="3" style="background-color: pink; text-align: center; vertical-align: middle;">החלק השברי</td>
+							<td style="color: black; font-weight: bold; font-size: 36px; text-align: center; vertical-align: middle;">●</td>
+							<td colspan="3" style="background-color: cornflowerblue; text-align: center; vertical-align: middle;">החלק השלם</td>
+						</tr>
+					</table>
+				</div>
+
+					<!-- Number Line -->
+				<div class="delayed-p" style="margin-top: 70px; position: relative; height: 100px; font-family: 'chewy', Arial;">
+					<!-- Arrow line -->
+					<div style="position: absolute; height: 10px; width: 90%; background-color: cadetblue; top: 42px; left: 5%; border-radius: 3px; "></div>
+					<!-- Ticks and labels -->
+					<div style="position: absolute; top: 18px; left: 5%; width: 90%; display: flex; justify-content: space-between; font-size: 24px; color: #F8F8F8; direction: ltr;">
+						<div>0</div>
+						<div>0.10</div>
+						<div>0.20</div>
+						<div style="color: #F7954C; font-weight: bold;">0.25</div>
+						<div style="color: #F7954C; font-weight: bold;">0.30</div>
+						<div>0.40</div>
+					</div>
+					<!-- Pac-Man Image ABOVE the number line -->
+					<img src="Math-Project/less-than-blue.png"
+						 alt="<"
+						 style="position: absolute; top: -20%; left: 62%; height: 70px;" />
+
+					<!-- Arrow pointing at Pac-Man -->
+					<img src="Math-Project/pointy-arrow-green.png"
+						 alt="arrow"
+						 style="position: absolute; top: 58%; left: 70%; height: 60px; transform: rotate(200deg) scaleY(-1);" />
+
+					<!-- Label text under arrow -->
+					<div style="position: absolute; top: 110%; left: 73%; font-size: 26px; font-weight: bold; color: #f7954c; background-color:floralwhite; padding:10px; border-radius:5px;">
+						0.25 <span style="color:cadetblue">קטן מ-</span>  0.30
+					</div>
+				</div>
+
+					<!-- Continue -->
+					<div class="continue-button delayed-p" style="margin-top: 60px;">
+						<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+					</div>
 			</section>
+			<section> what can we learn from this</section>
+
 
 
 			<!-- Slide 13 index=12 Example2: choose between 0.68 and 0.7-->
@@ -662,10 +850,10 @@
 							אלפיות
 						</div>
 					</div>
-					<div class="delayed-p" style="animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-						<button style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
-							לחץ כדי להסביר
-						</button>
+					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+							לחץ כדי להמשיך
+						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
 						 data-fragment-index="7"
@@ -790,8 +978,106 @@
 				</div>
 			</section>
 			<!-- comparision on numbers' axis 0.68 vs 0.7 -->
-			<section>
-				view: 0.68 and 0.7 on numbers axis
+			<section dir="rtl" style="padding: 40px;">
+				<style>
+					td {
+						border-left: 2px solid lightgrey;
+						border-right: 2px solid lightgrey;
+						text-align: center;
+						vertical-align: middle;
+					}
+				</style>
+
+				<!-- Title -->
+				<h3 class="delayed-p" style="text-align: center; font-size: 42px; color: whitesmoke; margin-bottom: 40px; height: 60px; width: 90%; background-color: cadetblue; vertical-align: middle; margin-right:40px; padding-top:5px; border-radius:10px; ">
+					עכשיו נסדר את המספרים על ציר המספרים:
+				</h3>
+
+				<!-- Place Value Table -->
+				<div class="delayed-p" style="margin: auto; width: 95%; background-color: #fafafa; border-radius: 12px; overflow-x: auto; font-size: 24px; font-family: 'chewy', Arial; text-align: center; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+					<table style="width: 100%; border-collapse: collapse; direction: rtl;">
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">8</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">6</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td> </td>
+							<td> </td>
+
+						</tr>
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">7</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td> </td>
+
+						</tr>
+						<tr>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td style="background-color: hotpink;">אלפיות</td>
+							<td style="background-color: hotpink;">מאיות</td>
+							<td style="background-color: hotpink;">עשיריות</td>
+							<td style="background-color: cadetblue; text-align: center; vertical-align: middle;"> הנקודה העשרונית</td>
+							<td style="background-color: dodgerblue">אחדות</td>
+							<td style="background-color: dodgerblue">עשרות</td>
+							<td style="background-color: dodgerblue">מאות</td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td colspan="3" style="background-color: pink; text-align: center; vertical-align: middle;">החלק השברי</td>
+							<td style="color: black; font-weight: bold; font-size: 36px; text-align: center; vertical-align: middle;">●</td>
+							<td colspan="3" style="background-color: cornflowerblue; text-align: center; vertical-align: middle;">החלק השלם</td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- Number Line -->
+				<div class="delayed-p" style="margin-top: 70px; position: relative; height: 100px; font-family: 'chewy', Arial;">
+					<!-- Arrow line -->
+					<div style="position: absolute; height: 10px; width: 120%; background-color: cadetblue; top: 42px; left: -5%; border-radius: 3px; "></div>
+					<!-- Ticks and labels -->
+					<div style="position: absolute; top: 18px; left: -5%; width: 120%; display: flex; justify-content: space-between; font-size: 24px; color: #F8F8F8; direction: ltr;">
+						<div>0</div>
+						<div>0.10</div>
+						<div>0.20</div>
+						<div>0.30</div>
+						<div>0.40</div>
+						<div>0.50</div>
+						<div>0.60</div>
+						<div style="color: #F7954C; font-weight: bold;">0.68</div>
+						<div style="color: #F7954C; font-weight: bold;">0.70</div>
+						<div>0.80</div>
+					</div>
+					<!-- Pac-Man Image ABOVE the number line -->
+					<img src="Math-Project/less-than-blue.png"
+						 alt="<"
+						 style="position: absolute; top: -20%; left: 89%; height: 70px;" />
+
+					<!-- Arrow pointing at Pac-Man -->
+					<img src="Math-Project/pointy-arrow-green.png"
+						 alt="arrow"
+						 style="position: absolute; top: 53%; left: 95%; height: 60px; transform: rotate(215deg) scaleY(-1);" />
+
+					<!-- Label text under arrow -->
+					<div style="position: absolute; top: 110%; left: 90%; font-size: 26px; font-weight: bold; color: #f7954c; background-color:floralwhite; padding:10px; border-radius:5px; width:23%">
+						0.68 <span style="color:cadetblue">קטן מ-</span>  0.70
+					</div>
+				</div>
+
+				<!-- Continue -->
+				<div class="continue-button delayed-p" style="margin-top: 60px;">
+					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+				</div>
 			</section>
 
 			<!-- choose between 1.31 and 1.4-->
@@ -928,10 +1214,10 @@
 							אלפיות
 						</div>
 					</div>
-					<div class="delayed-p" style="animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-						<button style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
-							לחץ כדי להסביר
-						</button>
+					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+							לחץ כדי להמשיך
+						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
 						 data-fragment-index="7"
@@ -1057,8 +1343,119 @@
 			</section>
 
 			<!-- numbers' axis 1.31 vs 1.4 -->
-			<section>
-				:view 1.31 and 1.4 on numbers axis
+			<section dir="rtl" style="padding: 40px;">
+				<style>
+					td {
+						border-left: 2px solid lightgrey;
+						border-right: 2px solid lightgrey;
+						text-align: center;
+						vertical-align: middle;
+					}
+				</style>
+
+				<!-- Title -->
+				<h3 class="delayed-p" style="text-align: center; font-size: 42px; color: whitesmoke; margin-bottom: 40px; height: 60px; width: 90%; background-color: cadetblue; vertical-align: middle; margin-right:40px; padding-top:5px; border-radius:10px; ">
+					עכשיו נסדר את המספרים על ציר המספרים:
+				</h3>
+
+				<!-- Place Value Table -->
+				<div class="delayed-p" style="margin: auto; width: 95%; background-color: #fafafa; border-radius: 12px; overflow-x: auto; font-size: 24px; font-family: 'chewy', Arial; text-align: center; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+					<table style="width: 100%; border-collapse: collapse; direction: rtl;">
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">1</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">3</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">1</td>
+							<td> </td>
+							<td> </td>
+
+						</tr>
+						<tr style="font-size: 36px;">
+							<td> </td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">0</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">4</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">●</td>
+							<td style="color: #FFB800; font-weight: bold; text-align: center; vertical-align: middle;">1</td>
+							<td> </td>
+
+						</tr>
+						<tr>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td>●</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td style="background-color: hotpink;">אלפיות</td>
+							<td style="background-color: hotpink;">מאיות</td>
+							<td style="background-color: hotpink;">עשיריות</td>
+							<td style="background-color: cadetblue; text-align: center; vertical-align: middle;"> הנקודה העשרונית</td>
+							<td style="background-color: dodgerblue">אחדות</td>
+							<td style="background-color: dodgerblue">עשרות</td>
+							<td style="background-color: dodgerblue">מאות</td>
+						</tr>
+						<tr style="font-weight: bold;">
+							<td colspan="3" style="background-color: pink; text-align: center; vertical-align: middle;">החלק השברי</td>
+							<td style="color: black; font-weight: bold; font-size: 36px; text-align: center; vertical-align: middle;">●</td>
+							<td colspan="3" style="background-color: cornflowerblue; text-align: center; vertical-align: middle;">החלק השלם</td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- Number Line -->
+				<div class="delayed-p" style="margin-top: 70px; position: relative; height: 130px; font-family: 'chewy', Arial;">
+
+					<!-- Bracket label above the gap -->
+					<div style="position: absolute; top: -30px; left: -2%; font-size: 28px; color: lightcoral; font-weight: bold;">
+						המספרים בין 0 עד 1
+					</div>
+
+					<!-- Arrow line -->
+					<div style="position: absolute; height: 10px; width: 120%; background-color: cadetblue; top: 50px; left: -5%; border-radius: 3px;"></div>
+
+					<!-- Ticks and labels -->
+					<div style="position: absolute; top: 20px; left: -5%; width: 120%; display: flex; justify-content: space-between; font-size: 30px; color: #F8F8F8; direction: ltr;">
+						<div style="color:lightcoral"> 0</div>
+						<div style="width: 50px;"></div> <!-- EMPTY GAP to represent 0–1 -->
+						<div style="color:lightcoral"> 1.0</div>
+						<div>1.10</div>
+						<div>1.20</div>
+						<div>1.30</div>
+						<div style="color: #F7954C; font-weight: bold;">1.31</div>
+						<div style="color: #F7954C; font-weight: bold;">1.40</div>
+						<div>1.50</div>
+					</div>
+
+					<!-- Arrow Image UNDER the 0–1 section -->
+					<img src="Math-Project/two-sided-arrow.png"
+						 alt="double arrow"
+						 style="position: absolute; bottom: -20px; left: -3%; height: 110px; width:275px;" />
+
+					<!-- Pac-Man Image ABOVE the number line -->
+					<img src="Math-Project/less-than-blue.png"
+						 alt="<"
+						 style="position: absolute; top: -15%; left: 86%; height: 70px;" />
+
+					<!-- Arrow pointing at Pac-Man -->
+					<img src="Math-Project/pointy-arrow-green.png"
+						 alt="arrow"
+						 style="position: absolute; top: 53%; left: 92%; height: 60px; transform: rotate(215deg) scaleY(-1);" />
+
+					<!-- Label text under arrow -->
+					<div style="position: absolute; top: 100%; left: 90%; font-size: 26px; font-weight: bold; color: #f7954c; background-color: floralwhite; padding: 10px; border-radius: 5px; width: 23%;">
+						 1.31  <span style="color: cadetblue;">  קטן מ-  </span>1.40  
+					</div>
+				</div>
+
+
+				<!-- Continue -->
+				<div class="continue-button delayed-p" style="margin-top: 60px;">
+					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+				</div>
 			</section>
 
 

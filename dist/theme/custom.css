@@ -316,6 +316,7 @@ body {
     display: block;
     justify-items:center;
     justify-self:center;
+    cursor:pointer;
 }
 
 
@@ -484,6 +485,25 @@ body {
     opacity: 0;
     transform: scale(0.2);
 }
+
+
+.triangle-frame {
+    position: absolute;
+    top: 5%; /* adjust based on your layout */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 230px solid transparent;
+    border-right: 230px solid transparent;
+    border-bottom: 160px solid rgba(255, 145, 0, 0.8); /* orange frame color */
+
+    filter: drop-shadow(0 0 12px rgba(255, 145, 0, 0.8)); /* glow around triangle */
+    z-index: 9999;
+    pointer-events: none;
+
+}
+
 
  /******* Duplicates of numbers house to use for examples: ********/
 .num-house-slide {
