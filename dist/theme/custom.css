@@ -115,9 +115,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
     }
 }
 
+@keyframes gemGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(255, 240, 255, 0.8), 0 0 16px rgba(240, 220, 255, 0.5);
+    }
+
+    50% {
+        text-shadow: 0 0 16px rgba(255, 240, 255, 1), 0 0 32px rgba(240, 220, 255, 0.8);
+    }
+}
+
 /*=== my stylings ===*/
-.animate-on-load{
-    
+.animate-on-load{   
 }
 .Background-theme{
     background-size: cover;
@@ -597,6 +606,13 @@ body {
     .click-to-continue.visible-now {
         animation: fade-in 2s ease-in forwards, bounce 1.2s 2.2s infinite;
     }
+
+.sparkle-gem {
+    font-size: 55px;
+    position: relative;
+    color: white;
+    animation: gemGlow 1.5s infinite ease-in-out;
+}
 
 /*****************************************/
 /* Game slides styling: */

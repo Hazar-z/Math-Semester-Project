@@ -1,7 +1,7 @@
 
 //JS function for Math-Project Game using Reveal.js
 let allowSound = true;
-
+let correctStreak = 0;  //variable for streak points (3 or mores corrects answwers in row)
 
 //detect when the slide becomes visible and trigger animation with delay
 Reveal.addEventListener('slidechanged', (event) => {
@@ -176,6 +176,21 @@ function bindAnswerButtons() {
 					console.warn("Feedback sound failed to play:", err);
 				});
 			}
+			// ✅ Handle Points & Streaks
+			if (isCorrect) {
+				addPoints(10); // add 10 points for every correct answer- Regular points
+				correctStreak++;
+
+				if (correctStreak >= 3) {
+					addPoints(25); // Bonus
+					showStreakPopup(25); // Visual
+					playAudio('streak-sound'); // 🎧 special sound
+				}
+			}
+				else {
+					correctStreak = 0;
+				 }
+
 
 			// 🕒 Delay navigation slightly so sound gets committed
 			setTimeout(() => {
@@ -184,6 +199,22 @@ function bindAnswerButtons() {
 		});
 	});
 }
+
+
+//helper function for STREAK POINTS:
+function showStreakPopup(bonus) {
+	const popup = document.getElementById('points-popup');
+	popup.innerHTML = `🔥 רצף!<br><span style="color: cadetblue;">+${bonus}</span>`;
+	popup.style.opacity = '1';
+	popup.style.transform = 'translateX(-100px) translateY(-25px) scale(1.1)';
+
+	setTimeout(() => {
+		popup.style.opacity = '0';
+		popup.style.transform = 'translateY(0) scale(1)';
+	}, 3000);
+}
+
+
 
 
 
@@ -228,6 +259,15 @@ function shuffleQuestions() {
 	updateContinueButtons();  //  update continue buttons after shuffling
 	bindContinueButtons();    //  re-binds after setting data
 	bindAnswerButtons();      // rebind answer after setting data
+
+	const allQuestions = document.querySelectorAll('.question-slide');
+	allQuestions.forEach(q => q.removeAttribute('data-start'));
+
+	const firstQuestion = document.querySelector('.question-group .question-slide');
+	if (firstQuestion) {
+		firstQuestion.setAttribute('data-start', 'true');
+	}
+
 }
 
 function updateContinueButtons() {
@@ -276,6 +316,10 @@ function updateContinueButtons() {
 		});
 	});
 }
+
+
+
+
 
 // Poof sound and star dust effect on hover:
 document.addEventListener('mouseenter', (e) => {
@@ -454,45 +498,59 @@ Reveal.on('slidechanged', (event) => {
 
 // Unified logic for showing/hiding UI and starting timer
 function handleGameUIVisibility(currentSlide) {
-	const slideId = currentSlide?.id;
-	const isGameSlide = slideId === 'start-game' || currentSlide?.classList.contains('question-slide');
+	// Traverse up to check if current slide is inside a .question-group
+	let parent = currentSlide;
+	let insideGame = false;
 
-	if (isGameSlide) {
+	while (parent) {
+		if (parent.classList && parent.classList.contains('question-group')) {
+			insideGame = true;
+			break;
+		}
+		parent = parent.parentElement;
+	}
+
+	if (insideGame) {
 		showGameUI();
-		startGameTimer(); // will auto-block if already started
+		startGameTimer(); // Still safe, will not restart
 		gameStarted = true;
 	} else {
 		hideGameUI();
 	}
 }
 
+
 // Show pause and timer with fade-in
 function showGameUI() {
 	const timer = document.getElementById('game-timer');
 	const pause = document.querySelector('.pause-button');
-	if (!timer || !pause) return;
+	const points = document.getElementById('points-container');
+	if (!timer || !pause || !points) return;
 
 	timer.style.display = 'block';
 	pause.style.display = 'block';
+	points.style.display = 'flex'; // ✅ Show points
 
 	setTimeout(() => {
 		timer.style.opacity = '1';
 		pause.style.opacity = '1';
+		points.style.opacity = '1';
 	}, 50);
 }
+
 
 // Hide pause and timer completely
 function hideGameUI() {
 	const timer = document.getElementById('game-timer');
 	const pause = document.querySelector('.pause-button');
-	if (!timer || !pause) return;
+	const points = document.getElementById('points-container');
+	if (!timer || !pause || !points) return;
 
 	timer.style.display = 'none';
 	pause.style.display = 'none';
+	points.style.display = 'none'; // ✅ Hide points
 }
 
-
- //function that activate for ' data-correct="true" ': and plays sound accordingly: 
 
 
 
