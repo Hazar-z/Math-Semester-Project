@@ -2,6 +2,10 @@
 //JS function for Math-Project Game using Reveal.js
 let allowSound = true;
 let correctStreak = 0;  //variable for streak points (3 or mores corrects answwers in row)
+let musicPlaying = false;
+const bgMusic = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-toggle');
+
 
 //detect when the slide becomes visible and trigger animation with delay
 Reveal.addEventListener('slidechanged', (event) => {
@@ -94,10 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 🔁 WHEN SLIDE CHANGES
 Reveal.on('slidechanged', (event) => {
-	// Stop all playing audio
 	document.querySelectorAll('audio').forEach(audio => {
-		audio.pause();
-		audio.currentTime = 0;
+		// ✅ Skip pausing the background music
+		if (audio.id !== 'bg-music') {
+			audio.pause();
+			audio.currentTime = 0;
+		}
 	});
 
 	// Clean up old listeners from previous slide
@@ -198,6 +204,11 @@ function bindAnswerButtons() {
 			}, 1000); // 
 		});
 	});
+}
+//helper function to reset points:
+function resetPoints() {
+	totalPoints = 0;
+	document.getElementById('points-count').textContent = '0';
 }
 
 
@@ -353,7 +364,27 @@ document.addEventListener('mouseenter', (e) => {
 }, true);
 
 
+let totalPoints = 0;
 
+// Function to show +X points animation
+function showPointsPopup(pts) {
+	const popup = document.getElementById('points-popup');
+	popup.textContent = `+${pts}`;
+	popup.style.opacity = '1';
+	popup.style.transform = 'translateY(-20px)';
+
+	setTimeout(() => {
+		popup.style.opacity = '0';
+		popup.style.transform = 'translateY(0)';
+	}, 1000);
+}
+
+// Function to add points
+function addPoints(num) {
+	totalPoints += num;
+	document.getElementById('points-count').textContent = totalPoints;
+	showPointsPopup(num);
+}
 
 
 
@@ -417,6 +448,7 @@ function goHome() {
 	}
 
 	resetGameState();   // Reset slide position
+	resetPoints();		//reset points
 	resetGameTimer();   // Reset timer
 	shuffleQuestions(); // Rebuild question order if needed
 
@@ -498,7 +530,6 @@ Reveal.on('slidechanged', (event) => {
 
 // Unified logic for showing/hiding UI and starting timer
 function handleGameUIVisibility(currentSlide) {
-	// Traverse up to check if current slide is inside a .question-group
 	let parent = currentSlide;
 	let insideGame = false;
 
@@ -512,12 +543,26 @@ function handleGameUIVisibility(currentSlide) {
 
 	if (insideGame) {
 		showGameUI();
-		startGameTimer(); // Still safe, will not restart
+		startGameTimer();
 		gameStarted = true;
+
+		// ✅ START music
+		if (bgMusic.paused) {
+			bgMusic.play().catch(() => { });
+		}
 	} else {
 		hideGameUI();
+
+		// ✅ STOP music when leaving game
+		if (!bgMusic.paused) {
+			bgMusic.pause();
+			bgMusic.currentTime = 0;
+		}
 	}
 }
+
+
+
 
 
 // Show pause and timer with fade-in
@@ -525,6 +570,7 @@ function showGameUI() {
 	const timer = document.getElementById('game-timer');
 	const pause = document.querySelector('.pause-button');
 	const points = document.getElementById('points-container');
+	const musicBtn = document.getElementById('music-toggle');
 	if (!timer || !pause || !points) return;
 
 	timer.style.display = 'block';
@@ -536,6 +582,21 @@ function showGameUI() {
 		pause.style.opacity = '1';
 		points.style.opacity = '1';
 	}, 50);
+	// Auto-play music on first entry
+	if (!musicPlaying) {
+		bgMusic.play().catch(() => { }); // autoplay-safe
+		musicPlaying = true;
+	}
+	musicBtn.style.display = 'block';
+	setTimeout(() => {
+		musicBtn.style.opacity = '1';
+	}, 50);
+
+	volumeSlider.style.display = 'block';
+	setTimeout(() => {
+		volumeSlider.style.opacity = '1';
+	}, 50);
+
 }
 
 
@@ -544,14 +605,34 @@ function hideGameUI() {
 	const timer = document.getElementById('game-timer');
 	const pause = document.querySelector('.pause-button');
 	const points = document.getElementById('points-container');
-	if (!timer || !pause || !points) return;
+	const musicBtn = document.getElementById('music-toggle');
+
+	if (!timer || !pause || !points || !musicBtn) return;
 
 	timer.style.display = 'none';
 	pause.style.display = 'none';
-	points.style.display = 'none'; // ✅ Hide points
+	points.style.display = 'none';
+	musicBtn.style.display = 'none'; // ✅ Just hide, don’t stop music
+	volumeSlider.style.display = 'none';
+
 }
 
+//Toggle Button Logic
+musicBtn.addEventListener('click', () => {
+	if (bgMusic.paused) {
+		bgMusic.play().catch(() => { });
+		musicBtn.style.backgroundImage = "url('Math-Project/mute-music.png')";
+	} else {
+		bgMusic.pause();
+		musicBtn.style.backgroundImage = "url('Math-Project/unmute-music.png')";
+	}
+});
 
+//slider control:
+const volumeSlider = document.getElementById('volume-slider');
+volumeSlider.addEventListener('input', () => {
+	bgMusic.volume = parseFloat(volumeSlider.value);
+});
 
 
 // Shuffle only once when the DOM is ready (before Reveal.initialize)
@@ -573,6 +654,7 @@ document.addEventListener('click', (e) => {
 		if (tapSound) tapSound.play();
 
 		resetGameState();
+		resetPoints(); 
 		resetGameTimer();
 		shuffleQuestions();
 
@@ -588,6 +670,7 @@ document.addEventListener('click', (e) => {
 		if (tapSound) tapSound.play();
 
 		resetGameState();
+		resetPoints();
 		resetGameTimer();
 		shuffleQuestions();
 

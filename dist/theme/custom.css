@@ -255,8 +255,6 @@ body {
     left: 180px;
 }
 
-
-
 /* pause button styling: */
 .pause-button {
     left: 120px;
@@ -292,6 +290,40 @@ body {
              .hidden{
                  display:none !important;
              }
+
+
+.music-toggle {
+    left: 27px; /* Position near the nav arrows */
+    top: 290px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px dotted #FFC0CB; /* or any color like cadetblue */
+}
+
+
+#volume-slider {
+    width: 130px;
+    height: 45px !important;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    background: transparent;
+    appearance: auto; /* keep native look */
+    border: none; /* let the browser render the slider */
+    outline: 3px dotted #ffb6c1; /* tightly hugging dotted frame */
+    outline-offset: 2px; /* optional: pull border in or out */
+    border-radius: 10px;
+    box-shadow: none;
+    cursor: pointer;
+    position: fixed;
+    left: -13px;
+    top: 190px;
+    z-index: 9999;
+    display: block; /* or 'none' if toggling in game */
+}
+
+
+
 
 
 .audio-btn {
