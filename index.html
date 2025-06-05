@@ -58,7 +58,7 @@
 			</section>
 
 			<!-- Slide 2 index=1-->
-			<section class="Slide2" >
+			<section class="Slide2">
 				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
 					<div onclick="playAudio('audio0')" class="audio-border" style="margin-left: 20px;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon">
@@ -71,7 +71,7 @@
 						</h3>
 					</div>
 				</div>
-				<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>
+
 
 				<!-- Slide2 fragments-->
 				<ul class="delayed-p" style="text-align:right; animation-delay:2s;  line-height:1.5px;">
@@ -96,8 +96,7 @@
 						</div>
 					</li>
 				</ul>
-				<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>
-				<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>
+
 				<div class="continue-button delayed-p" style="animation-delay: 3s;">
 					<!-- linked to slide3: index=2-->
 					<a onclick="playTapAndGo(2)"
@@ -128,7 +127,7 @@
 					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
 				</div>
-				<audio id="audio3" src="Math-Project/audio-instrcts/choose-big-num.m4a"></audio>
+
 				<div style="display: flex;
 								gap:80px;
 								justify-content:space-between;
@@ -146,10 +145,28 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר</p>
-				<div class="composition-next">
-					<a onclick="playTapAndGo(5)" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 			<!-- Slide 5 index=4 -->
@@ -157,11 +174,27 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר </p>
-				<div class="composition-next">
-					<!--if we click, forward to slide-index=5-->
-					<a onclick="playTapAndGo(5)" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 			<!-- Slide 6 index=5-->
@@ -196,7 +229,7 @@
 					</div>
 
 				</div>
-				<audio id="audio4" src="Math-Project/audio-instrcts/lets-compose.m4a"></audio>
+
 
 				<div style="display: flex;
 						gap:80px;
@@ -335,11 +368,7 @@
 							 style="width: 100%; height: 100%; transform: scaleX(-1) rotate(-70deg);">
 					</div>
 				</div>
-				<audio id="audio5" src="Math-Project/audio-instrcts/lets-look-num-comp.m4a"></audio>
-				<audio id="audio6" src="Math-Project/audio-instrcts/every-dec-num.m4a"></audio>
-				<audio id="audio7" src="Math-Project/audio-instrcts/whole-left.m4a"></audio>
-				<audio id="audio8" src="Math-Project/audio-instrcts/decimal-pnt.m4a"></audio>
-				<audio id="audio9" src="Math-Project/audio-instrcts/frac-right.m4a"></audio>
+
 			</section>
 
 			<!-- Slide 8 index=7  composition of 0.25-->
@@ -352,6 +381,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -362,17 +397,29 @@
 						<span style="font-weight: bold; font-size: 1.15em; font-family: 'Chewy'; letter-spacing: 0.15em;">
 							<span style="color: #2C91E6;">0.25</span>
 						</span>	מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio10')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 23.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio11')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -388,13 +435,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 150%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -405,14 +452,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							2
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio12')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -424,8 +477,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							5
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio13')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<img src="Math-Project/pointy-arrow.png"
 							 alt="Arrow"
@@ -439,6 +498,12 @@
 					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להמשיך
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio01')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
 						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
@@ -463,6 +528,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -474,17 +545,29 @@
 							<span style="color: #2C91E6;">0.3</span><span style="color: #4CAF50;">0</span>
 						</span>
 						מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio14')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 24%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio11')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -500,13 +583,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 152%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -517,14 +600,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							3
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio15')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -536,8 +625,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio16')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<div style=" position: absolute; top: 130%; left: 92%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אלפיות
@@ -554,23 +649,41 @@
 						 class="question-mark-bounce delayed-p"
 						 data-fragment-index="8"
 						 style="animation-delay: 17s;">
-					<div class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+					<div  class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						מאיפה מגיע האפס?
 						<br><br>
-						<button class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+						<button onclick="playTapAndGo(9)" class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להסביר
 						</button>
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio17')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 
 				</div>
 			</section>
 			<!-- Slide 10 index=9 importance of zero in decimal numbers example:0.3 -->
 			<section>
-				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: #4ebeb8; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: cadetblue; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
 					לאפס משמעות חשובה במספרים העשרוניים
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio28')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 				</div>
 
 				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: steelblue; background-color: #FFF6D1; padding: 10px 25px; border-radius: 15px; display: inline-block; margin-bottom: 20px;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio29')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					לדוגמה:
 				</div>
 				<br />
@@ -579,24 +692,60 @@
 				</div>
 
 				<div class="delayed-p" style="background-color: white; padding: 30px; border-radius: 15px; font-size: 30px; color: black; line-height: 2; text-align: right; font-weight:bold;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio30')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					יש בתוכו <span style="color: mediumseagreen; font-weight: bold;"> 3 עשיריות</span> = 0.<span style="color: mediumseagreen;">3</span> <br>
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio31')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					הוא שווה ל־<span style="color: lightseagreen; font-weight: bold;">  30 במאיות</span> = 0.<span style="color: lightseagreen; ">30</span><br>
+
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio32')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					וגם שווה ל־<span style="color: forestgreen; font-weight: bold;"> 300 באלפיות</span> = 0.<span style="color: forestgreen;;">300</span> <br>
 				</div>
 
-				<div class="continue-button delayed-p" style="margin-top: 50px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)"> לחץ כאן כדי להמשיך <br /> <span style="line-height:1.3;"> לדוגמה נוספת: </span> </a>
+				<div class="continue-button delayed-p" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(10)"> לחץ כאן כדי להמשיך <br /> <span style="line-height:1.3;"> לדוגמה נוספת: </span> </a>
+					<div onclick="playAudio('audio02')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+
 				</div>
 			</section>
 
 
 			<!-- Slide 11 index=10 another example 0.03-->
 			<section>
-				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: #4ebeb8; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
+				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: white; background-color: cadetblue; padding: 15px 30px; margin-bottom: 30px; border-radius: 15px; display: inline-block;">
 					לאפס משמעות חשובה במספרים העשרוניים
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio28')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 				</div>
 
 				<div class="delayed-p" style="font-size: 38px; font-weight: bold; color: steelblue; background-color: #FFF6D1; padding: 10px 25px; border-radius: 15px; display: inline-block; margin-bottom: 20px;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio33')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					לדוגמה:
 				</div>
 				<br />
@@ -605,14 +754,39 @@
 				</div>
 
 				<div class="delayed-p" style="background-color: white; padding: 30px; border-radius: 15px; font-size: 30px; color: black; line-height: 2; text-align: right; font-weight:bold;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio34')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					יש בתוכו <span style="color: mediumseagreen; font-weight: bold;"> 0 עשיריות</span> = 0.<span style="color: mediumseagreen;">0</span>3 <br>
+
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio35')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					הוא שווה ל־<span style="color: lightseagreen; font-weight: bold;">  3 במאיות</span> = 0.0<span style="color: lightseagreen; ">3</span><br>
-					וגם שווה ל־<span style="color: forestgreen; font-weight: bold;"> 30 באלפיות</span> = 0.0<span style="color: forestgreen;;">30</span> <br>
+
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio36')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
+					וגם שווה ל־<span style="color: forestgreen; font-weight: bold;"> 30 באלפיות</span> = 0.0<span style="color: forestgreen;">30</span> <br>
 				</div>
 
-				<div class="continue-button delayed-p" style="margin-top: 50px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)"> לחץ כאן כדי להמשיך </a>
+				<div class="continue-button delayed-p" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(11)" style="font-size: 24px; cursor: pointer;"> לחץ כאן כדי להמשיך </a>
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
 				</div>
+
 			</section>
 
 			<!-- Slide 12 index=11 numbers' x-axis  0.25 vs, 0.3-->
@@ -628,6 +802,12 @@
 
 				<!-- Title -->
 				<h3 class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;margin-bottom:15px;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio37')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					עכשיו נסדר את המספרים על ציר המספרים:
 				</h3>
 
@@ -700,8 +880,12 @@
 				</div>
 
 				<!-- Continue -->
-				<div class="continue-button delayed-p" style="margin-top: 60px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+				<div class="continue-button delayed-p" style="margin-top: 100px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(12)">לחץ כאן כדי להמשיך</a>
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
 				</div>
 			</section>
 
@@ -709,6 +893,12 @@
 			<section dir="rtl" style="padding: 40px; font-family: 'Noto Sans Hebrew', 'chewy', Arial;">
 				<!-- Top box question -->
 				<div class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio38')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					מה אפשר ללמוד מזה?
 				</div>
 
@@ -730,13 +920,23 @@
 
 				<!-- Bottom explanation block -->
 				<div class="delayed-p" style="background-color: #6e3e70; border: 6px solid; border-color: goldenrod ; border-radius: 15px; padding: 25px 25px; font-size: 28px; color: white; margin-top: 40px; line-height: 1.7;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio39')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					אורך המספר העשרוני לא תמיד עוזר לנו לזהות את ערכו.<br>
 					<span style="color:lightcoral; font-weight:bold; text-decoration:underline;">כלומר:</span> יכול להיות שמספר יהיה קצר  <span style="color:lightcoral; font-weight:bold;"> אך! </span> ערכו גדול יותר מהמספר הארוך.
 				</div>
 
 				<!-- Continue button -->
-				<div class="continue-button delayed-p" style="margin-top: 55px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כדי לראות  <br /> <span style="line-height:1.3;"> דוגמה נוספת   </span>  </a>
+				<div class="continue-button delayed-p" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(13)">לחץ כדי לראות  <br /> <span style="line-height:1.3;"> דוגמה נוספת   </span>  </a>
+					<div onclick="playAudio('audio03')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
 				</div>
 			</section>
 
@@ -763,11 +963,27 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר </p>
-				<div class="composition-next">
-					<!--if we click, forward to slide-index=______-->
-					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(16)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 			<!--example2- incorrect answer:-->
@@ -775,11 +991,27 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר </p>
-				<div class="composition-next">
-					<!--if we click, forward to slide-index=______-->
-					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(16)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 			<!-- Slide: composition of 0.68-->
@@ -792,6 +1024,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -802,17 +1040,29 @@
 						<span style="font-weight: bold; font-size: 1.15em; font-family: 'Chewy'; letter-spacing: 0.15em;">
 							<span style="color: #2C91E6;">0.68</span>
 						</span>	מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio18')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 23.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio11')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -828,13 +1078,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 150%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -845,14 +1095,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							6
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio19')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -864,8 +1120,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							8
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio26')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<img src="Math-Project/pointy-arrow.png"
 							 alt="Arrow"
@@ -877,8 +1139,14 @@
 						</div>
 					</div>
 					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+						<div  style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להמשיך
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio01')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
 						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
@@ -903,6 +1171,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -914,17 +1188,29 @@
 							<span style="color: #2C91E6;">0.7</span><span style="color: #4CAF50;">0</span>
 						</span>
 						מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio20')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 24%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio11')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -940,13 +1226,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 151%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -957,14 +1243,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							7
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio21')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -976,8 +1268,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio16')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<div style=" position: absolute; top: 130%; left: 92%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אלפיות
@@ -997,9 +1295,15 @@
 					<div class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						מאיפה מגיע האפס?
 						<br><br>
-						<button class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+						<button onclick="playTapAndGo(18)" class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להסביר
 						</button>
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio17')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 				</div>
 			</section>
@@ -1016,6 +1320,12 @@
 
 				<!-- Title -->
 				<h3 class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;margin-bottom:15px;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio37')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					עכשיו נסדר את המספרים על ציר המספרים:
 				</h3>
 
@@ -1094,8 +1404,12 @@
 				</div>
 
 				<!-- Continue -->
-				<div class="continue-button delayed-p" style="margin-top: 60px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+				<div class="continue-button delayed-p" style="margin-top: 100px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(19)">לחץ כאן כדי להמשיך</a>
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
 				</div>
 			</section>
 
@@ -1114,30 +1428,33 @@
 				</div>
 			</section>
 
-			<section>
-				<div class="delayed-p glow-underline"
-					 style="display: flex; flex-shrink:1; margin-top: 90px; animation-delay: 2s; margin-right: -60px; font-size:60px; position:absolute; flex-wrap: wrap; width: 150%; right: -17%; animation-delay:0s;">
-					<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-					</div>
-					בחר את המספר הגדול מבין שני המספרים הבאים:
-				</div>
-				<div style="display: flex; gap:80px; justify-content:space-between; margin:270px -70px 300px 300px; width: 1200px; height:300px; flex-wrap:wrap;">
-					<a data-feedback="Q-Ex3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> תשובה 1 </a>
-					<a data-feedback="Q-Ex3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> תשובה 2 </a>
-				</div>
-			</section>
 
 			<!-- example 3- correct answer:-->
 			<section data-role="feedback" id="Q-Ex3-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
 				<div class="feedback-centering">
 					<div class="ansFeedback"> נכון </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר </p>
-				<div class="composition-next">
-					<!--if we click, forward to slide-index=______-->
-					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(22)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 			<!--example 3- incorrect answer:-->
@@ -1145,11 +1462,27 @@
 				<div class="feedback-centering">
 					<div class="ansFeedback"> לא נכון   </div>
 				</div>
-				<p class="compose-num"> בוא נפרק כל מספר </p>
-				<div class="composition-next">
-					<!--if we click, forward to slide-index=______-->
-					<a onclick="playTapAndGo()" style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+
+					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
 				</div>
+
+
+				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst-blue.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
+					<a onclick="playTapAndGo(22)" style="cursor: pointer; color: white; margin-right: -52px; ">
+						לחץ כאן כדי להמשיך
+					</a>
+				</div>
+
 			</section>
 
 
@@ -1163,6 +1496,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -1173,17 +1512,29 @@
 						<span style="font-weight: bold; font-size: 1.15em; font-family: 'Chewy'; letter-spacing: 0.15em;">
 							<span style="color: #2C91E6;">1.31</span>
 						</span>	מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio22')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 24%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							1
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio23')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -1199,13 +1550,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 152%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -1216,14 +1567,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 64%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							3
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio15')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -1235,8 +1592,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							1
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio27')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<img src="Math-Project/pointy-arrow.png"
 							 alt="Arrow"
@@ -1250,6 +1613,12 @@
 					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להמשיך
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio01')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 50px; height: 45px; display: inline-block; margin-right:10px;">
+							</span>
 						</div>
 					</div>
 					<div class="click-to-continue delayed-p"
@@ -1273,6 +1642,12 @@
 					<div class="delayed-p peek-effect" data-fragment-index="1"
 						 style="animation-delay:1s; display: inline-block; max-width: 90vw; width: 1100px; position: absolute; color: #5C3B00; background-color: #FFF6D1; top: 5%; left: 75%; transform: translateX(-50%); padding: 15px 20px; border-radius: 20px; text-align: right; font-size: 40px; ">
 						בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio5')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 
 					<!-- Main explanation -->
@@ -1284,17 +1659,29 @@
 							<span style="color: #2C91E6;">1.4</span><span style="color: #4CAF50;">0</span>
 						</span>
 						מורכב מ:
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio24')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 					<!-- Decimal nummber components:-->
 					<div class="delayed-p peek-effect" data-fragment-index="3" style="animation-delay: 4s;">
-						<div style=" position: absolute; top: 105%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
+						<div style=" position: absolute; top: 102%; left: 10%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; font-weight: bold; ">
 							החלק השלם
 						</div>
 						<div style=" position: absolute; top: 130%; left: 25.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אחדות
 						</div>
-						<div style="position: absolute; top: 150%; left: 27%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 24%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							1
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio23')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -1310,13 +1697,13 @@
 							מאות
 						</div>
 					</div>
-					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 105%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
+					<div class="delayed-p peek-effect" data-fragment-index="5" style="position: absolute; top: 102%; left: 38.5%; font-weight: bold; animation-delay: 8s;">
 						<div style="padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B;">
 							הנקודה העשרונית
 						</div>
 					</div>
 					<!-- circle -->
-					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 154%; left: 46%; font-weight: bold;">
+					<div class="delayed-p" data-fragment-index="5" style="position: absolute; top: 152%; left: 46%; font-weight: bold;">
 						<div style="width: 97px; height: 90px; background-color:#2C91E6; border-radius: 50%; "></div>
 					</div>
 					<!-- Arrow -->
@@ -1327,14 +1714,20 @@
 						 style="position: absolute; top: 130%; left: 50%; width: 60px; height: 60px; transform: rotate(110deg); animation-delay: 10s;">
 
 					<div class="delayed-p peek-effect" data-fragment-index="6" style="animation-delay: 12s;">
-						<div style="position: absolute; top: 105%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
+						<div style="position: absolute; top: 102%; left: 75%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							החלק השברי
 						</div>
 						<div style=" position: absolute; top: 130%; left: 63.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							עשיריות
 						</div>
-						<div style="position: absolute; top: 150%; left: 67%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
+						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							4
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio25')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<!-- Arrow -->
 						<img src="Math-Project/pointy-arrow.png"
@@ -1346,8 +1739,14 @@
 						<div style=" position: absolute; top: 130%; left: 79%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							מאיות
 						</div>
-						<div style="position: absolute; top: 150%; left: 81%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
+						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
 							0
+							<!-- Audio Icon -->
+							<span onclick="playAudio('audio16')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+								<img src="Math-Project/audio-inst-blue.png"
+									 class="audio-icon"
+									 style="width: 40px; height: 35px; display: inline-block;">
+							</span>
 						</div>
 						<div style=" position: absolute; top: 130%; left: 92%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-weight: bold;">
 							אלפיות
@@ -1367,9 +1766,15 @@
 					<div class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						מאיפה מגיע האפס?
 						<br><br>
-						<button class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+						<button onclick="playTapAndGo(24)" class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להסביר
 						</button>
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio17')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst-blue.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; display: inline-block;">
+						</span>
 					</div>
 
 				</div>
@@ -1388,6 +1793,12 @@
 
 				<!-- Title -->
 				<h3 class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;margin-bottom:15px;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio37')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					עכשיו נסדר את המספרים על ציר המספרים:
 				</h3>
 
@@ -1479,9 +1890,14 @@
 
 
 				<!-- Continue -->
-				<div class="continue-button delayed-p" style="margin-top: 60px;">
-					<a onclick="playTapAndGo(SLIDE_INDEX_HERE)">לחץ כאן כדי להמשיך</a>
+				<div class="continue-button delayed-p" style="margin-top: 100px; display: flex; align-items: center; justify-content: center; gap: 10px; direction: rtl;">
+					<a onclick="playTapAndGo(25)">לחץ כאן כדי להמשיך</a>
+					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 55px; height: 55px; transform: translateY(6px);">
+					</div>
 				</div>
+
 			</section>
 
 
@@ -1492,6 +1908,12 @@
 				<div style="background-color: cadetblue; border: 20px solid #6b3f1d; border-radius: 25px; box-shadow: 0 0 40px rgba(255, 255, 255, 0.25), 0 0 25px #6b3f1d; padding: 60px; text-align: center; width: 700px; height: 130px;">
 
 					<div style="font-size: 48px; font-weight: bold; color: white; text-shadow: 2px 2px #3b3b3b;">
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio40')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<img src="Math-Project/audio-inst.png"
+								 class="audio-icon"
+								 style="width: 50px; height: 45px; display: inline-block;">
+						</span>
 						הגעת לסיום ההדרכה<br>בהצלחה
 					</div>
 				</div>
@@ -1499,27 +1921,62 @@
 				<!-- Buttons Container -->
 				<div style="display: flex; justify-content: center; margin-top: 80px; gap: 150px; flex-wrap: nowrap; font-weight: bold;">
 
-					<!-- Start Game Button -->
-					<a class="special-button" style="margin-right: -100px;" onclick="playTapAndGo(26)">
-						להתחיל במשחק<br>לחץ כאן
-					</a>
+					<div class="continue-button delayed-p"
+						 style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 20px; direction: rtl;">
 
-					<!-- Repeat Tutorial Button -->
-					<a class="special-button" onclick="playTapAndGo(1)">
-						לעבור על ההדרכה פעם<br>נוספת לחץ כאן
-					</a>
+						<!-- Start Game Button + Audio Icon stacked vertically -->
+						<div style="display: flex; flex-direction: column; align-items: center;">
+							<a class="special-button" onclick="playTapAndGo(26)" style="text-align: center;">
+								להתחיל במשחק<br>לחץ כאן
+							</a>
+							<div onclick="playAudio('audio41')" style="cursor: pointer; margin-top: 18px;">
+								<img src="Math-Project/audio-inst.png"
+									 style="width: 55px; height: 55px;">
+							</div>
+						</div>
+
+					</div>
+
+					<div class="continue-button delayed-p"
+						 style="margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 20px; direction: rtl;">
+
+						<!-- Repeat Tutorial Button + Audio Icon (stacked) -->
+						<div style="display: flex; flex-direction: column; align-items: center;">
+							<a class="special-button" onclick="playTapAndGo(1)" style="text-align: center;">
+								לעבור על ההדרכה פעם<br>נוספת לחץ כאן
+							</a>
+							<div onclick="playAudio('audio42')" style="cursor: pointer; margin-top: 18px;">
+								<img src="Math-Project/audio-inst.png"
+									 style="width: 55px; height: 55px;">
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 			</section>
 
 			<!-- Game insturction:-->
-			<section id="start-game" dir="rtl" style="padding: 40px; text-align: center;">
+			<section id="start-game" dir="rtl" style="padding: 20px; text-align: center;">
 				<!-- Main Message -->
 				<div style="background-color: cadetblue; color: white; font-size: 42px; font-weight: bold; letter-spacing: 2px; padding: 30px; border-radius: 20px; border: 10px solid #5b3e1b; width: fit-content; margin: auto; box-shadow: 0 0 40px rgba(255, 255, 255, 0.25), 0 0 25px #6b3f1d;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio43')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					המשחק עומד להתחיל!
 				</div>
 
 				<!-- Game Explanation -->
 				<div style="margin-top: 40px; font-size: 36px; color: white; font-weight: bold; text-align: right; margin-right: -30%; width:140%;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio44')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					<span style="color: limegreen; font-size: 40px; font-weight: bold; text-shadow: 0 0 8px rgba(50, 205, 50, 0.8), 0 0 14px rgba(0, 255, 0, 0.6);">◆ </span>
 					כאשר המשחק מתחיל: יוצג כפתור "הפסק" כדי לעצור את הטיימר
 				</div>
@@ -1533,8 +1990,14 @@
 				</div>
 
 				<div style="margin-top: -120px; font-size: 36px; font-weight: bold; color: white; text-align: right; margin-right: -30%; width: 140%;">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio45')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					<span style="color: orange; font-size: 40px; font-weight: bold; text-shadow: 0 0 8px rgba(255, 165, 0, 0.8),  0 0 14px rgba(255, 140, 0, 0.9);">◆ </span>
-					ברגע שתלחץ על הכפתור, המשחק יתחיל וטיימר יופיע למעלה בצד ימין
+					בּרגע שתתחיל את המשחק, יתחיל טיימר ויופיע למעלה בצד שמאל.
 				</div>
 
 				<!-- Pause Button Preview with Arrow -->
@@ -1547,24 +2010,45 @@
 
 				<!-- music slider: -->
 				<div style="margin-top: -120px; font-size: 36px; font-weight: bold; color: white; text-align: right; margin-right: -30%; width: 140%;">
-					<span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9);">◆</span> 
-					בנוסף תופעל מוזיקה ויוצג כפתור להגברת ולהנמכת הקול 
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio46')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
+					<span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9);">◆</span>
+					בנוסף תופעל מוזיקה ויוצג כפתור להגברת ולהנמכת הקול
 				</div>
 
 				<!-- volume slider Preview with Arrow -->
 				<div>
 					<div style="position: relative; height: 200px; margin-top: 20px; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9);">
-						<img src="Math-Project/pointy-arrow-blue.png" alt="arrow" style="position: absolute; top: -65%; left: -15%; height: 290px; transform: rotate(-20deg); z-index: 1;" />
+						<img src="Math-Project/pointy-arrow-blue.png" alt="arrow" style="position: absolute; top: -65%; left: -5%; height: 290px; transform: rotate(-20deg); z-index: 1;" />
 						<img src="Math-Project/music-slider.png" alt="pause button" style="z-index: 2; position: absolute; top: -145%; left: -30%; height: 270px; width: 120px; border: 4px solid; border-color: cornflowerblue; border-radius: 4px; padding: 1px; box-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9); " />
 					</div>
 				</div>
 
-				<!-- Start Game Button -->
-				<div style="margin-top: -150px;">
-					<a class="special-button" onclick="playTapAndGo(28)"
-					   style=" color: whitesmoke; font-weight: bold; background: linear-gradient(135deg, #A9C9C9, #7FBFBF); box-shadow: 0 0 20px rgba(95, 158, 160, 0.5), 0 0 40px rgba(95, 158, 160, 0.4); ">
+				<!-- Start Game Button + Audio Icon on same line (fully clickable) -->
+				<div style="display: flex; align-items: center; justify-content: center; gap: 14px; direction: rtl; margin-top: -190px; z-index: 9999; position: relative;">
+
+					<a class="special-button"
+					   onclick="playTapAndGo(27)"
+					   style="color: whitesmoke;
+			  font-weight: bold;
+			  text-align: center;
+			  background: linear-gradient(135deg, #A9C9C9, #7FBFBF);
+			  box-shadow: 0 0 20px rgba(95, 158, 160, 0.5), 0 0 40px rgba(95, 158, 160, 0.4);
+			  padding: 12px 20px;
+			  border-radius: 12px;
+			  font-size: 24px;">
 						להתחיל את המשחק<br>לחץ כאן
 					</a>
+
+					<!-- Audio Icon (safe clickable container) -->
+					<div style="cursor: pointer; z-index: 9999;" onclick="playAudio('audio41')">
+						<img src="Math-Project/audio-inst.png"
+							 style="width: 50px; height: 45px;">
+					</div>
 				</div>
 			</section>
 
@@ -1575,13 +2059,19 @@
 
 				<!-- Reminder Message -->
 				<div style="background-color: cadetblue; color: white; font-size: 40px; font-weight: bold; padding: 20px 40px; border-radius: 25px; border: 16px solid #5b3e1b; width: fit-content; margin: auto; box-shadow: 0 0 25px rgba(0,0,0,0.3);">
+					<!-- Audio Icon -->
+					<span onclick="playAudio('audio47')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+						<img src="Math-Project/audio-inst.png"
+							 class="audio-icon"
+							 style="width: 50px; height: 45px; display: inline-block;">
+					</span>
 					מה יהיה  במשחק?
 				</div>
 				<!-- Instructional Note -->
 				<div style="margin-top: 10px; font-size: 28px; color: whitesmoke; font-weight: bold; max-width: 800px; margin-inline: auto; line-height: 1.2;">
 					<span style="color:goldenrod;">◆</span> במשחק יהיה שאלות כמו בהדרכה <span style="color:lightcoral; text-decoration:underline;">  אבל</span> הפעם לא יהיו הסברים   !<br>
 					<span style="color:goldenrod;">◆</span> על כל תשובה נכונה תקבל נקודות <span class="sparkle-gem" style="font-size:55px;">💎</span><br>
-				   <span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.4);"> בהצלחה!</span>
+					<span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.4);"> בהצלחה!</span>
 				</div>
 				<!-- Screenshot Preview -->
 				<div style="position: relative; margin-top: 5px; font-size: 36px; display: inline-block;">
@@ -1594,11 +2084,26 @@
 				</div>
 
 
-				<div class="delayed-p" style="display: inline-block; animation-delay: 1.5s; position: absolute; top: 30%; left: -25%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-					<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
-						לחץ כדי להתחיל
+				<div class="delayed-p"
+					 style="display: inline-block; align-items: center; animation-delay: 1.5s; position: absolute; top: 30%; left: -25%;
+			background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px;
+			padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1);">
+
+					<div style="white-space: nowrap; font-size: 22px; padding: 10px; background-color: #C088DC; color: white;
+				border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;
+				display: flex; align-items: center; gap: 10px; direction: rtl;">
+
+						מכונים?<br> לחץ כדי להתחיל
+
+						<!-- Audio Icon -->
+						<span onclick="playAudio('audio48')" style="cursor: pointer;">
+							<img src="Math-Project/audio-inst.png"
+								 class="audio-icon"
+								 style="width: 40px; height: 35px; transform: translateY(6px);">
+						</span>
 					</div>
 				</div>
+
 				<div class="click-to-continue delayed-p"
 					 data-fragment-index="8"
 					 style="position: absolute; top: 12%; left: -22%; width: 140px; height: 140px; animation-delay: 1.9s;">
@@ -1625,473 +2130,473 @@
 						<a data-feedback="q1-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.14 </a>
 					</div>
 				</section>
-					<!-- Q1 Correct Answer -->
-					<section data-role="feedback" id="q1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q1-incorrect Answer -->
-					<section data-role="feedback" id="q1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q1 Correct Answer -->
+				<section data-role="feedback" id="q1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question2 -->
-				<section class="question-group" id="group-q2">
-					<section class="question-slide" data-question-id="q2">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.56 </a>
-							<a data-feedback="q2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.7 </a>
-						</div>
-					</section>
-					<!-- Q2 Correct Answer -->
-					<section data-role="feedback" id="q2-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q1-incorrect Answer -->
+				<section data-role="feedback" id="q1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q2-incorrect Answer -->
-					<section data-role="feedback" id="q2-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
+			<!-- Question2 -->
+			<section class="question-group" id="group-q2">
+				<section class="question-slide" data-question-id="q2">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q2-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.56 </a>
+						<a data-feedback="q2-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.7 </a>
+					</div>
+				</section>
+				<!-- Q2 Correct Answer -->
+				<section data-role="feedback" id="q2-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question3 -->
-				<section class="question-group" id="group-q3">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.5 </a>
-							<a data-feedback="q3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.44 </a>
-						</div>
-					</section>
+				<!-- Q2-incorrect Answer -->
+				<section data-role="feedback" id="q2-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q3 Correct Answer -->
-					<section data-role="feedback" id="q3-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
+			<!-- Question3 -->
+			<section class="question-group" id="group-q3">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q3-incorrect Answer -->
-					<section data-role="feedback" id="q3-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q3-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.5 </a>
+						<a data-feedback="q3-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.44 </a>
+					</div>
 				</section>
 
-				<!-- Question4 -->
-				<section class="question-group" id="group-q4">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q4-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.33 </a>
-							<a data-feedback="q4-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.03 </a>
-						</div>
-					</section>
-
-					<!-- Q4 Correct Answer -->
-					<section data-role="feedback" id="q4-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q4-incorrect Answer -->
-					<section data-role="feedback" id="q4-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q3 Correct Answer -->
+				<section data-role="feedback" id="q3-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question5 -->
-				<section class="question-group" id="group-q5">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q5-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.66 </a>
-							<a data-feedback="q5-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.8 </a>
-						</div>
-					</section>
+				<!-- Q3-incorrect Answer -->
+				<section data-role="feedback" id="q3-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q5 Correct Answer -->
-					<section data-role="feedback" id="q5-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
+			<!-- Question4 -->
+			<section class="question-group" id="group-q4">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q5 incorrect Answer -->
-					<section data-role="feedback" id="q5-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q4-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.33 </a>
+						<a data-feedback="q4-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.03 </a>
+					</div>
 				</section>
 
-				<!-- Question6 -->
-				<section class="question-group" id="group-q6">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q6-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.3 </a>
-							<a data-feedback="q6-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.24 </a>
-						</div>
-					</section>
-
-					<!-- Q6 Correct Answer -->
-					<section data-role="feedback" id="q6-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q6 incorrect Answer -->
-					<section data-role="feedback" id="q6-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q4 Correct Answer -->
+				<section data-role="feedback" id="q4-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question7 -->
-				<section class="question-group" id="group-q7">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q7-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.9 </a>
-							<a data-feedback="q7-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.91 </a>
-						</div>
-					</section>
+				<!-- Q4-incorrect Answer -->
+				<section data-role="feedback" id="q4-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q7 Correct Answer -->
-					<section data-role="feedback" id="q7-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
+			<!-- Question5 -->
+			<section class="question-group" id="group-q5">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q7-incorrect Answer -->
-					<section data-role="feedback" id="q7-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q5-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.66 </a>
+						<a data-feedback="q5-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.8 </a>
+					</div>
 				</section>
 
-				<!-- Question8 -->
-				<section class="question-group" id="group-q8">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q8-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.2 </a>
-							<a data-feedback="q8-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.18 </a>
-						</div>
-					</section>
-
-					<!-- Q8 Correct Answer -->
-					<section data-role="feedback" id="q8-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q8 incorrect Answer -->
-					<section data-role="feedback" id="q8-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q5 Correct Answer -->
+				<section data-role="feedback" id="q5-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question9 -->
-				<section class="question-group" id="group-q9">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q9-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.23 </a>
-							<a data-feedback="q9-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.4 </a>
-						</div>
-					</section>
+				<!-- Q5 incorrect Answer -->
+				<section data-role="feedback" id="q5-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q9 Correct Answer -->
-					<section data-role="feedback" id="q9-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
+			<!-- Question6 -->
+			<section class="question-group" id="group-q6">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q9 incorrect Answer -->
-					<section data-role="feedback" id="q9-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q6-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.3 </a>
+						<a data-feedback="q6-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.24 </a>
+					</div>
 				</section>
 
-				<!-- Question10 -->
-				<section class="question-group" id="group-q10">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q10-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 8.7 </a>
-							<a data-feedback="q10-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 8.27 </a>
-						</div>
-					</section>
-
-					<!-- Q10 Correct Answer -->
-					<section data-role="feedback" id="q10-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q10 incorrect Answer -->
-					<section data-role="feedback" id="q10-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+				<!-- Q6 Correct Answer -->
+				<section data-role="feedback" id="q6-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!-- Question11 -->
-				<section class="question-group" id="group-q11">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q11-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 6.4 </a>
-							<a data-feedback="q11-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 6.34 </a>
-						</div>
-					</section>
+				<!-- Q6 incorrect Answer -->
+				<section data-role="feedback" id="q6-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
 
-					<!-- Q11 Correct Answer -->
-					<section data-role="feedback" id="q11-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
+			<!-- Question7 -->
+			<section class="question-group" id="group-q7">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q11 incorrect Answer -->
-					<section data-role="feedback" id="q11-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q7-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 0.9 </a>
+						<a data-feedback="q7-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 0.91 </a>
+					</div>
 				</section>
 
-				<!-- Question12 -->
-				<section class="question-group" id="group-q12">
-					<section class="question-slide" data-question-id="q1">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q12-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 5.18 </a>
-							<a data-feedback="q12-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 5.8 </a>
-						</div>
-					</section>
-
-					<!-- Q12 Correct Answer -->
-					<section data-role="feedback" id="q12-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-
-					<!-- Q12 incorrect Answer -->
-					<section data-role="feedback" id="q12-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="continue-to-next">
-							<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
-						</div>
-					</section>
-				</section>
-				<!-- Question13 -->
-				<section class="question-group" id="group-q13">
-					<section class="question-slide" data-question-id="q3">
-						<div class="delayed-p glow-underline"
-							 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
-							<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
-								<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
-							</div>
-							בחר את המספר הגדול מבין שני המספרים הבאים:
-						</div>
-						<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
-							<a data-feedback="q13-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 2.24 </a>
-							<a data-feedback="q13-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 2.4 </a>
-						</div>
-					</section>
-
-					<!-- Q13 Correct Answer -->
-					<section data-role="feedback" id="q13-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> נכון </div>
-						</div>
-						<div class="end-options" style="display:flex; flex-direction:column; gap:20px; margin-top:50px;">
-							<a id="btn-replay" style="cursor:pointer; color:white;"> 🔁 שחק שוב </a>
-							<a id="btn-tutorial" style="cursor:pointer; color:white;"> 🏠 חזרה להדרכה </a>
-						</div>
-					</section>
-
-					<!-- Q13-incorrect Answer -->
-					<section data-role="feedback" id="q13-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-						<div class="feedback-centering">
-							<div class="ansFeedback"> לא נכון   </div>
-						</div>
-						<div class="end-options" style="display:flex; flex-direction:column; gap:20px; margin-top:50px;">
-							<a id="btn-replay" style="cursor:pointer; color:white;"> 🔁 שחק שוב </a>
-							<a id="btn-tutorial" style="cursor:pointer; color:white;"> 🏠 חזרה להדרכה </a>
-						</div>
-					</section>
+				<!-- Q7 Correct Answer -->
+				<section data-role="feedback" id="q7-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
 				</section>
 
-				<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
-</div>
+				<!-- Q7-incorrect Answer -->
+				<section data-role="feedback" id="q7-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+
+			<!-- Question8 -->
+			<section class="question-group" id="group-q8">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q8-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.2 </a>
+						<a data-feedback="q8-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.18 </a>
+					</div>
+				</section>
+
+				<!-- Q8 Correct Answer -->
+				<section data-role="feedback" id="q8-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+
+				<!-- Q8 incorrect Answer -->
+				<section data-role="feedback" id="q8-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+
+			<!-- Question9 -->
+			<section class="question-group" id="group-q9">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q9-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 1.23 </a>
+						<a data-feedback="q9-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 1.4 </a>
+					</div>
+				</section>
+
+				<!-- Q9 Correct Answer -->
+				<section data-role="feedback" id="q9-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+
+				<!-- Q9 incorrect Answer -->
+				<section data-role="feedback" id="q9-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+
+			<!-- Question10 -->
+			<section class="question-group" id="group-q10">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q10-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 8.7 </a>
+						<a data-feedback="q10-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 8.27 </a>
+					</div>
+				</section>
+
+				<!-- Q10 Correct Answer -->
+				<section data-role="feedback" id="q10-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+
+				<!-- Q10 incorrect Answer -->
+				<section data-role="feedback" id="q10-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+
+			<!-- Question11 -->
+			<section class="question-group" id="group-q11">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q11-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 6.4 </a>
+						<a data-feedback="q11-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 6.34 </a>
+					</div>
+				</section>
+
+				<!-- Q11 Correct Answer -->
+				<section data-role="feedback" id="q11-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+
+				<!-- Q11 incorrect Answer -->
+				<section data-role="feedback" id="q11-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+
+			<!-- Question12 -->
+			<section class="question-group" id="group-q12">
+				<section class="question-slide" data-question-id="q1">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q12-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 5.18 </a>
+						<a data-feedback="q12-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 5.8 </a>
+					</div>
+				</section>
+
+				<!-- Q12 Correct Answer -->
+				<section data-role="feedback" id="q12-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+
+				<!-- Q12 incorrect Answer -->
+				<section data-role="feedback" id="q12-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="continue-to-next">
+						<a style="cursor:pointer; color:white;">  לחץ כאן כדי להמשיך </a>
+					</div>
+				</section>
+			</section>
+			<!-- Question13 -->
+			<section class="question-group" id="group-q13">
+				<section class="question-slide" data-question-id="q3">
+					<div class="delayed-p glow-underline"
+						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
+						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+							<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+						</div>
+						בחר את המספר הגדול מבין שני המספרים הבאים:
+					</div>
+					<div style="display: flex;gap:80px;justify-content:space-between;margin:270px -70px 300px 300px;width: 1200px;height:300px;flex-wrap:wrap;">
+						<a data-feedback="q13-wrong" class="answer delayed-p" data-correct="false" style="cursor:pointer; color:white; animation-delay:1s;"> 2.24 </a>
+						<a data-feedback="q13-correct" class="answer delayed-p" data-correct="true" style="cursor:pointer; color:white; animation-delay: 1s"> 2.4 </a>
+					</div>
+				</section>
+
+				<!-- Q13 Correct Answer -->
+				<section data-role="feedback" id="q13-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> נכון </div>
+					</div>
+					<div class="end-options" style="display:flex; flex-direction:column; gap:20px; margin-top:50px;">
+						<a id="btn-replay" style="cursor:pointer; color:white;"> 🔁 שחק שוב </a>
+						<a id="btn-tutorial" style="cursor:pointer; color:white;"> 🏠 חזרה להדרכה </a>
+					</div>
+				</section>
+
+				<!-- Q13-incorrect Answer -->
+				<section data-role="feedback" id="q13-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
+					<div class="feedback-centering">
+						<div class="ansFeedback"> לא נכון   </div>
+					</div>
+					<div class="end-options" style="display:flex; flex-direction:column; gap:20px; margin-top:50px;">
+						<a id="btn-replay" style="cursor:pointer; color:white;"> 🔁 שחק שוב </a>
+						<a id="btn-tutorial" style="cursor:pointer; color:white;"> 🏠 חזרה להדרכה </a>
+					</div>
+				</section>
+			</section>
+
+			<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
+		</div>
 
 	</div>
 
@@ -2130,33 +2635,32 @@
 				   style="position: fixed;
               height: 100px; writing-mode: bt-lr; transform: rotate(90deg);
               z-index: 9999; display: none;">
-			</div>
-
-
-
-
-			<!-- Pause Button -->
-			<a onclick="togglePause()" class="nav-arrow pause-button hover-sound" id="pause-btn"></a>
-
-			<!-- Audio elements -->
-			<audio id="poof-sound" src="Math-Project/audio/swish-swipe.wav" preload="auto"></audio>
-			<audio id="ticking-sound" src="Math-Project/audio/ticking-clock.mp3" preload="auto"></audio>
-			<audio id="peek-sound" src="Math-Project/audio/zooming-sound.mp3" preload="auto"></audio>
-			<audio id="arrow-sound" src="Math-Project/audio/peek-sound.wav" preload="auto"></audio>
-			<audio id="questionMark-sound" src="Math-Project/audio/ding-cartoon.mp3" preload="auto"></audio>
-			<audio id="continue-sound" src="Math-Project/audio/swipe-sound.mp3" preload="auto"></audio>
-			<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
-			<audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
-			<audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
-			<audio id="streak-sound" src="Math-Project/audio/streak.mp3" preload="auto"></audio>
-			<audio id="add-points-sound" src="Math-Project/audio/add-points.mp3" preload="auto"></audio>
-			<audio id="bg-music" src="Math-Project/audio/cartoon-theme-song.mp3" preload="auto" loop></audio>
-
 		</div>
+
+		<!-- Pause Button -->
+		<a onclick="togglePause()" class="nav-arrow pause-button hover-sound" id="pause-btn"></a>
+
+		<!-- Audio elements -->
+		<audio id="poof-sound" src="Math-Project/audio/swish-swipe.wav" preload="auto"></audio>
+		<audio id="ticking-sound" src="Math-Project/audio/ticking-clock.mp3" preload="auto"></audio>
+		<audio id="peek-sound" src="Math-Project/audio/zooming-sound.mp3" preload="auto"></audio>
+		<audio id="arrow-sound" src="Math-Project/audio/peek-sound.wav" preload="auto"></audio>
+		<audio id="questionMark-sound" src="Math-Project/audio/ding-cartoon.mp3" preload="auto"></audio>
+		<audio id="continue-sound" src="Math-Project/audio/swipe-sound.mp3" preload="auto"></audio>
+		<audio id="tap-sound" src="Math-Project/audio/POP-(clicking).wav"></audio>
+		<audio id="correct-sound" src="Math-Project/audio/Correct-answer.wav"></audio>
+		<audio id="wrong-sound" src="Math-Project/audio/Try-Again-wrong.wav"></audio>
+		<audio id="streak-sound" src="Math-Project/audio/streak.mp3" preload="auto"></audio>
+		<audio id="add-points-sound" src="Math-Project/audio/add-points.mp3" preload="auto"></audio>
+		<audio id="bg-music" src="Math-Project/audio/cartoon-theme-song.mp3" preload="auto" loop></audio>
+
+	</div>
+
+
 
 
 	<!-- 💎 Points HUD -->
-	<div id="points-container" 
+	<div id="points-container"
 		 style="position: fixed; top: 12px; left: 265px;
             z-index: 9999;
             font-size: 30px;
@@ -2182,6 +2686,68 @@
 	</div>
 
 
+
+	<!-- 🎧  audio instruction elements: -->
+	<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>				 <!-- הוראות המשחק -->
+	<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>	<!-- במשחק זה עליך לבחור את המספר העשׂרוני הגדול בין שני המספרים המופיעים על המסך. -->
+	<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
+	<audio id="audio3" src="Math-Project/audio-instrcts/choose-big-num.m4a"></audio>		<!-- בְחַר את המספר הגדול מבין שני המספרים הבאים:. -->
+	<audio id="audio4" src="Math-Project/audio-instrcts/lets-compose.m4a"></audio>			<!-- בוא נִפַרֵק את שני המספרים שבשאלה. בחר את המספר שתרצה לפרק:. -->
+	<audio id="audio5" src="Math-Project/audio-instrcts/lets-look-num-comp.m4a"></audio>	<!-- בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים::. -->
+	<audio id="audio6" src="Math-Project/audio-instrcts/every-dec-num.m4a"></audio>			<!-- כל מספר עשׂרוני מורכב מ: -->
+	<audio id="audio7" src="Math-Project/audio-instrcts/whole-left.m4a"></audio>			<!-- החלק השלם, שהוא כולל את המספרים מצד שמאל של הנקודה העשׂרונית כמו האַחַדוֹת, העשרות והמִאוֹת.: -->
+	<audio id="audio8" src="Math-Project/audio-instrcts/decimal-pnt.mp3"></audio>			<!-- הנקודה העשׂרונית שהיא נקודה באמְצַע בין החלק השלם והחלק השברי.: -->
+	<audio id="audio9" src="Math-Project/audio-instrcts/frac-right.m4a"></audio>			<!--החלק השברי,שהוא כולל את המספרים מצד ימין של הנקודה העשׂרונית כמו העשׂיריות, המִאִיות והאלפיות.: -->
+	<audio id="audio10" src="Math-Project/audio-instrcts/for-exmple-0.25.mp3"></audio>			<!--לדוגמה המִספר 0.25 מורכב מ-: -->
+	<audio id="audio11" src="Math-Project/audio-instrcts/0-ones.mp3"></audio>					<!--אפס אַחַדוֹת. -->
+	<audio id="audio12" src="Math-Project/audio-instrcts/2-10ths.mp3"></audio>					<!--שתי עשיריות. -->
+	<audio id="audio13" src="Math-Project/audio-instrcts/5-100ths.mp3"></audio>					<!--חמש מאיות. -->
+	<audio id="audio14" src="Math-Project/audio-instrcts/for-exmple-0.3.mp3"></audio>			<!--לדוגמה המִספר 0.30 מורכב מ-: -->
+	<audio id="audio15" src="Math-Project/audio-instrcts/3-10ths.mp3"></audio>					<!--שלוש עשיריות. -->
+	<audio id="audio16" src="Math-Project/audio-instrcts/0-100ths.MP3"></audio>					<!--אפס מאיות.-->
+	<audio id="audio17" src="Math-Project/audio-instrcts/why-zero.mp3"></audio>					<!--מאיפה מגיע האפס! לְחץ כּדי להסְבִּיר. -->
+	<audio id="audio18" src="Math-Project/audio-instrcts/for-exmple-0.68.mp3"></audio>			<!--לדוגמה המִספר 0.68 מורכב מ-:  -->
+	<audio id="audio19" src="Math-Project/audio-instrcts/6-10ths.mp3"></audio>					<!--שש עשיריות.-->
+	<audio id="audio20" src="Math-Project/audio-instrcts/for-exmple-0.7.mp3"></audio>			<!--לדוגמה המִספר 0.70 מורכב מ-: -->
+	<audio id="audio21" src="Math-Project/audio-instrcts/7-10ths.mp3"></audio>					<!--שבע עשיריות. -->
+	<audio id="audio22" src="Math-Project/audio-instrcts/for-exmple-1.31.mp3"></audio>			<!--לדוגמה המִספר 1.31 מורכב מ-:  -->
+	<audio id="audio23" src="Math-Project/audio-instrcts/1-ones.mp3"></audio>					<!--יִחידַה אַחַת. -->
+	<audio id="audio24" src="Math-Project/audio-instrcts/for-exmple-1.4.mp3"></audio>			<!--לדוגמה המִספר 1.40 מורכב מ-:  -->
+	<audio id="audio25" src="Math-Project/audio-instrcts/4-10ths.mp3"></audio>					<!--ארבע עשיריות. -->
+	<audio id="audio26" src="Math-Project/audio-instrcts/8-100ths.mp3"></audio>					<!--שמונֶה מִאִיות. -->
+	<audio id="audio27" src="Math-Project/audio-instrcts/1-100ths.mp3"></audio>					<!--מאייה אחת -->
+	<audio id="audio28" src="Math-Project/audio-instrcts/zero-importance.mp3"></audio>			<!--לאפס משמעות חשובה במספרים העשרוניים. -->
+	<audio id="audio29" src="Math-Project/audio-instrcts/0.3-example.mp3"></audio>				<!--לדוגמה: המספר העשרוני: 0.3,-->
+	<audio id="audio30" src="Math-Project/audio-instrcts/it-has-3-10ths.mp3"></audio>					<!--יש בתוכו 3 עשיריות. -->
+	<audio id="audio31" src="Math-Project/audio-instrcts/its-equal-30-100ths.mp3"></audio>					<!--הוא שווה ל־ 30 במאיות. -->
+	<audio id="audio32" src="Math-Project/audio-instrcts/its-equal-300-1000ths.mp3"></audio>					<!--וגם שווה ל־ 300 באלפיות. -->
+	<audio id="audio33" src="Math-Project/audio-instrcts/0.03-example.mp3"></audio>					<!--המספר העשרוני: 0.03, -->
+	<audio id="audio34" src="Math-Project/audio-instrcts/it-has-0-10ths.mp3"></audio>					<!--יש בתוכו 0 עשיריות. -->
+	<audio id="audio35" src="Math-Project/audio-instrcts/its-equal-3-100ths.mp3"></audio>					<!--הוא שווה ל־ 3 במאיות. -->
+	<audio id="audio36" src="Math-Project/audio-instrcts/its-equal-30-1000ths.mp3"></audio>					<!--וגם שווה ל־ 30 באלפיות. -->
+	<audio id="audio37" src="Math-Project/audio-instrcts/put-on-axis.mp3"></audio>					<!--עכשיו נִסַדֵּר את המספרים על ציר המספרים: -->
+	<audio id="audio38" src="Math-Project/audio-instrcts/what-we-learn-from-this.mp3"></audio>		<!--מה אפשר ללמוד מזה?	 -->
+	<audio id="audio39" src="Math-Project/audio-instrcts/length-of-num-not-indicate.mp3"></audio>		<!--	אורך המספר העשׂרוני לא תמיד עוזר לנו לזהות את ערכו. כלומר: יכול להיות שמספר יהיה קצר אַךְ ערכו גדול יותר מהמספר הארוך. -->
+	<audio id="audio40" src="Math-Project/audio-instrcts/end-of-tutorial.mp3"></audio>					<!--הגעת לסיום ההדרכה בהצלחה. -->
+	<audio id="audio41" src="Math-Project/audio-instrcts/click-to-start-game.mp3"></audio>					<!--להתחיל את המשחק לחץ כַּאן. -->
+	<audio id="audio42" src="Math-Project/audio-instrcts/replay-tutorial.mp3"></audio>					<!--לעבור על ההדרכה פעם נוספת, לחץ כַּאן -->
+	<audio id="audio43" src="Math-Project/audio-instrcts/game-about-to-start.mp3"></audio>					<!-- המשחק עומד להתחיל! -->
+	<audio id="audio44" src="Math-Project/audio-instrcts/pause-buttn-inst.mp3"></audio>					<!--כּאשר המשחק מתחיל יוצג כּפתור "הַfסֵק" כּדי לעצור את השעון. -->
+	<audio id="audio45" src="Math-Project/audio-instrcts/timer-view-inst.mp3"></audio>					<!--בּרגע שתתחיל את המשחק, יתחיל טיימר ויופיע למעלה בצד שמאל. -->
+	<audio id="audio46" src="Math-Project/audio-instrcts/music-inst.mp3"></audio>					<!--בּנוסף תופעל מוזיקה ויוצג כּפתור להגְבַּרַת ולהנְמַכַת הקול. -->
+	<audio id="audio47" src="Math-Project/audio-instrcts/what-is-in-the-game.mp3"></audio>		<!--מה יהיה במשחק?במשחק יהיה שאלות כמו בהדרכה אבל הפעם לא יהיו הסברים!על כֹּל תְשובה נכונה תקבל נקודות.בהצלחה! -->
+	<audio id="audio48" src="Math-Project/audio-instrcts/ready-start.mp3"></audio>		<!--מוכנים?, לְחַץ כּדי להתחיל! -->
+
+
+
+
+
+
+
+	<audio id="audio01" src="Math-Project/audio-instrcts/click-here-to-continue.mp3"></audio>					<!--לְחץ כַּאן כּדי להַמשיך. -->
+	<audio id="audio02" src="Math-Project/audio-instrcts/click-here-to-continue-exmple.mp3"></audio>			<!--לְחץ כַּאן כּדי להַמשיך לדוגמה נוספת .  -->
+	<audio id="audio03" src="Math-Project/audio-instrcts/click-to-see-exmple.mp3"></audio>					<!--לְחץ כַּאן כּדי לראות דוגמה נוספת. -->
+	<audio id="audio04" src="Math-Project/audio-instrcts/lets-breakdown.mp3"></audio>					<!--בּוא נִפַרֵק כֹּל מספר. -->
 	<!-- Core and Plugins -->
 	<script src="dist/reveal.js"></script>
 	<script src="plugin/notes/notes.js"></script>
