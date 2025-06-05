@@ -276,7 +276,7 @@ body {
              }
       /* When paused, show the play triangle image instead */
             .pause-button.playing {
-                 background-image: url('../../Math-Project/resume-btn-green.png'); /* your triangle image */
+                 background-image: url('../../Math-Project/resume-btn-green.png'); /*triangle image */
                  background-repeat: no-repeat;
                  background-position: center;
                  background-size: 132%
@@ -293,12 +293,12 @@ body {
 
 
 .music-toggle {
-    left: 27px; /* Position near the nav arrows */
+    left: 30px; /* Position near the nav arrows */
     top: 290px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border: 3px dotted #FFC0CB; /* or any color like cadetblue */
+    box-shadow: 0 0 12px 4px rgba(100, 149, 237, 0.6); /* cornflowerblue glow */
 }
 
 
@@ -310,10 +310,11 @@ body {
     background: transparent;
     appearance: auto; /* keep native look */
     border: none; /* let the browser render the slider */
-    outline: 3px dotted #ffb6c1; /* tightly hugging dotted frame */
+    outline: 3.5px dotted; /* tightly hugging dotted frame */
+    outline-color: cornflowerblue;
     outline-offset: 2px; /* optional: pull border in or out */
     border-radius: 10px;
-    box-shadow: none;
+    box-shadow: 0 0 12px 4px rgba(100, 149, 237, 0.8); /* cornflowerblue glow */
     cursor: pointer;
     position: fixed;
     left: -13px;

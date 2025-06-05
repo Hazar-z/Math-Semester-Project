@@ -5,6 +5,8 @@ let correctStreak = 0;  //variable for streak points (3 or mores corrects answwe
 let musicPlaying = false;
 const bgMusic = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-toggle');
+let lastVolume = 0.3; // Default volume to restore on unmute
+
 
 
 //detect when the slide becomes visible and trigger animation with delay
@@ -582,11 +584,27 @@ function showGameUI() {
 		pause.style.opacity = '1';
 		points.style.opacity = '1';
 	}, 50);
+
 	// Auto-play music on first entry
 	if (!musicPlaying) {
-		bgMusic.play().catch(() => { }); // autoplay-safe
+		bgMusic.volume = 0; // start muted
+		bgMusic.play().then(() => {
+			let v = 0;
+			const fadeIn = setInterval(() => {
+				v += 0.05;
+				if (v >= lastVolume) {
+					bgMusic.volume = lastVolume;
+					clearInterval(fadeIn);
+				} else {
+					bgMusic.volume = v;
+				}
+			}, 10);
+		}).catch(() => {
+			// autoplay blocked — ignore
+		});
 		musicPlaying = true;
 	}
+
 	musicBtn.style.display = 'block';
 	setTimeout(() => {
 		musicBtn.style.opacity = '1';
@@ -619,20 +637,42 @@ function hideGameUI() {
 
 //Toggle Button Logic
 musicBtn.addEventListener('click', () => {
-	if (bgMusic.paused) {
-		bgMusic.play().catch(() => { });
+	if (bgMusic.volume > 0) {
+		// Mute: store current volume and set to 0
+		lastVolume = bgMusic.volume;
+		bgMusic.volume = 0;
+		volumeSlider.value = 0;
 		musicBtn.style.backgroundImage = "url('Math-Project/mute-music.png')";
 	} else {
-		bgMusic.pause();
+		// 🔊 Unmute: restore previous volume
+		bgMusic.volume = lastVolume;
+		volumeSlider.value = lastVolume;
 		musicBtn.style.backgroundImage = "url('Math-Project/unmute-music.png')";
 	}
 });
 
+
+
 //slider control:
 const volumeSlider = document.getElementById('volume-slider');
 volumeSlider.addEventListener('input', () => {
-	bgMusic.volume = parseFloat(volumeSlider.value);
+	const vol = parseFloat(volumeSlider.value);
+	bgMusic.volume = vol;
+
+	volumeSlider.addEventListener('input', () => {
+		const vol = parseFloat(volumeSlider.value);
+		bgMusic.volume = vol;
+
+		if (vol > 0) {
+			lastVolume = vol; // Save last non-zero volume
+			musicBtn.style.backgroundImage = "url('Math-Project/unmute-music.png')";
+		} else {
+			musicBtn.style.backgroundImage = "url('Math-Project/mute-music.png')";
+		}
+	});
+
 });
+
 
 
 // Shuffle only once when the DOM is ready (before Reveal.initialize)
@@ -697,3 +737,13 @@ Reveal.on('slidechanged', (event) => {
 		setTimeout(() => current.classList.remove('fade-in'), 700); // Reset
 	}
 });
+
+Reveal.on('slidechanged', (event) => {
+	document.querySelectorAll('audio').forEach(audio => {
+		if (audio.id !== 'bg-music') {
+			audio.pause();
+			audio.currentTime = 0;
+		}
+	});
+});
+

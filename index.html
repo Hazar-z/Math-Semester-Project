@@ -58,7 +58,7 @@
 			</section>
 
 			<!-- Slide 2 index=1-->
-			<section class="Slide2">
+			<section class="Slide2" >
 				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
 					<div onclick="playAudio('audio0')" class="audio-border" style="margin-left: 20px;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon">
@@ -66,7 +66,7 @@
 
 
 					<div style="display: flex; align-items: center; gap: 50px; direction: rtl;">
-						<h3 class="glow-underline delayed-p" style="font-size: 70px; margin: 0; text-align: center;">
+						<h3 class="glow-underline delayed-p" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
 							הוראות המשחק
 						</h3>
 					</div>
@@ -74,7 +74,7 @@
 				<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>
 
 				<!-- Slide2 fragments-->
-				<ul class="delayed-p" style="text-align:right; animation-delay:2s;">
+				<ul class="delayed-p" style="text-align:right; animation-delay:2s;  line-height:1.5px;">
 					<li>
 						<div class="instruction-wrapper">
 							<div class="audio-border" onclick="playAudio('audio1')">
@@ -102,7 +102,7 @@
 					<!-- linked to slide3: index=2-->
 					<a onclick="playTapAndGo(2)"
 					   id="delayed-fragment"
-					   style=" display: flex; margin-top: 150px; margin-right: 250px; width: 400px; justify-content: center; text-align: center; cursor: pointer; ">
+					   style=" display: flex; margin-top: 100px; margin-right: 200px; width: 400px; justify-content: center; text-align: center; cursor: pointer; ">
 						לחץ כּאן כּדי להמשיך
 					</a>
 				</div>
@@ -1519,34 +1519,50 @@
 				</div>
 
 				<!-- Game Explanation -->
-				<div style="margin-top: 60px; font-size: 36px; color: white; font-weight: bold; text-align: right; margin-right: -30%; width:140%;">
-					◆  כאשר המשחק מתחיל: יוצג כפתור "הפסק" כדי לעצור את הטיימר
+				<div style="margin-top: 40px; font-size: 36px; color: white; font-weight: bold; text-align: right; margin-right: -30%; width:140%;">
+					<span style="color: limegreen; font-size: 40px; font-weight: bold; text-shadow: 0 0 8px rgba(50, 205, 50, 0.8), 0 0 14px rgba(0, 255, 0, 0.6);">◆ </span>
+					כאשר המשחק מתחיל: יוצג כפתור "הפסק" כדי לעצור את הטיימר
 				</div>
 
 				<!-- Timer Preview with Arrow -->
 				<div>
 					<div style="position: relative; height: 200px; margin-top: 20px;">
 						<img src="Math-Project/pointy-arrow-green.png" alt="arrow" style="position: absolute; top: -60%; left: 0%; height: 130px;  width:auto; transform: rotate(-120deg); z-index: 1;" />
-						<img src="Math-Project/timer-prev.png" alt="timer preview" style="position: absolute; top: -85%; left: -30%; height: 70px; border: 4px solid orange; border-radius: 4px; padding: 1px; box-shadow: 0 0 15px rgba(0,0,0,0.3);" />
+						<img src="Math-Project/timer-prev.png" alt="timer preview" style="position: absolute; top: -85%; left: -30%; height: 70px; border: 4px solid orange; border-radius: 4px; padding: 1px; box-shadow: 0 0 8px rgba(255, 165, 0, 0.8), 0 0 14px rgba(255, 140, 0, 0.9); " />
 					</div>
 				</div>
 
 				<div style="margin-top: -120px; font-size: 36px; font-weight: bold; color: white; text-align: right; margin-right: -30%; width: 140%;">
-					◆ ברגע שתלחץ על הכפתור, המשחק יתחיל וטיימר יופיע למעלה בצד ימין
+					<span style="color: orange; font-size: 40px; font-weight: bold; text-shadow: 0 0 8px rgba(255, 165, 0, 0.8),  0 0 14px rgba(255, 140, 0, 0.9);">◆ </span>
+					ברגע שתלחץ על הכפתור, המשחק יתחיל וטיימר יופיע למעלה בצד ימין
 				</div>
 
 				<!-- Pause Button Preview with Arrow -->
 				<div>
 					<div style="position: relative; height: 200px; margin-top: 20px;">
-						<img src="Math-Project/pointy-arrow.png" alt="arrow" style="position: absolute; top: -85%; left: -20%; height: 290px; transform: rotate(-115deg); z-index: 1;" />
-						<img src="Math-Project/pause-btn1.png" alt="pause button" style="position: absolute; top: -153%; left: -10%; height: 70px; border: 4px solid limegreen; border-radius:4px; padding:1px; box-shadow: 0 0 15px rgba(0,0,0,0.3);" />
+						<img src="Math-Project/pointy-arrow.png" alt="arrow" style="position: absolute; top: -85%; left: -15%; height: 290px; transform: rotate(-115deg); z-index: 1;" />
+						<img src="Math-Project/pause-btn1.png" alt="pause button" style="position: absolute; top: -155%; left: -10%; height: 70px; border: 4px solid limegreen; border-radius: 4px; padding: 1px; box-shadow: 0 0 8px rgba(50, 205, 50, 0.8), 0 0 14px rgba(0, 255, 0, 0.6)" />
+					</div>
+				</div>
+
+				<!-- music slider: -->
+				<div style="margin-top: -120px; font-size: 36px; font-weight: bold; color: white; text-align: right; margin-right: -30%; width: 140%;">
+					<span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9);">◆</span> 
+					בנוסף תופעל מוזיקה ויוצג כפתור להגברת ולהנמכת הקול 
+				</div>
+
+				<!-- volume slider Preview with Arrow -->
+				<div>
+					<div style="position: relative; height: 200px; margin-top: 20px; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9);">
+						<img src="Math-Project/pointy-arrow-blue.png" alt="arrow" style="position: absolute; top: -65%; left: -15%; height: 290px; transform: rotate(-20deg); z-index: 1;" />
+						<img src="Math-Project/music-slider.png" alt="pause button" style="z-index: 2; position: absolute; top: -145%; left: -30%; height: 270px; width: 120px; border: 4px solid; border-color: cornflowerblue; border-radius: 4px; padding: 1px; box-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.9); " />
 					</div>
 				</div>
 
 				<!-- Start Game Button -->
-				<div style="margin-top: -100px;">
-					<a class="special-button" onclick="playTapAndGo(27)"
-					   style=" color: whitesmoke; font-weight: bold; background: linear-gradient(135deg, #FAD2CF, #F9AFAE); box-shadow: 0 0 20px rgba(255, 170, 170, 0.5), 0 0 40px rgba(255, 140, 180, 0.4); ">
+				<div style="margin-top: -150px;">
+					<a class="special-button" onclick="playTapAndGo(28)"
+					   style=" color: whitesmoke; font-weight: bold; background: linear-gradient(135deg, #A9C9C9, #7FBFBF); box-shadow: 0 0 20px rgba(95, 158, 160, 0.5), 0 0 40px rgba(95, 158, 160, 0.4); ">
 						להתחיל את המשחק<br>לחץ כאן
 					</a>
 				</div>
@@ -1555,22 +1571,26 @@
 
 
 			<!-- start of the game, using shuffle between slides. number of questions=13-->
-			<section dir="rtl" style="padding: 30px; font-family: 'chewy', Arial; background-color: rgba(30, 30, 30, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); text-align: center; ">
+			<section dir="rtl" style="padding: 20px; font-family: 'chewy', Arial; background-color: rgba(30, 30, 30, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); text-align: center; ">
 
 				<!-- Reminder Message -->
-				<div style="background-color: cadetblue; color: white; font-size: 40px; font-weight: bold; padding: 25px 40px; border-radius: 25px; border: 16px solid #5b3e1b; width: fit-content; margin: auto; box-shadow: 0 0 25px rgba(0,0,0,0.3);">
+				<div style="background-color: cadetblue; color: white; font-size: 40px; font-weight: bold; padding: 20px 40px; border-radius: 25px; border: 16px solid #5b3e1b; width: fit-content; margin: auto; box-shadow: 0 0 25px rgba(0,0,0,0.3);">
 					מה יהיה  במשחק?
 				</div>
 				<!-- Instructional Note -->
-				<div style="margin-top: 10x; font-size: 28px; color: whitesmoke; font-weight: bold; max-width: 800px; margin-inline: auto; line-height: 1.6;">
+				<div style="margin-top: 10px; font-size: 28px; color: whitesmoke; font-weight: bold; max-width: 800px; margin-inline: auto; line-height: 1.2;">
 					<span style="color:goldenrod;">◆</span> במשחק יהיה שאלות כמו בהדרכה <span style="color:lightcoral; text-decoration:underline;">  אבל</span> הפעם לא יהיו הסברים   !<br>
 					<span style="color:goldenrod;">◆</span> על כל תשובה נכונה תקבל נקודות <span class="sparkle-gem" style="font-size:55px;">💎</span><br>
-					<span style="color:cadetblue; letter-spacing:1.2px; font-weight:bold; font-size:35px;"> בהצלחה!</span>
+				   <span style="color:cornflowerblue; font-size:40px; font-weight:bold; text-shadow: 0 0 8px rgba(100, 149, 237, 0.8), 0 0 14px rgba(100, 149, 237, 0.4);"> בהצלחה!</span>
 				</div>
 				<!-- Screenshot Preview -->
-				<div style="margin-top:10px; font-size:36px; ">
-					לדוגמה: <br />
-					<img src="Math-Project/quest-review.png" alt="reminder screenshot" style="max-width: 85%; border-radius: 20px; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 5px solid; border-color: yellowgreen; ">
+				<div style="position: relative; margin-top: 5px; font-size: 36px; display: inline-block;">
+
+					<!-- Label on top-right corner -->
+					<span style="position: absolute; top: 10px; right: -9%; background-color: rgb(204, 196, 130); box-shadow: 0 0 25px rgba(238, 232, 170, 0.6); padding: 5px 10px; border-radius: 8px; font-weight: bold; color: white; ">
+						לדוגמה:
+					</span>
+					<img src="Math-Project/quest-review.png" alt="reminder screenshot" style="max-width: 85%; border-radius: 20px; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 5px solid; border-color: palegoldenrod; ">
 				</div>
 
 
@@ -1581,11 +1601,11 @@
 				</div>
 				<div class="click-to-continue delayed-p"
 					 data-fragment-index="8"
-					 style="position: absolute; top: 12%; left: -20%; width: 140px; height: 140px; animation-delay: 1.9s;">
+					 style="position: absolute; top: 12%; left: -22%; width: 140px; height: 140px; animation-delay: 1.9s;">
 
-					<img src="Math-Project/pointy-arrow-green.png"
+					<img src="Math-Project/pointy-arrow-pink.png"
 						 alt="Arrow"
-						 style="width: 100%; height: 100%; transform: scaleX(-1) rotate(-70deg);">
+						 style="width: 100%; height: 100%; transform: scaleX(1) rotate(-20deg);">
 				</div>
 			</section>
 
@@ -2099,7 +2119,7 @@
 		<a onclick="goHome()" class="nav-arrow home-button hover-sound" id="home-btn"></a>
 		<a id="music-toggle"
 		   class="nav-arrow music-toggle"
-		   style="display: none; background-image: url('Math-Project/mute-music.png'); width: 10px; height: 10px;"
+		   style="display: none; background-image: url('Math-Project/unmute-music.png'); width: 10px; height: 10px;"
 		   title="השתק מוזיקה">
 		</a>
 		<!--slider element-->
