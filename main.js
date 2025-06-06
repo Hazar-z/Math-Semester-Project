@@ -185,19 +185,23 @@ function bindAnswerButtons() {
 				});
 			}
 			// ✅ Handle Points & Streaks
-			if (isCorrect) {
-				addPoints(10); // add 10 points for every correct answer- Regular points
+			// ✅ Only count points and streaks in game section
+			const isGameQuestion = btn.closest('.question-group') !== null;
+
+			if (isCorrect && isGameQuestion) {
+				addPoints(10); // Base points
 				correctStreak++;
 
-				if (correctStreak >= 3) {
+				if (correctStreak >4 ) {
 					addPoints(25); // Bonus
-					showStreakPopup(25); // Visual
-					playAudio('streak-sound'); // 🎧 special sound
+					showStreakPopup(25);
+					playAudio('streak-sound');
 				}
+			} else if (!isCorrect && isGameQuestion) {
+				correctStreak = 0; // ❌ Wrong in game = reset streak
 			}
-				else {
-					correctStreak = 0;
-				 }
+
+
 
 
 			// 🕒 Delay navigation slightly so sound gets committed
@@ -269,17 +273,22 @@ function shuffleQuestions() {
 		});
 	});
 
-	updateContinueButtons();  //  update continue buttons after shuffling
-	bindContinueButtons();    //  re-binds after setting data
-	bindAnswerButtons();      // rebind answer after setting data
+	// After shuffle, update continue buttons
+	updateContinueButtons();
+	bindContinueButtons();
+	bindAnswerButtons();
 
+	// Reset all data-start attributes
 	const allQuestions = document.querySelectorAll('.question-slide');
 	allQuestions.forEach(q => q.removeAttribute('data-start'));
 
-	const firstQuestion = document.querySelector('.question-group .question-slide');
-	if (firstQuestion) {
-		firstQuestion.setAttribute('data-start', 'true');
+	// ✅ Force start at the first .question-group
+	const firstGroup = document.querySelector('.question-group');
+	if (firstGroup) {
+		const hIndex = Array.from(Reveal.getHorizontalSlides()).indexOf(firstGroup);
+		if (hIndex !== -1) Reveal.slide(hIndex, 0);
 	}
+
 
 }
 
@@ -312,18 +321,24 @@ function updateContinueButtons() {
 			}
 			//change the the "click to continue" on final question so it won't bug
 			else {
-				// Final slide → add Replay and Tutorial buttons
-				const btnReplay = document.createElement('a');
-				btnReplay.id = 'btn-replay';
-				btnReplay.textContent = 'שחק שוב 🔁 ';
+				// Final feedback → link to static result slide
+				const btnToResult = document.createElement('a');
+				btnToResult.className = 'continue-to-next';
+				btnToResult.textContent = 'סיום וצפייה בתוצאה 💎';
 
-				const btnTutorial = document.createElement('a');
-				btnTutorial.id = 'btn-tutorial';
-				btnTutorial.textContent = 'חזרה להדרכה 🏠';
+				// Find horizontal index of result slide
+				const slides = Reveal.getHorizontalSlides();
+				const finalResultSlide = document.getElementById('game-results');
+				const finalH = Array.from(slides).indexOf(finalResultSlide);
+				if (finalH !== -1) {
+					btnToResult.setAttribute('data-go-h', finalH);
+				}
 
-				wrapper.appendChild(btnReplay);
-				wrapper.appendChild(btnTutorial);
+				wrapper.appendChild(btnToResult);
 			}
+
+
+
 
 			slide.appendChild(wrapper);
 		});
@@ -426,12 +441,17 @@ function goToSlideSkippingFeedback(direction) {
 
 	for (let i = index + step; i >= 0 && i < totalSlides; i += step) {
 		let slide = Reveal.getSlides()[i];
-		if (!slide || slide.dataset.role !== 'feedback') {
-			Reveal.slide(i);
-			break;
+
+		// ✅ Skip feedback and result slides
+		if (!slide || slide.dataset.role === 'feedback' || slide.id === 'game-results') {
+			continue;
 		}
+
+		Reveal.slide(i);
+		break;
 	}
 }
+
 //go next but skip the feedback slides when using navigation arrows:
 function goNext() {
 	goToSlideSkippingFeedback('forward');
@@ -745,5 +765,19 @@ Reveal.on('slidechanged', (event) => {
 			audio.currentTime = 0;
 		}
 	});
+});
+
+Reveal.on('slidechanged', (event) => {
+	const slide = event.currentSlide;
+	if (slide?.id === 'game-results') {
+		const finalCount = document.getElementById('final-points-count');
+		finalCount.textContent = totalPoints;
+
+		const resultSound = document.getElementById('earned-point');
+		if (resultSound) {
+			resultSound.currentTime = 0;
+			resultSound.play().catch(() => { });
+		}
+	}
 });
 

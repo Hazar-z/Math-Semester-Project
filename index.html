@@ -649,7 +649,7 @@
 						 class="question-mark-bounce delayed-p"
 						 data-fragment-index="8"
 						 style="animation-delay: 17s;">
-					<div  class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
+					<div class="delayed-p" style="animation-delay: 18.5s; position: absolute; top: 143%; right: -32%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 25px 30px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
 						מאיפה מגיע האפס?
 						<br><br>
 						<button onclick="playTapAndGo(9)" class="hoverable-btn hover-sound" style="font-size: 22px; padding: 10px 20px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
@@ -1139,7 +1139,7 @@
 						</div>
 					</div>
 					<div class="delayed-p" style="display: inline-block; animation-delay: 18s; position: absolute; top: 60%; left: -30%; background-color: #E9C7F7; border: 3px solid #C088DC; border-radius: 20px; padding: 10px; font-size: 30px; color: #5C2C7A; box-shadow: 4px 4px 10px rgba(0,0,0,0.1); ">
-						<div  style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
+						<div style=" white-space: nowrap; font-size: 22px; padding:10px; background-color: #C088DC; color: white; border: none; border-radius: 12px; cursor: pointer; transition: background-color 0.3s ease;">
 							לחץ כדי להמשיך
 							<!-- Audio Icon -->
 							<span onclick="playAudio('audio01')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
@@ -2596,6 +2596,29 @@
 			</section>
 
 			<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
+			<!-- FINAL GAME RESULT SLIDE (ALWAYS STATIC) -->
+			<section id="game-results"
+					 data-role="final-score"
+					 style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; "
+					 data-transition="fade">
+
+				<!-- Score message -->
+				<div id="final-score-display"
+					 style="margin-top:90px; font-size: 70px; font-weight: bold; color: #5C2C7A; background-color: #FFFAF0; border: 6px dashed #FF9DC0; border-radius: 40px; padding: 50px; box-shadow: 0 0 30px rgba(255, 190, 255, 0.6); animation: fade-in 1.5s ease-out;">
+					✨ קיבלת <span id="final-points-count">0</span> נקודות! ✨ 
+				</div>
+
+				<!-- Sound -->
+				<audio id="earned-point" src="Math-Project/sfx/earned-point.mp3"></audio>
+
+				<!-- Buttons -->
+				<div class="end-options" style="margin-top: 90px;">
+					<a id="btn-replay" class="special-button">🔁 שחק שוב</a>
+					<a id="btn-tutorial" class="special-button">🏠 חזרה להדרכה</a>
+				</div>
+			</section>
+
+
 		</div>
 
 	</div>
