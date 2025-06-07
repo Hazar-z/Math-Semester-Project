@@ -36,19 +36,23 @@ function switchLanguage(toLang) {
 }
 
 
-function playInstruction(id) {
-	const audio = document.getElementById(`audio-${id}`);
+function playInstructionSimple(id) {
+	const audio = document.getElementById(id);
 	if (!audio) return;
 
-	// Folder is based on current language
-	const folder = `Math-Project/audio-instrcts-${currentLanguage}`;
-	const path = `${folder}/${id}.m4a`;
+	// Read file extension from HTML attribute
+	const ext = audio.getAttribute("data-ext") || "mp3"; // fallback to mp3
+	const path = `Math-Project/audio-instrcts-${currentLanguage}/${id}.${ext}`;
 
 	audio.src = path;
 	audio.play().catch(() => {
 		console.warn(`Audio not found: ${path}`);
 	});
 }
+
+
+
+
 
 
 

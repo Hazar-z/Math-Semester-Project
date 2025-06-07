@@ -67,7 +67,7 @@
 			<!-- Slide 2 index=1-->
 			<section class="Slide2">
 				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
-					<div onclick="playInstruction('game-inst')" class="audio-border" style="margin-left: 20px;">
+					<div onclick="playInstructionSimple('game-inst')" class="audio-border" style="margin-left: 20px;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon">
 					</div>
 
@@ -87,39 +87,53 @@
 				<ul class="delayed-p" style="text-align:right; animation-delay:2s;  line-height:1.5px;">
 					<li>
 						<div class="instruction-wrapper">
-							<div class="audio-border" onclick="playAudio('audio1')">
+							<div class="audio-border" onclick="playInstructionSimple('in-this-game-choose')">
 								<img src="Math-Project/audio-inst.png" class="audio-icon">
 							</div>
-							<span class="instruction-text">
+							<span class="instruction-text lang lang-heb">
 								במשחק זה עליך לבחור את המספר העשרוני הגדול בין שני המספרים המופיעים על המסך.
+							</span>
+							<span class="instruction-text lang lang-ar">
+								في هذه اللعبة، عليك اختيار العدد العشري الأكبر من بين العددين الظاهِرَيْن على الشاشة.
 							</span>
 						</div>
 					</li>
 					<li>
 						<div class="instruction-wrapper">
-							<div class="audio-border" onclick="playAudio('audio2')">
+							<div class="audio-border" onclick="playInstructionSimple('you-need-to-pass')">
 								<img src="Math-Project/audio-inst.png" class="audio-icon">
 							</div>
-							<span class="instruction-text">
+							<span class="instruction-text lang lang-heb">
 								עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
+							</span>
+							<span class="instruction-text lang lang-ar">
+								يجب عليك إتمام الشرح بنجاح لكي تتمكن من بدء اللعبة..
 							</span>
 						</div>
 					</li>
 				</ul>
 
-				<div class="continue-button delayed-p" style="animation-delay: 3s;">
+				<div class="continue-button delayed-p lang lang-heb" style="animation-delay: 3s;">
 					<!-- linked to slide3: index=2-->
 					<a onclick="playTapAndGo(2)"
-					   id="delayed-fragment"
+					   id="delayed-fragment "
 					   style=" display: flex; margin-top: 100px; margin-right: 200px; width: 400px; justify-content: center; text-align: center; cursor: pointer; ">
 						לחץ כּאן כּדי להמשיך
+					</a>
+				</div>
+
+				<div class="continue-button delayed-p lang lang-ar" style="animation-delay: 3s;">
+					<a onclick="playTapAndGo(2)"
+					   id="delayed-fragment "
+					   style=" display: flex; margin-top: 100px; margin-right: 200px; width: 400px; justify-content: center; text-align: center; cursor: pointer; ">
+						اضغط هُنا للمًتابَعة.
 					</a>
 				</div>
 			</section>
 
 			<!-- Slide 3 index=2-->
 			<section id="slide3">
-				<div class="delayed-p glow-underline"
+				<div class="delayed-p glow-underline lang lang-heb"
 					 style="
 						display: flex;
 						flex-shrink:1;
@@ -132,10 +146,28 @@
 						width: 150%;
 						right: -17%;
 						animation-delay:0s;">
-					<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
 						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
+				</div>
+				<div class="delayed-p glow-underline lang lang-ar"
+					 style="
+					display: flex;
+					flex-shrink:1;
+					margin-top: 90px;
+					animation-delay: 2s;
+					margin-right: -60px;
+					font-size:60px;
+					position:absolute;
+					flex-wrap: wrap;
+					width: 150%;
+					right: -37%;
+					animation-delay:0s;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
+						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
+					</div>
+					اختر العدد الأكبر من بين العددين التاليين:
 				</div>
 
 				<div style="display: flex;
@@ -152,59 +184,84 @@
 
 			<!-- Slide 4 index=3 -->
 			<section data-role="feedback" id="Q-Ex1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-				<div class="feedback-centering">
+				<div class="feedback-centering lang lang-heb">
 					<div class="ansFeedback"> נכון </div>
 				</div>
 
-				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+				<div class="feedback-centering lang lang-ar">
+					<div class="ansFeedback"> صحيح </div>
+				</div>
 
-					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 300px;">
+
+					<div onclick="playInstructionSimple('lets-breakdown')" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png"
 							 style="width: 55px; height: 55px; transform: translateY(6px);">
 					</div>
-					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
+					<span class="lang lang-heb" style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
+					<span class="lang lang-ar" style="font-size: 48px; gap:15px;">هيّا نُفَكِّك كُل عدد</span>
 				</div>
 
 
 
-				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
-					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+				<div class="composition-next " style="display: flex; align-items: center; direction: rtl; margin-right: -40px;">
+					<div onclick="playInstructionSimple('click-here-to-continue')" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png"
 							 style="width: 55px; height: 55px; transform: translateY(6px);">
 					</div>
-					<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
-						לחץ כאן כדי להמשיך
-					</a>
-				</div>
+					<div class="lang lang-heb">
+						<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+							לחץ כאן כדי להמשיך
+						</a>
+					</div>
+					<div class="lang lang-ar">
+						<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+							اضغط هُنا للمًتابَعة
+						</a>
+					</div>
 
+				</div>
 			</section>
 
 			<!-- Slide 5 index=4 -->
-			<section data-role="feedback" id="Q-Ex1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-				<div class="feedback-centering">
-					<div class="ansFeedback"> לא נכון   </div>
+			<section data-role="feedback" id="Q-Ex1-wrong" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
+				<div class="feedback-centering lang lang-heb">
+					<div class="ansFeedback"> לא נכון</div>
 				</div>
 
-				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 255px;">
+				<div class="feedback-centering lang lang-ar">
+					<div class="ansFeedback"> غير صحيح </div>
+				</div>
 
-					<div onclick="playAudio('audio04')" style="cursor: pointer;">
+				<div style="display: flex; align-items: baseline; direction: rtl; margin-right: 300px;">
+
+					<div onclick="playInstructionSimple('lets-breakdown')" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png"
 							 style="width: 55px; height: 55px; transform: translateY(6px);">
 					</div>
-					<span style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
+					<span class="lang lang-heb" style="font-size: 48px; gap:15px;">בוא נפרק כל מספר</span>
+					<span class="lang lang-ar" style="font-size: 48px; gap:15px;">هيّا نُفَكِّك كُل عدد</span>
 				</div>
 
 
-				<div class="composition-next" style="display: flex; align-items: center; direction: rtl; margin-right: -52px;">
-					<div onclick="playAudio('audio01')" style="cursor: pointer;">
+
+				<div class="composition-next " style="display: flex; align-items: center; direction: rtl; margin-right: -40px;">
+					<div onclick="playInstructionSimple('click-here-to-continue')" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png"
 							 style="width: 55px; height: 55px; transform: translateY(6px);">
 					</div>
-					<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
-						לחץ כאן כדי להמשיך
-					</a>
-				</div>
+					<div class="lang lang-heb">
+						<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+							לחץ כאן כדי להמשיך
+						</a>
+					</div>
+					<div class="lang lang-ar">
+						<a onclick="playTapAndGo(5)" style="cursor: pointer; color: white; margin-right: -52px; ">
+							اضغط هُنا للمًتابَعة
+						</a>
+					</div>
 
+				</div>
 			</section>
 
 			<!-- Slide 6 index=5-->
@@ -225,7 +282,7 @@
                  direction: rtl; ">
 
 					<!-- Audio Icon -->
-					<div onclick="playAudio('audio4')" class="audio-border"
+					<div onclick="playInstructionSimple('lets-compose')" class="audio-border"
 						 style="margin-left: 20px; flex-shrink: 0;">
 						<img src="Math-Project/audio-inst-blue.png"
 							 class="audio-icon"
@@ -233,9 +290,13 @@
 					</div>
 
 					<!-- Text Block fills remaining space -->
-					<div style="flex: 1; display: flex; flex-direction: column; text-align: right;">
+					<div class="lang lang-heb" style="flex: 1; display: flex; flex-direction: column; text-align: right;">
 						<p style="margin: 0;">בוא נפרק את שני המספרים שבשאלה.</p>
 						<p style="margin: 0;">בחר את המספר שתרצה לפרק:</p>
+					</div>
+					<div class="lang lang-ar" style="flex: 1; display: flex; flex-direction: column; text-align: right;">
+						<p style="margin: 0;">هيا نقوم بتفكيك العددين في السؤال.</p>
+						<p style="margin: 0;">اختر العدد الذي تودّ تفكيكه:</p>
 					</div>
 
 				</div>
@@ -2723,66 +2784,75 @@
 
 
 	<!-- 🎧  audio instruction elements: -->
-	<audio id="audio-game-inst"></audio>				 <!-- הוראות המשחק -->
-	<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>	<!-- במשחק זה עליך לבחור את המספר העשׂרוני הגדול בין שני המספרים המופיעים על המסך. -->
-	<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
-	<audio id="audio3" src="Math-Project/audio-instrcts/choose-big-num.m4a"></audio>		<!-- בְחַר את המספר הגדול מבין שני המספרים הבאים:. -->
-	<audio id="audio4" src="Math-Project/audio-instrcts/lets-compose.m4a"></audio>			<!-- בוא נִפַרֵק את שני המספרים שבשאלה. בחר את המספר שתרצה לפרק:. -->
-	<audio id="audio5" src="Math-Project/audio-instrcts/lets-look-num-comp.m4a"></audio>	<!-- בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים::. -->
-	<audio id="audio6" src="Math-Project/audio-instrcts/every-dec-num.m4a"></audio>			<!-- כל מספר עשׂרוני מורכב מ: -->
-	<audio id="audio7" src="Math-Project/audio-instrcts/whole-left.m4a"></audio>			<!-- החלק השלם, שהוא כולל את המספרים מצד שמאל של הנקודה העשׂרונית כמו האַחַדוֹת, העשרות והמִאוֹת.: -->
-	<audio id="audio8" src="Math-Project/audio-instrcts/decimal-pnt.mp3"></audio>			<!-- הנקודה העשׂרונית שהיא נקודה באמְצַע בין החלק השלם והחלק השברי.: -->
-	<audio id="audio9" src="Math-Project/audio-instrcts/frac-right.m4a"></audio>			<!--החלק השברי,שהוא כולל את המספרים מצד ימין של הנקודה העשׂרונית כמו העשׂיריות, המִאִיות והאלפיות.: -->
-	<audio id="audio10" src="Math-Project/audio-instrcts/for-exmple-0.25.mp3"></audio>			<!--לדוגמה המִספר 0.25 מורכב מ-: -->
-	<audio id="audio11" src="Math-Project/audio-instrcts/0-ones.mp3"></audio>					<!--אפס אַחַדוֹת. -->
-	<audio id="audio12" src="Math-Project/audio-instrcts/2-10ths.mp3"></audio>					<!--שתי עשיריות. -->
-	<audio id="audio13" src="Math-Project/audio-instrcts/5-100ths.mp3"></audio>					<!--חמש מאיות. -->
-	<audio id="audio14" src="Math-Project/audio-instrcts/for-exmple-0.3.mp3"></audio>			<!--לדוגמה המִספר 0.30 מורכב מ-: -->
-	<audio id="audio15" src="Math-Project/audio-instrcts/3-10ths.mp3"></audio>					<!--שלוש עשיריות. -->
-	<audio id="audio16" src="Math-Project/audio-instrcts/0-100ths.MP3"></audio>					<!--אפס מאיות.-->
-	<audio id="audio17" src="Math-Project/audio-instrcts/why-zero.mp3"></audio>					<!--מאיפה מגיע האפס! לְחץ כּדי להסְבִּיר. -->
-	<audio id="audio18" src="Math-Project/audio-instrcts/for-exmple-0.68.mp3"></audio>			<!--לדוגמה המִספר 0.68 מורכב מ-:  -->
-	<audio id="audio19" src="Math-Project/audio-instrcts/6-10ths.mp3"></audio>					<!--שש עשיריות.-->
-	<audio id="audio20" src="Math-Project/audio-instrcts/for-exmple-0.7.mp3"></audio>			<!--לדוגמה המִספר 0.70 מורכב מ-: -->
-	<audio id="audio21" src="Math-Project/audio-instrcts/7-10ths.mp3"></audio>					<!--שבע עשיריות. -->
-	<audio id="audio22" src="Math-Project/audio-instrcts/for-exmple-1.31.mp3"></audio>			<!--לדוגמה המִספר 1.31 מורכב מ-:  -->
-	<audio id="audio23" src="Math-Project/audio-instrcts/1-ones.mp3"></audio>					<!--יִחידַה אַחַת. -->
-	<audio id="audio24" src="Math-Project/audio-instrcts/for-exmple-1.4.mp3"></audio>			<!--לדוגמה המִספר 1.40 מורכב מ-:  -->
-	<audio id="audio25" src="Math-Project/audio-instrcts/4-10ths.mp3"></audio>					<!--ארבע עשיריות. -->
-	<audio id="audio26" src="Math-Project/audio-instrcts/8-100ths.mp3"></audio>					<!--שמונֶה מִאִיות. -->
-	<audio id="audio27" src="Math-Project/audio-instrcts/1-100ths.mp3"></audio>					<!--מאייה אחת -->
-	<audio id="audio28" src="Math-Project/audio-instrcts/zero-importance.mp3"></audio>			<!--לאפס משמעות חשובה במספרים העשרוניים. -->
-	<audio id="audio29" src="Math-Project/audio-instrcts/0.3-example.mp3"></audio>				<!--לדוגמה: המספר העשרוני: 0.3,-->
-	<audio id="audio30" src="Math-Project/audio-instrcts/it-has-3-10ths.mp3"></audio>					<!--יש בתוכו 3 עשיריות. -->
-	<audio id="audio31" src="Math-Project/audio-instrcts/its-equal-30-100ths.mp3"></audio>					<!--הוא שווה ל־ 30 במאיות. -->
-	<audio id="audio32" src="Math-Project/audio-instrcts/its-equal-300-1000ths.mp3"></audio>					<!--וגם שווה ל־ 300 באלפיות. -->
-	<audio id="audio33" src="Math-Project/audio-instrcts/0.03-example.mp3"></audio>					<!--המספר העשרוני: 0.03, -->
-	<audio id="audio34" src="Math-Project/audio-instrcts/it-has-0-10ths.mp3"></audio>					<!--יש בתוכו 0 עשיריות. -->
-	<audio id="audio35" src="Math-Project/audio-instrcts/its-equal-3-100ths.mp3"></audio>					<!--הוא שווה ל־ 3 במאיות. -->
-	<audio id="audio36" src="Math-Project/audio-instrcts/its-equal-30-1000ths.mp3"></audio>					<!--וגם שווה ל־ 30 באלפיות. -->
-	<audio id="audio37" src="Math-Project/audio-instrcts/put-on-axis.mp3"></audio>					<!--עכשיו נִסַדֵּר את המספרים על ציר המספרים: -->
-	<audio id="audio38" src="Math-Project/audio-instrcts/what-we-learn-from-this.mp3"></audio>		<!--מה אפשר ללמוד מזה?	 -->
-	<audio id="audio39" src="Math-Project/audio-instrcts/length-of-num-not-indicate.mp3"></audio>		<!--	אורך המספר העשׂרוני לא תמיד עוזר לנו לזהות את ערכו. כלומר: יכול להיות שמספר יהיה קצר אַךְ ערכו גדול יותר מהמספר הארוך. -->
-	<audio id="audio40" src="Math-Project/audio-instrcts/end-of-tutorial.mp3"></audio>					<!--הגעת לסיום ההדרכה בהצלחה. -->
-	<audio id="audio41" src="Math-Project/audio-instrcts/click-to-start-game.mp3"></audio>					<!--להתחיל את המשחק לחץ כַּאן. -->
-	<audio id="audio42" src="Math-Project/audio-instrcts/replay-tutorial.mp3"></audio>					<!--לעבור על ההדרכה פעם נוספת, לחץ כַּאן -->
-	<audio id="audio43" src="Math-Project/audio-instrcts/game-about-to-start.mp3"></audio>					<!-- המשחק עומד להתחיל! -->
-	<audio id="audio44" src="Math-Project/audio-instrcts/pause-buttn-inst.mp3"></audio>					<!--כּאשר המשחק מתחיל יוצג כּפתור "הַfסֵק" כּדי לעצור את השעון. -->
-	<audio id="audio45" src="Math-Project/audio-instrcts/timer-view-inst.mp3"></audio>					<!--בּרגע שתתחיל את המשחק, יתחיל טיימר ויופיע למעלה בצד שמאל. -->
-	<audio id="audio46" src="Math-Project/audio-instrcts/music-inst.mp3"></audio>					<!--בּנוסף תופעל מוזיקה ויוצג כּפתור להגְבַּרַת ולהנְמַכַת הקול. -->
-	<audio id="audio47" src="Math-Project/audio-instrcts/what-is-in-the-game.mp3"></audio>		<!--מה יהיה במשחק?במשחק יהיה שאלות כמו בהדרכה אבל הפעם לא יהיו הסברים!על כֹּל תְשובה נכונה תקבל נקודות.בהצלחה! -->
-	<audio id="audio48" src="Math-Project/audio-instrcts/ready-start.mp3"></audio>		<!--מוכנים?, לְחַץ כּדי להתחיל! -->
+	<audio id="game-inst" data-ext="m4a"></audio>				 <!-- הוראות המשחק -->
+	<audio id="in-this-game-choose" data-ext="m4a"></audio>	<!-- במשחק זה עליך לבחור את המספר העשׂרוני הגדול בין שני המספרים המופיעים על המסך. -->
+	<audio id="you-need-to-pass"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
+
+	<audio id="choose-big-num" data-ext="m4a"></audio>		<!-- בְחַר את המספר הגדול מבין שני המספרים הבאים:. -->
+	<audio id="lets-compose" data-ext="m4a"></audio>			<!-- בוא נִפַרֵק את שני המספרים שבשאלה. בחר את המספר שתרצה לפרק:. -->
+
+	<audio id="lets-look-num-comp" data-ext="m4a"></audio>	<!-- בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים::. -->
+	<audio id="every-dec-num" data-ext="m4a"></audio>			<!-- כל מספר עשׂרוני מורכב מ: -->
+	<audio id="whole-left" data-ext="m4a"></audio>			<!-- החלק השלם, שהוא כולל את המספרים מצד שמאל של הנקודה העשׂרונית כמו האַחַדוֹת, העשרות והמִאוֹת.: -->
+	<audio id="decimal-pnt" data-ext="mp3"></audio>			<!-- הנקודה העשׂרונית שהיא נקודה באמְצַע בין החלק השלם והחלק השברי.: -->
+	<audio id="frac-right" data-ext="m4a"></audio>			<!--החלק השברי,שהוא כולל את המספרים מצד ימין של הנקודה העשׂרונית כמו העשׂיריות, המִאִיות והאלפיות.: -->
+
+	<audio id="for-exmple-0.25" data-ext="mp3"></audio>			<!--לדוגמה המִספר 0.25 מורכב מ-: -->
+	<audio id="0-ones" data-ext="mp3"></audio>					<!--אפס אַחַדוֹת. -->
+	<audio id="2-10ths" data-ext="mp3"></audio>					<!--שתי עשיריות. -->
+	<audio id="5-100ths" data-ext="mp3"></audio>					<!--חמש מאיות. -->
+
+	<audio id="for-exmple-0.3"></audio>			<!--לדוגמה המִספר 0.30 מורכב מ-: -->
+	<audio id="3-10ths" data-ext="mp3"></audio>					<!--שלוש עשיריות. -->
+	<audio id="0-100ths" data-ext="mp3"></audio>					<!--אפס מאיות.-->
+	<audio id="why-zero" data-ext="mp3"></audio>					<!--מאיפה מגיע האפס! לְחץ כּדי להסְבִּיר. -->
+	<audio id="for-exmple-0.68" data-ext="mp3" ></audio>			<!--לדוגמה המִספר 0.68 מורכב מ-:  -->
+	<audio id="6-10ths" data-ext="mp3"> </audio>					<!--שש עשיריות.-->
+	<audio id="8-100ths" data-ext="mp3" ></audio>					<!--שמונֶה מִאִיות. -->
+
+	<audio id="for-exmple-0.7" data-ext="mp3" ></audio>			<!--לדוגמה המִספר 0.70 מורכב מ-: -->
+	<audio id="7-10ths" data-ext="mp3" ></audio>					<!--שבע עשיריות. -->
+
+	<audio id="for-exmple-1.31" data-ext="mp3" ></audio>			<!--לדוגמה המִספר 1.31 מורכב מ-:  -->
+	<audio id="1-ones" data-ext="mp3" ></audio>					<!--יִחידַה אַחַת. -->
+	<audio id="1-100ths" data-ext="mp3" ></audio>					<!--מאייה אחת -->
+
+	<audio id="for-exmple-1.4" data-ext="mp3" ></audio>			<!--לדוגמה המִספר 1.40 מורכב מ-:  -->
+	<audio id="4-10ths" data-ext="mp3" ></audio>					<!--ארבע עשיריות. -->
 
 
+	<audio id="zero-importance" data-ext="mp3" ></audio>			<!--לאפס משמעות חשובה במספרים העשרוניים. -->
+	<audio id="0.3-example" data-ext="mp3" ></audio>				<!--לדוגמה: המספר העשרוני: 0.3,-->
+	<audio id="it-has-3-10ths" data-ext="mp3"></audio>					<!--יש בתוכו 3 עשיריות. -->
+	<audio id="its-equal-30-100ths" data-ext="mp3" ></audio>					<!--הוא שווה ל־ 30 במאיות. -->
+	<audio id="its-equal-300-1000ths" data-ext="mp3" ></audio>					<!--וגם שווה ל־ 300 באלפיות. -->
 
+	<audio id="0.03-example" data-ext="mp3" ></audio>					<!--המספר העשרוני: 0.03, -->
+	<audio id="it-has-0-10ths" data-ext="mp3"></audio>					<!--יש בתוכו 0 עשיריות. -->
+	<audio id="its-equal-3-100ths" data-ext="mp3" ></audio>					<!--הוא שווה ל־ 3 במאיות. -->
+	<audio id="its-equal-30-1000ths" data-ext="mp3" ></audio>					<!--וגם שווה ל־ 30 באלפיות. -->
 
+	<audio id="put-on-axis" data-ext="mp3" ></audio>					<!--עכשיו נִסַדֵּר את המספרים על ציר המספרים: -->
 
+	<audio id="what-we-learn-from-this" data-ext="mp3" ></audio>		<!--מה אפשר ללמוד מזה?	 -->
+	<audio id="length-of-num-not-indicate" data-ext="mp3" ></audio>		<!--	אורך המספר העשׂרוני לא תמיד עוזר לנו לזהות את ערכו. כלומר: יכול להיות שמספר יהיה קצר אַךְ ערכו גדול יותר מהמספר הארוך. -->
 
+	<audio id="end-of-tutorial" data-ext="mp3" ></audio>					<!--הגעת לסיום ההדרכה בהצלחה. -->
+	<audio id="click-to-start-game" data-ext="mp3" ></audio>					<!--להתחיל את המשחק לחץ כַּאן. -->
+	<audio id="replay-tutorial" data-ext="mp3" ></audio>					<!--לעבור על ההדרכה פעם נוספת, לחץ כַּאן -->
 
-	<audio id="audio01" src="Math-Project/audio-instrcts/click-here-to-continue.mp3"></audio>					<!--לְחץ כַּאן כּדי להַמשיך. -->
-	<audio id="audio02" src="Math-Project/audio-instrcts/click-here-to-continue-exmple.mp3"></audio>			<!--לְחץ כַּאן כּדי להַמשיך לדוגמה נוספת .  -->
-	<audio id="audio03" src="Math-Project/audio-instrcts/click-to-see-exmple.mp3"></audio>					<!--לְחץ כַּאן כּדי לראות דוגמה נוספת. -->
-	<audio id="audio04" src="Math-Project/audio-instrcts/lets-breakdown.mp3"></audio>					<!--בּוא נִפַרֵק כֹּל מספר. -->
+	<audio id="game-about-to-start" data-ext="mp3" ></audio>					<!-- המשחק עומד להתחיל! -->
+	<audio id="pause-buttn-inst" data-ext="mp3" ></audio>					<!--כּאשר המשחק מתחיל יוצג כּפתור "הַfסֵק" כּדי לעצור את השעון. -->
+	<audio id="timer-view-inst" data-ext="mp3" ></audio>					<!--בּרגע שתתחיל את המשחק, יתחיל טיימר ויופיע למעלה בצד שמאל. -->
+	<audio id="music-inst" data-ext="mp3" ></audio>					<!--בּנוסף תופעל מוזיקה ויוצג כּפתור להגְבַּרַת ולהנְמַכַת הקול. -->
+
+	<audio id="what-is-in-the-game" data-ext="mp3" ></audio>		<!--מה יהיה במשחק?במשחק יהיה שאלות כמו בהדרכה אבל הפעם לא יהיו הסברים!על כֹּל תְשובה נכונה תקבל נקודות.בהצלחה! -->
+	<audio id="ready-start" data-ext="mp3" ></audio>		<!--מוכנים?, לְחַץ כּדי להתחיל! -->
+
+	<audio id="click-here-to-continue" data-ext="mp3"></audio>					<!--לְחץ כַּאן כּדי להַמשיך. -->
+	<audio id="click-here-to-continue-exmple" data-ext="mp3"></audio>			<!--לְחץ כַּאן כּדי להַמשיך לדוגמה נוספת .  -->
+	<audio id="click-to-see-exmple" data-ext="mp3"></audio>					<!--לְחץ כַּאן כּדי לראות דוגמה נוספת. -->
+	<audio id="lets-breakdown" data-ext="mp3"></audio>					<!--בּוא נִפַרֵק כֹּל מספר. -->
 	<!-- Core and Plugins -->
 	<script src="dist/reveal.js"></script>
 	<script src="plugin/notes/notes.js"></script>
