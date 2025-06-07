@@ -28,6 +28,11 @@
 </head>
 <body dir="rtl" style="text-align: right; font-family:'Noto Sans Hebrew'">
 	<img class="Background-theme" src="Math-Project/main-theme.png" />
+	<div id="lang-toggle" style="position: fixed; top: 10px; left: 10px; z-index: 999;">
+		<button onclick="switchLanguage('heb')">🇮🇱 עברית</button>
+		<button onclick="switchLanguage('ar')">🇸🇦 عربي</button>
+	</div>
+
 	<div class="reveal">
 		<div class="slides">
 			<!-- Slide 1 index=0-->
@@ -48,26 +53,31 @@
 								margin-right:350px;
 								justify-content: center;"
 					 class="header">
-					<h2 style="font-size: 75px !important;"> המבנה העשרוני </h2>
+					<h2 style="font-size: 75px !important;" class="lang lang-heb"> המבנה העשרוני </h2>
+					<h2 style="font-size: 75px !important;" class="lang lang-ar">  المبنى العَشْري </h2>
 				</div>
 				<!-- continue click-->
 				<div class="delayed-p continue-button" style="margin-top: 170px; margin-right:220px;">
 					<!-- linked to slide2: index=1-->
-					<a onclick="playTapAndGo(1)" id="delayed-fragment">	לחץ כּאן כּדי להמשיך </a>
+					<a onclick="playTapAndGo(1)" id="delayed-fragment" class="lang lang-heb">	לחץ כּאן כּדי להמשיך </a>
+					<a onclick="playTapAndGo(1)" id="delayed-fragment" class="lang lang-ar">	اضغط هنا للمتابعة </a>
 				</div>
 			</section>
 
 			<!-- Slide 2 index=1-->
 			<section class="Slide2">
 				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
-					<div onclick="playAudio('audio0')" class="audio-border" style="margin-left: 20px;">
+					<div onclick="playInstruction('game-inst')" class="audio-border" style="margin-left: 20px;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon">
 					</div>
 
 
 					<div style="display: flex; align-items: center; gap: 50px; direction: rtl;">
-						<h3 class="glow-underline delayed-p" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
+						<h3 class="glow-underline delayed-p lang lang-heb" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
 							הוראות המשחק
+						</h3>
+						<h3 class="glow-underline delayed-p lang lang-ar" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
+							تعليمات اللُّعبة
 						</h3>
 					</div>
 				</div>
@@ -2189,7 +2199,7 @@
 
 			<!-- Question3 -->
 			<section class="question-group" id="group-q3">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q3">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2226,7 +2236,7 @@
 
 			<!-- Question4 -->
 			<section class="question-group" id="group-q4">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q4">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2263,7 +2273,7 @@
 
 			<!-- Question5 -->
 			<section class="question-group" id="group-q5">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q5">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2300,7 +2310,7 @@
 
 			<!-- Question6 -->
 			<section class="question-group" id="group-q6">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q6">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2337,7 +2347,7 @@
 
 			<!-- Question7 -->
 			<section class="question-group" id="group-q7">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q7">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2374,7 +2384,7 @@
 
 			<!-- Question8 -->
 			<section class="question-group" id="group-q8">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q8">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2411,7 +2421,7 @@
 
 			<!-- Question9 -->
 			<section class="question-group" id="group-q9">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q9">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2448,7 +2458,7 @@
 
 			<!-- Question10 -->
 			<section class="question-group" id="group-q10">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q10">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2485,7 +2495,7 @@
 
 			<!-- Question11 -->
 			<section class="question-group" id="group-q11">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q11">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2522,7 +2532,7 @@
 
 			<!-- Question12 -->
 			<section class="question-group" id="group-q12">
-				<section class="question-slide" data-question-id="q1">
+				<section class="question-slide" data-question-id="q12">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2558,7 +2568,7 @@
 			</section>
 			<!-- Question13 -->
 			<section class="question-group" id="group-q13">
-				<section class="question-slide" data-question-id="q3">
+				<section class="question-slide" data-question-id="q13">
 					<div class="delayed-p glow-underline"
 						 style="display: flex;flex-shrink:1;margin-top: 90px;animation-delay: 2s;margin-right: -60px;font-size:50px;position:absolute;flex-wrap: wrap;width: 150%;right: -17%;animation-delay:0s;">
 						<div onclick="playAudio('audio3')" class="audio-border" style="margin-left: 15px;">
@@ -2596,27 +2606,29 @@
 			</section>
 
 			<!--youv'e reached the end of the game: two options: play again or watch back the tutorial-->
-			<!-- FINAL GAME RESULT SLIDE (ALWAYS STATIC) -->
+			<!-- FINAL GAME RESULT SLIDE -->
 			<section id="game-results"
 					 data-role="final-score"
-					 style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; "
+					 style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; color:purple; margin-top:150px;"
 					 data-transition="fade">
 
-				<!-- Score message -->
+				<!-- Score Message -->
 				<div id="final-score-display"
-					 style="margin-top:90px; font-size: 70px; font-weight: bold; color: #5C2C7A; background-color: #FFFAF0; border: 6px dashed #FF9DC0; border-radius: 40px; padding: 50px; box-shadow: 0 0 30px rgba(255, 190, 255, 0.6); animation: fade-in 1.5s ease-out;">
-					✨ קיבלת <span id="final-points-count">0</span> נקודות! ✨ 
+					 style="font-size: 60px; font-weight: bold; background-color: #FFFAF0; border: 6px dashed #FF9DC0; border-radius: 30px; padding: 35px; box-shadow: 0 0 30px rgba(255, 190, 255, 0.6); animation: fade-in 1.5s ease-out;">
+					💎 צברת <span id="final-points-count">0</span> נקודות!<br>
+					⏱️ זמן: <span id="final-time">00:00</span><br>
+					🥇 תשובות נכונות: <span id="correct-count">0</span> מתוך <span id="total-questions">0</span>
 				</div>
 
-				<!-- Sound -->
 				<audio id="earned-point" src="Math-Project/sfx/earned-point.mp3"></audio>
 
 				<!-- Buttons -->
-				<div class="end-options" style="margin-top: 90px;">
+				<div class="end-options" style="margin-top: 90px; color:antiquewhite; font-size:48px;">
 					<a id="btn-replay" class="special-button">🔁 שחק שוב</a>
 					<a id="btn-tutorial" class="special-button">🏠 חזרה להדרכה</a>
 				</div>
 			</section>
+
 
 
 		</div>
@@ -2711,7 +2723,7 @@
 
 
 	<!-- 🎧  audio instruction elements: -->
-	<audio id="audio0" src="Math-Project/audio-instrcts/game-inst.m4a"></audio>				 <!-- הוראות המשחק -->
+	<audio id="audio-game-inst"></audio>				 <!-- הוראות המשחק -->
 	<audio id="audio1" src="Math-Project/audio-instrcts/in-this-game-choose.m4a"></audio>	<!-- במשחק זה עליך לבחור את המספר העשׂרוני הגדול בין שני המספרים המופיעים על המסך. -->
 	<audio id="audio2" src="Math-Project/audio-instrcts/you-need-to-pass.m4a"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
 	<audio id="audio3" src="Math-Project/audio-instrcts/choose-big-num.m4a"></audio>		<!-- בְחַר את המספר הגדול מבין שני המספרים הבאים:. -->
@@ -2801,6 +2813,7 @@
 				el.classList.add('visible-now');
 			});
 		});
+
 
 
 	</script>

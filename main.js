@@ -6,6 +6,9 @@ let musicPlaying = false;
 const bgMusic = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-toggle');
 let lastVolume = 0.3; // Default volume to restore on unmute
+let correctGameAnswers = 0; //global variable to count correct answers in the game
+let currentLanguage = 'heb'; // Default language
+
 
 
 
@@ -24,6 +27,30 @@ Reveal.addEventListener('slidechanged', (event) => {
 		}, parseFloat(delay) * 1000);
 	});
 });
+
+function switchLanguage(toLang) {
+	currentLanguage = toLang;
+
+	document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+	document.querySelectorAll(`.lang-${toLang}`).forEach(el => el.style.display = 'block');
+}
+
+
+function playInstruction(id) {
+	const audio = document.getElementById(`audio-${id}`);
+	if (!audio) return;
+
+	// Folder is based on current language
+	const folder = `Math-Project/audio-instrcts-${currentLanguage}`;
+	const path = `${folder}/${id}.m4a`;
+
+	audio.src = path;
+	audio.play().catch(() => {
+		console.warn(`Audio not found: ${path}`);
+	});
+}
+
+
 
 
 //function that play "tap-sound" when clicking a button and then forwards the user to the targetSlideIndex
@@ -191,8 +218,9 @@ function bindAnswerButtons() {
 			if (isCorrect && isGameQuestion) {
 				addPoints(10); // Base points
 				correctStreak++;
+				correctGameAnswers++;  // Count correct game answers
 
-				if (correctStreak >4 ) {
+				if (correctStreak >2 ) {
 					addPoints(25); // Bonus
 					showStreakPopup(25);
 					playAudio('streak-sound');
@@ -281,13 +309,6 @@ function shuffleQuestions() {
 	// Reset all data-start attributes
 	const allQuestions = document.querySelectorAll('.question-slide');
 	allQuestions.forEach(q => q.removeAttribute('data-start'));
-
-	// ✅ Force start at the first .question-group
-	const firstGroup = document.querySelector('.question-group');
-	if (firstGroup) {
-		const hIndex = Array.from(Reveal.getHorizontalSlides()).indexOf(firstGroup);
-		if (hIndex !== -1) Reveal.slide(hIndex, 0);
-	}
 
 
 }
@@ -770,9 +791,18 @@ Reveal.on('slidechanged', (event) => {
 Reveal.on('slidechanged', (event) => {
 	const slide = event.currentSlide;
 	if (slide?.id === 'game-results') {
-		const finalCount = document.getElementById('final-points-count');
-		finalCount.textContent = totalPoints;
+		//  Points
+		document.getElementById('final-points-count').textContent = totalPoints;
 
+		//  Time
+		document.getElementById('final-time').textContent = document.getElementById('game-timer').textContent;
+
+		//  Count total game questions
+		const totalGameQuestions = document.querySelectorAll('.question-group .question-slide[data-question-id]').length;
+		document.getElementById('correct-count').textContent = correctGameAnswers;
+		document.getElementById('total-questions').textContent = totalGameQuestions;
+
+		//  Sound
 		const resultSound = document.getElementById('earned-point');
 		if (resultSound) {
 			resultSound.currentTime = 0;
@@ -780,4 +810,6 @@ Reveal.on('slidechanged', (event) => {
 		}
 	}
 });
+
+switchLanguage('heb');
 
