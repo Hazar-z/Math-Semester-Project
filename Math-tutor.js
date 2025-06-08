@@ -34,6 +34,7 @@ function toggleLanguageMenu() {
 
 function switchLanguage(toLang) {
 	currentLanguage = toLang;
+	// Hide all language elements
 	document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
 	document.querySelectorAll(`.lang-${toLang}`).forEach(el => el.style.display = 'block');
 
@@ -42,6 +43,12 @@ function switchLanguage(toLang) {
 	document.getElementById('btn-ar')?.classList.remove('active');
 	const btn = document.getElementById('btn-' + toLang);
 	if (btn) btn.classList.add('active');
+
+	// Stop any playing videos when switching language
+	document.querySelectorAll('video').forEach(video => {
+		video.pause();
+		video.currentTime = 0; // optional: reset to start
+	});
 }
 
 
@@ -846,3 +853,9 @@ Reveal.on('slidechanged', (event) => {
 
 switchLanguage('heb');
 
+Reveal.on('slidechanged', () => {
+	document.querySelectorAll('video').forEach(video => {
+		video.pause();
+		video.currentTime = 0; // optional: reset to start
+	});
+});
