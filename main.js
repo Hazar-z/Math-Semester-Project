@@ -263,20 +263,22 @@ function resetPoints() {
 //helper function for STREAK POINTS:
 function showStreakPopup(bonus) {
 	const popup = document.getElementById('points-popup');
-	popup.innerHTML = `🔥 רצף!<br><span style="color: cadetblue;">+${bonus}</span>`;
+	popup.innerHTML = `
+		<span class="lang lang-heb">🔥 רצף!<br><span style="color: cadetblue;">+${bonus}</span></span>
+		<span class="lang lang-ar" style="display: none;">🔥 تتالي!<br><span style="color: cadetblue;">+${bonus}</span></span>
+	`;
+
 	popup.style.opacity = '1';
 	popup.style.transform = 'translateX(-100px) translateY(-25px) scale(1.1)';
+
+	// ✅ Reapply current language properly
+	switchLanguage(currentLanguage);
 
 	setTimeout(() => {
 		popup.style.opacity = '0';
 		popup.style.transform = 'translateY(0) scale(1)';
 	}, 3000);
 }
-
-
-
-
-
 
 
 
@@ -751,14 +753,20 @@ window.addEventListener('click', (e) => {
 
 //function lisetens for a click and check whether to play tap-sound audio for "replay" and "go to home page" buttns
 document.addEventListener('click', (e) => {
-	if (e.target?.id === 'btn-replay') {
+	const target = e.target.closest('#btn-replay, #btn-tutorial');
+	if (!target) return;
+
+	if (target.id === 'btn-replay') {
 		const tapSound = document.getElementById('tap-sound');
 		if (tapSound) tapSound.play();
 
 		resetGameState();
-		resetPoints(); 
+		resetPoints();
 		resetGameTimer();
 		shuffleQuestions();
+		correctStreak = 0;
+		wrongStreak = 0;
+		correctGameAnswers = 0;
 
 		setTimeout(() => {
 			const startSlide = document.getElementById('start-game');
@@ -767,7 +775,7 @@ document.addEventListener('click', (e) => {
 		}, 0);
 	}
 
-	if (e.target?.id === 'btn-tutorial') {
+	if (target.id === 'btn-tutorial') {
 		const tapSound = document.getElementById('tap-sound');
 		if (tapSound) tapSound.play();
 
@@ -775,12 +783,17 @@ document.addEventListener('click', (e) => {
 		resetPoints();
 		resetGameTimer();
 		shuffleQuestions();
+		correctStreak = 0;
+		wrongStreak = 0;
+		correctGameAnswers = 0;
 
 		setTimeout(() => {
-			Reveal.slide(0, 0);
+			Reveal.slide(1, 0);
 		}, 0);
 	}
+
 });
+
 
 function playAudio(id) {
 	const audio = document.getElementById(id);

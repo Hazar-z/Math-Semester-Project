@@ -51,27 +51,49 @@
 
 			<section id="welcome-slide"
 					 data-background-image="Math-Project/welcome-bg.png"
-					 data-transition="fade">
+					 data-transition="concave">
 
 				<div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; width: 110%; padding-top: 10px;">
 
 					<!-- Title -->
-					<h2 class="lang lang-heb" style="font-size: 60px; margin-bottom: 80px; color: antiquewhite; font-weight:bold; ">
-						🧮	ברוכים הבאים למדריך החשבון! 🧮
-					</h2>
-					<h2 class="lang lang-ar" style="display: none; font-size: 60px; margin-bottom: 80px; color: antiquewhite; font-weight: bold;">
-						🧮	مرحباً بكم في مُرْشِد الحساب! 🧮
-					</h2>
+					<div style="display: flex; align-items: center; gap: 20px; margin-bottom: 80px;">
+						<!-- Hebrew -->
+						<h2 class="lang lang-heb" style="font-size: 55px; color: antiquewhite; font-weight:bold;">
+							🧮 ברוכים הבאים למדריך החשבון! 🧮
+						</h2>
+						<!-- Arabic -->
+						<h2 class="lang lang-ar" style="display: none; font-size: 60px; color: antiquewhite; font-weight:bold;">
+							🧮 مرحباً بكم في مُرْشِد الحساب! 🧮
+						</h2>
+
+						<!-- Shared audio icon -->
+						<div onclick="playInstructionSimple('welcome-tutor')" class="audio-border">
+							<img src="Math-Project/audio-inst.png" class="audio-icon">
+						</div>
+					</div>
+
+
+
 
 					<!-- Topic List -->
 					<div style="display: flex; justify-content: flex-start; width: 90%; margin-right: -550px;">
 						<div style="display: flex; gap: 60px;">
 
-							<!-- Game 1 -->
-							<div onclick="playTapAndGo(1)" class="hover-sound topic-square">
+							<!-- Game 1 with bottom-right audio icon -->
+							<div onclick="playTapAndGo(1)" class="hover-sound topic-square" style="position: relative;">
+
+								<!-- Bottom-right audio icon -->
+								<div onclick="event.stopPropagation(); playInstructionSimple('decimal-system')"
+									 class="audio-border"
+									 style="position: absolute; bottom: 10px; right: 10px; z-index: 2;">
+									<img src="Math-Project/audio-inst.png" class="audio-icon">
+								</div>
+
+								<!-- Game name -->
 								<span class="lang lang-heb topic-title topic-title-heb">המבנה העשרוני</span>
 								<span class="lang lang-ar topic-title topic-title-ar">المبنى العَشريّ</span>
 							</div>
+
 
 							<!-- Game 2 -->
 							<div class="topic-square dimmed">
@@ -106,7 +128,7 @@
 					</div>
 				</div>
 			</section>
-			
+
 
 			<!-- Slide 1 index=0-->
 			<section id="intro-slide"
@@ -117,39 +139,77 @@
 								justify-content: center;
 								margin-right:70px;"
 					 class="Slide1"
-					 data-transition="wipe"
+					 data-transition="concave"
 					 data-state="animate-paragraph">
 				<!-- slide1 Title-->
 				<div style="width: 500px;
-								padding-top: 145px;
-								padding-bottom:85px;
-								margin-right:350px;
-								justify-content: center;"
+			padding-top: 145px;
+			padding-bottom:85px;
+			margin-right:-30px;
+			justify-content: center;"
 					 class="header">
-					<h2 style="font-size: 75px !important;" class="lang lang-heb"> המבנה העשרוני </h2>
-					<h2 style="font-size: 75px !important;" class="lang lang-ar">  المبنى العَشْري </h2>
+
+					<!-- Hebrew title -->
+					<div style="display: flex; align-items: center;" class="lang lang-heb">
+						<h2 style="font-size: 70px !important;">המבנה העשרוני</h2>
+						<div onclick="playInstructionSimple('decimal-system')" class="audio-border"
+							 style="margin-left: 40px; margin-top: 150px; transform: translateX(400px); ">
+							<!-- 🔹 More space between text and icon -->
+							<img src="Math-Project/audio-inst.png" class="audio-icon">
+						</div>
+					</div>
+
+					<!-- Arabic title -->
+					<div style="display: none; display: flex; align-items: center;" class="lang lang-ar">
+						<h2 style="font-size: 80px !important;">المبنى العَشْري</h2>
+						<div onclick="playInstructionSimple('decimal-system')" class="audio-border"
+							 style="margin-left: 40px; margin-top: 150px; transform: translateX(400px);">
+							<img src="Math-Project/audio-inst.png" class="audio-icon">
+						</div>
+					</div>
+
 				</div>
-				<!-- continue click-->
-				<div class="delayed-p continue-button" style="margin-top: 170px; margin-right:220px;">
-					<!-- linked to slide2: index=1-->
-					<a onclick="playTapAndGo(2)" id="delayed-fragment" class="lang lang-heb">	לחץ כּאן כּדי להמשיך </a>
-					<a onclick="playTapAndGo(2)" id="delayed-fragment" class="lang lang-ar">	اضغط هنا للمتابعة </a>
+
+				<!-- continue click -->
+				<div class="delayed-p continue-button" style="margin-top: 50px; margin-right:220px; display: flex; flex-direction: column; gap: 20px;">
+
+					<!-- Hebrew -->
+					<div class="lang lang-heb" style="display: flex; align-items: center; gap: 20px;">
+						<div onclick="playInstructionSimple('click-here-to-continue')" class="audio-border">
+							<img src="Math-Project/audio-inst.png" class="audio-icon">
+						</div>
+						<a onclick="playTapAndGo(2)" id="delayed-fragment"
+						   style="position: relative; top: -25px;">לחץ כּאן כּדי להמשיך</a>
+
+					</div>
+
+					<!-- Arabic -->
+					<div class="lang lang-ar" style="display: none; display: flex; align-items: center; gap: 20px;">
+						<div onclick="playInstructionSimple('click-here-to-continue')" class="audio-border">
+							<img src="Math-Project/audio-inst.png" class="audio-icon">
+						</div>
+						<a onclick="playTapAndGo(2)" id="delayed-fragment"
+						   style="position: relative; top: -25px;">اضغط هنا للمتابعة</a>
+					</div>
+
 				</div>
+
+
 			</section>
 
 			<!-- Slide 2 index=1-->
 			<section class="Slide2">
-				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-bottom: 30px; ">
+				<div class="header delayed-p" style="width: 80%; display: flex; justify-content: center; margin-top: 30px; ">
 					<div onclick="playInstructionSimple('game-inst')" class="audio-border" style="margin-left: 20px;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon">
 					</div>
 
 
-					<div style="display: flex; align-items: center; gap: 50px; direction: rtl;">
-						<h3 class="glow-underline delayed-p lang lang-heb" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
+					<div style="display: flex; align-items: center; gap: 50px; direction: rtl; margin-top: -10px;">
+						<h3 class="glow-underline delayed-p lang lang-heb" style="font-size: 50px; font-family: 'Noto Sans Hebrew'; font-weight: bold; text-align: center;">
 							הוראות המשחק
 						</h3>
-						<h3 class="glow-underline delayed-p lang lang-ar" style="font-size: 70px; font-family:'Chewy'; font-weight:bold; margin: 0; text-align: center;">
+						<h3 class="glow-underline delayed-p lang lang-ar" style="font-size: 60px; font-family: 'Noto Sans Hebrew'; font-weight: bold;  text-align: center;">
 							تعليمات اللُّعبة
 						</h3>
 					</div>
@@ -157,7 +217,7 @@
 
 
 				<!-- Slide2 fragments-->
-				<ul class="delayed-p" style="text-align:right; animation-delay:2s;  line-height:1.5px;">
+				<ul class="delayed-p" style="text-align:right; animation-delay:2s;  line-height:1.3px; margin-top:-150px;">
 					<li>
 						<div class="instruction-wrapper">
 							<div class="audio-border" onclick="playInstructionSimple('in-this-game-choose')">
@@ -180,7 +240,7 @@
 								עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק.
 							</span>
 							<span class="instruction-text lang lang-ar">
-								يجب عليك إتمام الشرح بنجاح لكي تتمكن من بدء اللعبة..
+								يجب عليك إتمام الشرح بنجاح لكي تتمكن من بدء اللعبة.
 							</span>
 						</div>
 					</li>
@@ -199,7 +259,7 @@
 					<a onclick="playTapAndGo(3)"
 					   id="delayed-fragment "
 					   style=" display: flex; margin-top: 100px; margin-right: 200px; width: 400px; justify-content: center; text-align: center; cursor: pointer; ">
-						اضغط هُنا للمًتابَعة.
+						اضغط هُنا للمًتابَعة
 					</a>
 				</div>
 			</section>
@@ -338,7 +398,7 @@
 			</section>
 
 			<!-- Slide 6 index=5-->
-			<section>
+			<section data-transition="concave">
 				<div class="glow-underline"
 					 style="
 					display: flex;
@@ -388,7 +448,7 @@
 			</section>
 
 			<!-- Slide 7 index=6 -->
-			<section id="num-house-slide" data-transition="fade">
+			<section id="num-house-slide" data-transition="wipe">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background">
 
 				<!-- Text conten above image-->
@@ -456,7 +516,7 @@
 
 						</div>
 						<!-- highlight/circle of decimal dot-->
-						<div id="square-frame-2" class="circle-draw" data-delay="11000" style="position: absolute; top: 160%; left: 26.5%; border-radius: 55px;
+						<div id="square-frame-2" class="circle-draw" data-delay="11000" style="position: absolute; top: 200%; left: 27.5%; border-radius: 55px;
 							 width: 108px; height: 108px; border: 5px solid #cceeff; box-shadow: 0 0 10px 4px rgba(204, 238, 255, 0.8); background-color: #cceeff ">
 						</div>
 					</div>
@@ -537,7 +597,7 @@
 			</section>
 
 			<!-- Slide 8 index=7  composition of 0.25-->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -716,7 +776,7 @@
 			</section>
 
 			<!-- Slide 9 index=8 composition of 0.3 -->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -1081,12 +1141,12 @@
 				</style>
 
 				<!-- Title -->
-				<h3 class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;margin-bottom:15px;">
-					<span class="lang lang-heb">
+				<h3 class="delayed-p" style=" background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222; margin-bottom: 15px;">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('put-on-axis')">
 						עכשיו נסדר את המספרים על ציר המספרים:
 					</span>
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('put-on-axis')">
 						هيّا نرتب الأعداد على خط الأعداد:
 					</span>
@@ -1201,11 +1261,11 @@
 
 				<!-- Continue Button -->
 				<div class="continue-button delayed-p" style="margin-top: 100px; display: flex; align-items: center; justify-content: center; gap: 20px; direction: rtl;">
-					<span class="lang lang-heb">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('click-here-to-continue')">
 						<a onclick="playTapAndGo(13)">לחץ כאן כדי להמשיך</a>
 					</span>
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('click-here-to-continue')">
 						<a onclick="playTapAndGo(13)">اضغط هنا للمتابعة</a>
 					</span>
@@ -1219,11 +1279,11 @@
 
 				<!-- Top Box Question -->
 				<div class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;">
-					<span class="lang lang-heb">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon" style="width: 50px; height: 45px; display: inline-block; cursor:pointer;" onclick="playInstructionSimple('what-we-learn-from-this')">
 						מה אפשר ללמוד מזה?
 					</span>
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon" style="width: 50px; height: 45px; display: inline-block; cursor:pointer;" onclick="playInstructionSimple('what-we-learn-from-this')">
 						ماذا يمكن أن نتعلّم من ذلك؟
 					</span>
@@ -1244,7 +1304,7 @@
 
 				<!-- Bottom Explanation Block -->
 				<div class="delayed-p" style="background-color: #6e3e70; border: 6px solid; border-color: goldenrod; border-radius: 15px; padding: 25px; font-size: 28px; color: white; margin-top: 40px; line-height: 1.7;">
-					<span class="lang lang-heb">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon" style="width: 50px; height: 45px; display: inline-block; cursor:pointer;" onclick="playInstructionSimple('length-of-num-not-indicate')">
 						אורך המספר העשרוני לא תמיד עוזר לנו לזהות את ערכו.<br>
 						<span style="color:lightcoral; font-weight:bold; text-decoration:underline;">כלומר:</span>
@@ -1253,7 +1313,7 @@
 						ערכו גדול יותר מהמספר הארוך.
 					</span>
 
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" class="audio-icon" style="width: 50px; height: 45px; display: inline-block; cursor:pointer;" onclick="playInstructionSimple('length-of-num-not-indicate')">
 						طول العدد العشري لا يساعدنا دائمًا في معرفة قيمته.<br>
 						<span style="color:lightcoral; font-weight:bold; text-decoration:underline;">بمعنى:</span>
@@ -1309,7 +1369,7 @@ position: absolute;
 flex-wrap: wrap;
 width: max-content;
 right: -19%;">
-					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px; cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
@@ -1327,7 +1387,7 @@ position: absolute;
 flex-wrap: wrap;
 width: max-content;
 right: -13%;">
-					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 					</div>
 					اختر العدد الأكبر من بين العددين التاليين:
@@ -1417,11 +1477,11 @@ right: -13%;">
 							اضغط هُنا للمًتابَعة
 						</a>
 					</div>
-
+				</div>
 			</section>
 
 			<!-- Slide: composition of 0.68-->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -1432,7 +1492,7 @@ right: -13%;">
 						<span class="lang lang-heb">בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:</span>
 						<span class="lang lang-ar">هيا ننظر إلى بُنْيَة العدد العَشري بمساعدة جدول المنازل العَشرية:</span>
 						<!-- Audio Icon -->
-						<span onclick="playInstructionSimple('lets-look-num-comp')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+						<span onclick="playInstructionSimple('lets-look-num-comp')" style="vertical-align: middle; margin-top: 5px; display: inline-block; cursor: pointer;">
 							<img src="Math-Project/audio-inst-blue.png"
 								 class="audio-icon"
 								 style="width: 50px; height: 45px; margin-right:10px;">
@@ -1455,7 +1515,7 @@ right: -13%;">
 						</span>
 
 						<!-- Audio Icon -->
-						<span onclick="playInstructionSimple('for-exmple-0.68')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+						<span onclick="playInstructionSimple('for-exmple-0.68')" style="vertical-align: middle; margin-top: 5px; display: inline-block; cursor: pointer;">
 							<img src="Math-Project/audio-inst-blue.png"
 								 class="audio-icon"
 								 style="width: 50px; height: 45px;  margin-right:10px;">
@@ -1475,7 +1535,7 @@ right: -13%;">
 						<div style="position: absolute; top: 150%; left: 23.5%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('0-ones')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('0-ones')" style="vertical-align:initial; margin-top: 5px; display: inline-block; cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block;">
@@ -1531,7 +1591,7 @@ right: -13%;">
 						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							6
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('6-10ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('6-10ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;  cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block;">
@@ -1552,7 +1612,7 @@ right: -13%;">
 						<div style="position: absolute;  top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							8
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('8-100ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('8-100ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;  cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block; ">
@@ -1600,7 +1660,7 @@ right: -13%;">
 			</section>
 
 			<!-- composition of 0.7-->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -1611,7 +1671,7 @@ right: -13%;">
 						<span class="lang lang-heb">בוא נסתכל על מבנה המספר העשרוני בעזרת בית המספרים:</span>
 						<span class="lang lang-ar">هيا ننظر إلى بُنْيَة العدد العَشري بمساعدة جدول المنازل العَشرية:</span>
 						<!-- Audio Icon -->
-						<span onclick="playInstructionSimple('lets-look-num-comp')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+						<span onclick="playInstructionSimple('lets-look-num-comp')" style="vertical-align: middle; margin-top: 5px; display: inline-block;  cursor: pointer;">
 							<img src="Math-Project/audio-inst-blue.png"
 								 class="audio-icon"
 								 style="width: 50px; height: 45px; margin-right:10px;">
@@ -1634,7 +1694,7 @@ right: -13%;">
 						</span>
 
 						<!-- Audio Icon -->
-						<span onclick="playInstructionSimple('for-exmple-0.7')" style="vertical-align: middle; margin-top: 5px; display: inline-block;">
+						<span onclick="playInstructionSimple('for-exmple-0.7')" style="vertical-align: middle; margin-top: 5px; display: inline-block;  cursor: pointer;">
 							<img src="Math-Project/audio-inst-blue.png"
 								 class="audio-icon"
 								 style="width: 50px; height: 45px;  margin-right:10px;">
@@ -1655,7 +1715,7 @@ right: -13%;">
 						<div style="position: absolute; top: 150%; left: 24%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							0
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('0-ones')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('0-ones')" style="vertical-align:initial; margin-top: 5px; display: inline-block; cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block;">
@@ -1710,7 +1770,7 @@ right: -13%;">
 						<div style="position: absolute; top: 150%; left: 63%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #2C91E6;">
 							7
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('7-10ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('7-10ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;  cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block;">
@@ -1731,7 +1791,7 @@ right: -13%;">
 						<div style="position: absolute; top: 150%; left: 77%; padding: 20px; border-radius: 15px; font-size: 28px; color: #4B4B4B; white-space: nowrap; font-size: 70px; font-weight: bold; font-family: 'Chewy'; color: #4CAF50;">
 							0
 							<!-- Audio Icon -->
-							<span onclick="playInstructionSimple('0-100ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;">
+							<span onclick="playInstructionSimple('0-100ths')" style="vertical-align:initial; margin-top: 5px; display: inline-block;  cursor: pointer;">
 								<img src="Math-Project/audio-inst-blue.png"
 									 class="audio-icon"
 									 style="width: 40px; height: 35px; display: inline-block;">
@@ -1794,11 +1854,11 @@ right: -13%;">
 
 				<!-- Title -->
 				<h3 class="delayed-p" style="background-color: cadetblue; font-size: 36px; font-weight: bold; color: white; padding: 12px 28px; border-radius: 15px; width: fit-content; margin: auto; border: 5px solid #5b3e1b; box-shadow: 0 0 10px #222;margin-bottom:15px;">
-					<span class="lang lang-heb">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('put-on-axis')">
 						עכשיו נסדר את המספרים על ציר המספרים:
 					</span>
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('put-on-axis')">
 						هيّا نرتب الأعداد على خط الأعداد:
 					</span>
@@ -1916,11 +1976,11 @@ right: -13%;">
 
 				<!-- Continue Button -->
 				<div class="continue-button delayed-p" style=" margin-top: 100px;  display: flex; align-items: center; justify-content: center; gap: 20px; direction: rtl;">
-					<span class="lang lang-heb">
+					<span class="lang lang-heb" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('click-here-to-continue')">
 						<a onclick="playTapAndGo(20)">לחץ כאן כדי להמשיך</a>
 					</span>
-					<span class="lang lang-ar">
+					<span class="lang lang-ar" style="cursor: pointer;">
 						<img src="Math-Project/audio-inst.png" style="width:50px; height:45px;" onclick="playInstructionSimple('click-here-to-continue')">
 						<a onclick="playTapAndGo(20)">اضغط هنا للمتابعة</a>
 					</span>
@@ -1941,7 +2001,7 @@ position: absolute;
 flex-wrap: wrap;
 width: max-content;
 right: -19%;">
-					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;  cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 					</div>
 					בחר את המספר הגדול מבין שני המספרים הבאים:
@@ -1959,7 +2019,7 @@ position: absolute;
 flex-wrap: wrap;
 width: max-content;
 right: -13%;">
-					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px;">
+					<div onclick="playInstructionSimple('choose-big-num')" class="audio-border" style="margin-left: 15px; cursor: pointer;">
 						<img src="Math-Project/audio-inst-blue.png" class="audio-icon" style="width:60px; height:60px;">
 					</div>
 					اختر العدد الأكبر من بين العددين التاليين:
@@ -2055,7 +2115,7 @@ right: -13%;">
 
 
 			<!-- Slide: composition of 1.31-->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -2233,7 +2293,7 @@ right: -13%;">
 				</div>
 			</section>
 			<!-- Slide: composition of 1.4 -->
-			<section class="num-house-slide" data-transition="fade">
+			<section class="num-house-slide" data-transition="slide">
 				<img src="Math-Project/numbers-house.png" alt="House" class="house-background" style="animation-delay:1s; transform: translate(-60%, -55%) scale(1.2);">
 
 				<!-- Text conten above image-->
@@ -2758,7 +2818,7 @@ right: -13%;">
 
 				<!-- Start Button -->
 				<div style="display: flex; align-items: center; justify-content: center; direction: rtl; margin-top: -210px; z-index: 9999; position: relative;">
-					<a class="special-button" onclick="playTapAndGo(2)" style="color: whitesmoke; font-weight: bold; text-align: center; background: linear-gradient(135deg, #A9C9C9, #7FBFBF); box-shadow: 0 0 20px rgba(95, 158, 160, 0.5), 0 0 40px rgba(95, 158, 160, 0.4); padding: 12px 20px; border-radius: 12px; font-size: 24px;">
+					<a class="special-button" onclick="playTapAndGo(28)" style="color: whitesmoke; font-weight: bold; text-align: center; background: linear-gradient(135deg, #A9C9C9, #7FBFBF); box-shadow: 0 0 20px rgba(95, 158, 160, 0.5), 0 0 40px rgba(95, 158, 160, 0.4); padding: 12px 20px; border-radius: 12px; font-size: 24px;">
 						<span class="lang lang-heb">להתחיל את המשחק<br>לחץ כאן</span>
 						<span class="lang lang-ar">لبدأ اللعبة اضغط هنا</span>
 					</a>
@@ -2823,9 +2883,6 @@ right: -13%;">
 					</span>
 
 				</div>
-
-
-
 
 				<div class="delayed-p"
 					 style="display: inline-block; align-items: center; animation-delay: 1.5s; position: absolute; top: 30%; left: -25%;
@@ -2897,8 +2954,8 @@ right: -13%;">
 				</section>
 				<!-- Q1 Correct Answer -->
 				<section data-role="feedback" id="q1-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -2910,8 +2967,8 @@ right: -13%;">
 
 				<!-- Q1-incorrect Answer -->
 				<section data-role="feedback" id="q1-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -2949,8 +3006,8 @@ right: -13%;">
 				</section>
 				<!-- Q2 Correct Answer -->
 				<section data-role="feedback" id="q2-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -2962,8 +3019,8 @@ right: -13%;">
 
 				<!-- Q2-incorrect Answer -->
 				<section data-role="feedback" id="q2-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3002,8 +3059,8 @@ right: -13%;">
 
 				<!-- Q3 Correct Answer -->
 				<section data-role="feedback" id="q3-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3015,8 +3072,8 @@ right: -13%;">
 
 				<!-- Q3-incorrect Answer -->
 				<section data-role="feedback" id="q3-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3055,8 +3112,8 @@ right: -13%;">
 
 				<!-- Q4 Correct Answer -->
 				<section data-role="feedback" id="q4-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3068,8 +3125,8 @@ right: -13%;">
 
 				<!-- Q4-incorrect Answer -->
 				<section data-role="feedback" id="q4-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3108,8 +3165,8 @@ right: -13%;">
 
 				<!-- Q5 Correct Answer -->
 				<section data-role="feedback" id="q5-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3121,8 +3178,8 @@ right: -13%;">
 
 				<!-- Q5 incorrect Answer -->
 				<section data-role="feedback" id="q5-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3161,8 +3218,8 @@ right: -13%;">
 
 				<!-- Q6 Correct Answer -->
 				<section data-role="feedback" id="q6-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3174,8 +3231,8 @@ right: -13%;">
 
 				<!-- Q6 incorrect Answer -->
 				<section data-role="feedback" id="q6-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3214,8 +3271,8 @@ right: -13%;">
 
 				<!-- Q7 Correct Answer -->
 				<section data-role="feedback" id="q7-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3227,8 +3284,8 @@ right: -13%;">
 
 				<!-- Q7-incorrect Answer -->
 				<section data-role="feedback" id="q7-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3267,8 +3324,8 @@ right: -13%;">
 
 				<!-- Q8 Correct Answer -->
 				<section data-role="feedback" id="q8-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3280,8 +3337,8 @@ right: -13%;">
 
 				<!-- Q8 incorrect Answer -->
 				<section data-role="feedback" id="q8-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3320,8 +3377,8 @@ right: -13%;">
 
 				<!-- Q9 Correct Answer -->
 				<section data-role="feedback" id="q9-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3333,8 +3390,8 @@ right: -13%;">
 
 				<!-- Q9 incorrect Answer -->
 				<section data-role="feedback" id="q9-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3373,8 +3430,8 @@ right: -13%;">
 
 				<!-- Q10 Correct Answer -->
 				<section data-role="feedback" id="q10-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3386,8 +3443,8 @@ right: -13%;">
 
 				<!-- Q10 incorrect Answer -->
 				<section data-role="feedback" id="q10-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3426,8 +3483,8 @@ right: -13%;">
 
 				<!-- Q11 Correct Answer -->
 				<section data-role="feedback" id="q11-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3439,8 +3496,8 @@ right: -13%;">
 
 				<!-- Q11 incorrect Answer -->
 				<section data-role="feedback" id="q11-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3479,8 +3536,8 @@ right: -13%;">
 
 				<!-- Q12 Correct Answer -->
 				<section data-role="feedback" id="q12-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3492,8 +3549,8 @@ right: -13%;">
 
 				<!-- Q12 incorrect Answer -->
 				<section data-role="feedback" id="q12-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3531,8 +3588,8 @@ right: -13%;">
 
 				<!-- Q13 Correct Answer -->
 				<section data-role="feedback" id="q13-correct" style="display: flex; flex-direction:column; justify-content: center; align-items: center; height:100%; width:100%; text-align:center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">נכון</span>
 							<span class="lang lang-ar">صحيح</span>
 						</div>
@@ -3545,8 +3602,8 @@ right: -13%;">
 
 				<!-- Q13-incorrect Answer -->
 				<section data-role="feedback" id="q13-wrong" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; text-align: center;">
-					<div class="feedback-centering">
-						<div class="ansFeedback">
+					<div class="feedback-centering feedback-game-sec">
+						<div class="ansFeedback feedback-game-sec">
 							<span class="lang lang-heb">לא נכון </span>
 							<span class="lang lang-ar">غير صحيح </span>
 						</div>
@@ -3563,7 +3620,7 @@ right: -13%;">
 			<section id="game-results"
 					 data-role="final-score"
 					 style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; color:purple; margin-top:150px;"
-					 data-transition="fade">
+					 data-transition="concave">
 
 				<!-- Score Message -->
 				<div id="final-score-display"
@@ -3695,9 +3752,12 @@ right: -13%;">
 
 
 	<!-- 🎧  audio instruction elements: -->
+	<audio id="decimal-system" data-ext="mp3"></audio>				 <!-- המבנה העשרוני -->
+	<audio id="welcome-tutor" data-ext="mp3"></audio>				 <!-- ברוכים הבאים למדריך החשבון! -->
+
 	<audio id="game-inst" data-ext="m4a"></audio>				 <!-- הוראות המשחק -->
 	<audio id="in-this-game-choose" data-ext="m4a"></audio>	<!-- במשחק זה עליך לבחור את המספר העשׂרוני הגדול בין שני המספרים המופיעים על המסך. -->
-	<audio id="you-need-to-pass"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
+	<audio id="you-need-to-pass" data-ext="m4a"></audio>		<!-- עליך לעבור בהצלחה את ההדרכה על מנת להתחיל את המשחק. -->
 
 	<audio id="choose-big-num" data-ext="m4a"></audio>		<!-- בְחַר את המספר הגדול מבין שני המספרים הבאים:. -->
 	<audio id="lets-compose" data-ext="m4a"></audio>			<!-- בוא נִפַרֵק את שני המספרים שבשאלה. בחר את המספר שתרצה לפרק:. -->

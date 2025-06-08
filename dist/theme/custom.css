@@ -127,7 +127,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 /*=== my stylings ===*/
 
-/* === WELCOME SLIDE === */
+/* WELCOME SLIDE  */
 
 .topic-square {
     width: 320px;
@@ -223,6 +223,13 @@ body {
     text-align: right;
 }
 
+/* transition speed */
+.reveal .slides {
+    transition-duration: 2s !important;
+    transition-timing-function: ease-in-out !important;
+}
+
+
 /*.visible-fragment {
     opacity: 0;
     transition: opacity 2s ease-in;
@@ -236,7 +243,6 @@ body {
 
 
 /*=== Slide's title decoratios ===*/
-*/
 .Slide1 .header,
 .Slide2 .header {
     font-family: 'Noto Sans Hebrew', Arial;
@@ -501,7 +507,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     align-items: center;
-    margin-right:20px;
+    margin-right:320px;
     width: 100%;
     
 }
@@ -523,7 +529,9 @@ body {
     color: white;
 }
 
-
+.feedback-game-sec {
+    margin-right: -10px !important;
+}
 .compose-num {
     margin: 0;
     color: whitesmoke;
