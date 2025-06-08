@@ -20,12 +20,13 @@ Both languages include full audio instructions, ensuring accessibility for stude
 
 ## 📚 Research Background
 This project is based on two articles:
-Lortie-Forgues, H., Tian, J., & Siegler, R. S. (2015).
+
+Lortie-Forgues, H., Tian, J., & Siegler, R. S. (2015).1
  Why is learning fraction and decimal arithmetic so difficult?
  Developmental Review, 38, 201–221.
 
 
-Roell, M., Viarouge, A., Houdé, O., & Borst, G. (2017).
+Roell, M., Viarouge, A., Houdé, O., & Borst, G. (2017).2
  Inhibitory control and decimal number comparison in school-aged children.
  PLOS ONE, 12(11), e0188276. https://doi.org/10.1371/journal.pone.0188276
 
