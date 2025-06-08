@@ -20,8 +20,14 @@ Both languages include full audio instructions, ensuring accessibility for stude
 
 ## 📚 Research Background
 This project is based on two articles:
-1. *Why is learning fraction and decimal arithmetic so difficult?*
-2. *Inhibitory control and decimal number comparison in school-aged children*
+Lortie-Forgues, H., Tian, J., & Siegler, R. S. (2015).
+ Why is learning fraction and decimal arithmetic so difficult?
+ Developmental Review, 38, 201–221.
+
+
+Roell, M., Viarouge, A., Houdé, O., & Borst, G. (2017).
+ Inhibitory control and decimal number comparison in school-aged children.
+ PLOS ONE, 12(11), e0188276. https://doi.org/10.1371/journal.pone.0188276
 
 These studies emphasize how students often misinterpret decimals due to visual bias and lack of conceptual understanding (e.g., thinking 0.14 is greater than 0.4). The game directly addresses this by:
 - Using a “House of Numbers” to break down decimal structure
@@ -129,7 +135,7 @@ The game supports self-paced learning and encourages meaningful interaction—tw
 /Math-tutor.html           → Main HTML presentation  
 /Math-tutor.js             → JavaScript logic for game behavior  
 /custom.css                → Styling for layout and animations  
-/images/                   → Folder for screenshots and assets  
+//Math-Project/             → Folder for screenshots and assets  
 /README.md                 → This file  
 ```
 
