@@ -126,6 +126,81 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 /*=== my stylings ===*/
+
+/* === WELCOME SLIDE === */
+
+.topic-square {
+    width: 320px;
+    height: 320px;
+    background-image: url('../../Math-Project/frame.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+    /* Scale effect for available (clickable) game squares */
+    .topic-square:hover:not(.dimmed) {
+        transform: scale(1.15);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+
+.topic-title {
+    font-size:30px;
+    text-align: center;
+}
+
+.topic-title-heb {
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.topic-title-ar {
+    display: none;
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 30px !important;
+}
+
+.topic-title-soon {
+    color: darkcyan;
+    font-weight: bold;
+}
+
+.soon-strip {
+    position: absolute;
+    top: 25px;
+    background-color: #C088DC;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 12px;
+    font-size: 28px;
+}
+
+/* Dimmed look for 'soon' squares */
+.dimmed {
+    position: relative;
+    opacity: 0.7;
+    filter: grayscale(30%);
+    pointer-events: none; /* prevent click */
+}
+
+    .dimmed::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(200, 200, 200, 0.25); /* soft ash layer */
+        border-radius: 20px;
+    }
+
 .animate-on-load{   
 }
 .Background-theme{
@@ -426,7 +501,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     align-items: center;
-    margin-right:270px;
+    margin-right:20px;
     width: 100%;
     
 }
@@ -647,6 +722,48 @@ body {
     color: white;
     animation: gemGlow 1.5s infinite ease-in-out;
 }
+
+#language-menu button:hover {
+    background-color: #C088DC;
+    color: white;
+    border-radius: 6px;
+}
+
+.lang-icon {
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 12px 2px #E6C76B;
+}
+
+    .lang-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px 3px #C088DC;
+    }
+
+.lang-btn {
+    width: 100%;
+    margin: 5px 0;
+    padding: 6px 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .lang-btn:hover {
+        background-color: #C088DC;
+        color: white;
+    }
+
+    .lang-btn.active {
+        background-color: cadetblue;
+        color: white;
+    }
 
 /*****************************************/
 /* Game slides styling: */

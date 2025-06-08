@@ -11,7 +11,6 @@ let currentLanguage = 'heb'; // Default language
 
 
 
-
 //detect when the slide becomes visible and trigger animation with delay
 Reveal.addEventListener('slidechanged', (event) => {
 	const slide = event.currentSlide;
@@ -28,12 +27,23 @@ Reveal.addEventListener('slidechanged', (event) => {
 	});
 });
 
+function toggleLanguageMenu() {
+	const menu = document.getElementById('language-menu');
+	menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+}
+
 function switchLanguage(toLang) {
 	currentLanguage = toLang;
-
 	document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
 	document.querySelectorAll(`.lang-${toLang}`).forEach(el => el.style.display = 'block');
+
+	// Update active button style
+	document.getElementById('btn-heb')?.classList.remove('active');
+	document.getElementById('btn-ar')?.classList.remove('active');
+	const btn = document.getElementById('btn-' + toLang);
+	if (btn) btn.classList.add('active');
 }
+
 
 
 function playInstructionSimple(id) {
@@ -339,7 +349,10 @@ function updateContinueButtons() {
 				// Regular "Click to Continue" button
 				const continueBtn = document.createElement('a');
 				continueBtn.className = 'continue-to-next';
-				continueBtn.textContent = 'לחץ כאן כדי להמשיך';
+				continueBtn.innerHTML = `
+						<span class="lang lang-heb">לחץ כאן כדי להמשיך</span>
+						<span class="lang lang-ar" style="display:none;">اضغط هنا للمتابعة</span> `;
+
 				continueBtn.setAttribute('data-go-h', hIndex);
 
 				wrapper.appendChild(continueBtn);
@@ -349,7 +362,11 @@ function updateContinueButtons() {
 				// Final feedback → link to static result slide
 				const btnToResult = document.createElement('a');
 				btnToResult.className = 'continue-to-next';
-				btnToResult.textContent = 'סיום וצפייה בתוצאה 💎';
+				btnToResult.innerHTML = `
+	<span class="lang lang-heb">סיום וצפייה בתוצאה 💎</span>
+	<span class="lang lang-ar" style="display:none;">💎 إنهاء وعرض النتيجة</span> `;
+
+
 
 				// Find horizontal index of result slide
 				const slides = Reveal.getHorizontalSlides();
@@ -500,7 +517,7 @@ function goHome() {
 	shuffleQuestions(); // Rebuild question order if needed
 
 	setTimeout(() => {
-		Reveal.slide(0, 0);  // Go to the first slide (home)
+		Reveal.slide(1, 0);  // Go to the first slide (home)
 	}, 0);
 }
 
@@ -795,24 +812,23 @@ Reveal.on('slidechanged', (event) => {
 Reveal.on('slidechanged', (event) => {
 	const slide = event.currentSlide;
 	if (slide?.id === 'game-results') {
-		//  Points
-		document.getElementById('final-points-count').textContent = totalPoints;
+		// Update both languages using class-based selectors
+		document.querySelectorAll('.final-points-count').forEach(el => el.textContent = totalPoints);
+		document.querySelectorAll('.final-time').forEach(el => el.textContent = document.getElementById('game-timer').textContent);
 
-		//  Time
-		document.getElementById('final-time').textContent = document.getElementById('game-timer').textContent;
-
-		//  Count total game questions
 		const totalGameQuestions = document.querySelectorAll('.question-group .question-slide[data-question-id]').length;
-		document.getElementById('correct-count').textContent = correctGameAnswers;
-		document.getElementById('total-questions').textContent = totalGameQuestions;
 
-		//  Sound
-		const resultSound = document.getElementById('earned-point');
+		document.querySelectorAll('.correct-count').forEach(el => el.textContent = correctGameAnswers);
+		document.querySelectorAll('.total-questions').forEach(el => el.textContent = totalGameQuestions);
+
+		// Play result sound
+		const resultSound = document.getElementById('earned-points');
 		if (resultSound) {
 			resultSound.currentTime = 0;
 			resultSound.play().catch(() => { });
 		}
 	}
+
 });
 
 switchLanguage('heb');
